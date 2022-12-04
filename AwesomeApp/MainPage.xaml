@@ -1,28 +1,67 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AwesomeApp.MainPage">
+             x:Class="AwesomeApp.MainPage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
 
     <StackLayout>
         <Frame BackgroundColor="Orange"
                Padding="24"
-               Margin="20,50,20,20"
+               Margin="10,50,10,20"
                CornerRadius="10">
-            <Label Text="Your Feelings Matter"
+            <Label TextColor="{DynamicResource TextSecondaryColor}"
+                   Text="Your Feelings Matter"
                    HorizontalTextAlignment="Center"
-                   TextColor="White"
                    FontSize="36"/>
         </Frame>
-        <Label Text="Have an daily overview how your mood is changing."
+        <Label TextColor="{DynamicResource TextSecondaryColor}"
+               Text="Have an daily overview how your mood is changing."
                FontSize="Title"
                Padding="30,10,30,10"
                Margin="0,0,0,50"/>
         <StackLayout>
-            <Button Text="Add Mood" FontSize="Medium" BorderWidth="2" BorderColor="Orange" Margin="10" CornerRadius="10" WidthRequest="200" HorizontalOptions="Center"></Button>
-            <Button Text="Show Moods" FontSize="Medium" BorderWidth="2" BorderColor="Orange" Margin="10" CornerRadius="10"  WidthRequest="200" HorizontalOptions="Center"></Button>
-            <Button Text="Daily Chart" FontSize="Medium" BorderWidth="2" BorderColor="Orange" Margin="10" CornerRadius="10"  WidthRequest="200" HorizontalOptions="Center"></Button>
+            <Button TextColor="{DynamicResource TextSecondaryColor}"
+                    Text="Add Mood"
+                    FontSize="Medium" BorderWidth="2" BorderColor="Orange"
+                    Margin="10"
+                    CornerRadius="10"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"></Button>
+            <Button Text="Show Moods"
+                    TextColor="{DynamicResource TextSecondaryColor}"
+                    FontSize="Medium"
+                    BorderWidth="2"
+                    BorderColor="Orange" 
+                    Margin="10" 
+                    CornerRadius="10"
+                    WidthRequest="200" 
+                    HorizontalOptions="Center"></Button>
+            <Button Text="Daily Chart"
+                    TextColor="{DynamicResource TextSecondaryColor}"
+                    FontSize="Medium"
+                    BorderWidth="2"
+                    BorderColor="Orange"
+                    Margin="10"
+                    CornerRadius="10"
+                    WidthRequest="200"
+                    HorizontalOptions="Center"></Button>
         </StackLayout>
-        
+        <StackLayout Orientation="Horizontal"
+                     VerticalOptions="EndAndExpand"
+                     HorizontalOptions="Center">
+            <Label TextColor="{DynamicResource TextSecondaryColor}"
+                   Text="Light Mode" />
+            <Switch x:Name="themeToggle"
+                    IsToggled="False"
+                    Toggled="Switch_Toggled"/>
+            <Label TextColor="{DynamicResource TextSecondaryColor}"
+                   Text="Dark Mode" />
+        </StackLayout>
+        <ImageButton Source="spi.png"
+                     WidthRequest="100"
+                     HeightRequest="100"
+                     Clicked="ImageButton_Clicked"></ImageButton>
+
     </StackLayout>
 
 </ContentPage>
