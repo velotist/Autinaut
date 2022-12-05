@@ -37,7 +37,7 @@ namespace AwesomeApp
             SetTheme(toggleStatus);
         }
 
-        void SetTheme(bool status)
+        private void SetTheme(bool status)
         {
             Theme themeRequested = status ? Theme.Dark : Theme.Light;
             DependencyService.Get<IAppTheme>().SetAppTheme(themeRequested);
