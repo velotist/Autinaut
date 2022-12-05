@@ -52,7 +52,7 @@
             <Label TextColor="{DynamicResource TextSecondaryColor}"
                    Text="Light Mode" />
             <Switch x:Name="themeToggle"
-                    IsToggled="False"
+                    IsToggled="True"
                     Toggled="Switch_Toggled"/>
             <Label TextColor="{DynamicResource TextSecondaryColor}"
                    Text="Dark Mode" />
