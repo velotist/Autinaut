@@ -39,16 +39,7 @@ namespace AwesomeApp
 
         void SetTheme(bool status)
         {
-            Theme themeRequested;
-            if (status)
-            {
-                themeRequested = Theme.Dark;
-            }
-            else
-            {
-                themeRequested = Theme.Light;
-            }
-
+            Theme themeRequested = status ? Theme.Dark : Theme.Light;
             DependencyService.Get<IAppTheme>().SetAppTheme(themeRequested);
         }
     }
