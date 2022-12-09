@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AwesomeApp.MainPage"
+             x:Class="AwesomeApp.AboutPage"
              BackgroundColor="{DynamicResource BackgroundColor}">
 
     <StackLayout>
@@ -10,7 +10,7 @@
                Margin="10,50,10,20"
                CornerRadius="10">
             <Label TextColor="{DynamicResource TextSecondaryColor}"
-                   Text="Your Feelings Matter"
+                   Text="Your Moods Matter"
                    HorizontalTextAlignment="Center"
                    FontSize="36"/>
         </Frame>
@@ -26,7 +26,7 @@
                     Margin="10"
                     CornerRadius="10"
                     WidthRequest="200"
-                    HorizontalOptions="Center"></Button>
+                    HorizontalOptions="Center" />
             <Button Text="Show Moods"
                     TextColor="{DynamicResource TextSecondaryColor}"
                     FontSize="Medium"

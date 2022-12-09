@@ -1,0 +1,54 @@
+﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:controls="clr-namespace:AwesomeApp.Controls"
+       xmlns:views="clr-namespace:AwesomeApp.Views"
+       xmlns:awesomeapp="clr-namespace:AwesomeApp"
+       x:DataType="awesomeapp:AppShell"
+       x:Class="AwesomeApp.AppShell"
+       FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Route="protocols"
+                FlyoutDisplayOptions="AsMultipleItems"
+                Title="Protocols">
+        <Tab Title="Moods">
+            <ShellContent Route="addmood"
+                          Title="Add Mood"
+                          ContentTemplate="{DataTemplate views:MoodItemPage}">
+            </ShellContent>
+            <ShellContent Route="deletemood"
+                          Title="Delete Mood"
+                          ContentTemplate="{DataTemplate views:MoodItemPage}">
+            </ShellContent>
+            <ShellContent Route="updatemood"
+                          Title="Update Mood"
+                          ContentTemplate="{DataTemplate views:MoodItemPage}">
+            </ShellContent>
+        </Tab>
+        <Tab Title="Success">
+            <ShellContent Route="addsuccess"
+                          Title="Add Success"
+                          ContentTemplate="{DataTemplate views:MoodItemPage}">
+            </ShellContent>
+            <ShellContent Route="deletesuccess"
+                          Title="Delete Success"
+                          ContentTemplate="{DataTemplate views:MoodItemPage}">
+            </ShellContent>
+            <ShellContent Route="updatesuccess"
+                          Title="Update Success"
+                          ContentTemplate="{DataTemplate views:MoodItemPage}">
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+    
+    <MenuItem Text="About"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://github.com/velotist" />
+</Shell>

@@ -6,10 +6,10 @@ using static AwesomeApp.App;
 
 namespace AwesomeApp
 {
-    public partial class MainPage : ContentPage
+    public partial class AboutPage : ContentPage
     {
         private readonly Uri SpiHome = new Uri("https://google.de");
-        public MainPage()
+        public AboutPage()
         {
             InitializeComponent();
         }
@@ -42,5 +42,10 @@ namespace AwesomeApp
             Theme themeRequested = status ? Theme.Dark : Theme.Light;
             DependencyService.Get<IAppTheme>().SetAppTheme(themeRequested);
         }
+
+        //private async void AddButton_Clicked(object sender, EventArgs e)
+        //{
+        //    await Shell.Current.GoToAsync(nameof(MoodItemPage));
+        //}
     }
 }
