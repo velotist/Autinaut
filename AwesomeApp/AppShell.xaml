@@ -5,7 +5,8 @@
        xmlns:awesomeapp="clr-namespace:AwesomeApp"
        x:DataType="awesomeapp:AppShell"
        x:Class="AwesomeApp.AppShell"
-       FlyoutHeaderBehavior="CollapseOnScroll">
+       FlyoutHeaderBehavior="CollapseOnScroll"
+       FlyoutWidth="250">
 
     <Shell.FlyoutHeader>
         <controls:FlyoutHeader />
@@ -18,37 +19,20 @@
     <FlyoutItem Route="protocols"
                 FlyoutDisplayOptions="AsMultipleItems"
                 Title="Protocols">
-        <Tab Title="Moods">
-            <ShellContent Route="addmood"
-                          Title="Add Mood"
-                          ContentTemplate="{DataTemplate views:MoodItemPage}">
-            </ShellContent>
-            <ShellContent Route="deletemood"
-                          Title="Delete Mood"
-                          ContentTemplate="{DataTemplate views:MoodItemPage}">
-            </ShellContent>
-            <ShellContent Route="updatemood"
-                          Title="Update Mood"
-                          ContentTemplate="{DataTemplate views:MoodItemPage}">
-            </ShellContent>
-        </Tab>
-        <Tab Title="Success">
-            <ShellContent Route="addsuccess"
-                          Title="Add Success"
-                          ContentTemplate="{DataTemplate views:MoodItemPage}">
-            </ShellContent>
-            <ShellContent Route="deletesuccess"
-                          Title="Delete Success"
-                          ContentTemplate="{DataTemplate views:MoodItemPage}">
-            </ShellContent>
-            <ShellContent Route="updatesuccess"
-                          Title="Update Success"
-                          ContentTemplate="{DataTemplate views:MoodItemPage}">
-            </ShellContent>
-        </Tab>
+
+        <ShellContent Route="moods"
+                      Title="Moods"
+                      Icon="enjoying.png"
+                      ContentTemplate="{DataTemplate views:MoodItemsPage}">
+        </ShellContent>
+        <ShellContent Route="successes"
+                      Title="Successes"
+                      Icon="success.jpg"
+                      ContentTemplate="{DataTemplate views:SuccessItemsPage}" />
     </FlyoutItem>
     
     <MenuItem Text="About"
+              IconImageSource="github.png"
               Command="{Binding HelpCommand}"
               CommandParameter="https://github.com/velotist" />
 </Shell>

@@ -10,6 +10,7 @@ namespace AwesomeApp.Views
     public partial class SuccessItemsPage : ContentPage
     {
         public ObservableCollection<SuccessItem> Items { get; set; }
+        private DateTime Today = DateTime.Now;
 
         public SuccessItemsPage()
         {
@@ -17,12 +18,12 @@ namespace AwesomeApp.Views
 
             Items = new ObservableCollection<SuccessItem>
             {
-                new SuccessItem { SuccessNote = "Zähne geputzt", Date = DateTime.Now.ToString() },
-                new SuccessItem { SuccessNote = "Hintern gewaschen", Date = DateTime.Now.ToString() },
-                new SuccessItem { SuccessNote = "Vater angerufen", Date = DateTime.Now.ToString() },
-                new SuccessItem { SuccessNote = "Brief weggebracht", Date = DateTime.Now.ToString() },
-                new SuccessItem { SuccessNote = "Geld überwiesen", Date = DateTime.Now.ToString() },
-                new SuccessItem { SuccessNote = "Mit Frau ausgegangen", Date = DateTime.Now.ToString() },
+                new SuccessItem { ID=1, SuccessNote = "Zähne geputzt", Date = Today.AddDays(1).ToString("dd.MMM.yyyy") },
+                new SuccessItem { ID=2, SuccessNote = "Meditiert", Date = Today.AddDays(2).ToString("dd.MMM.yyyy") },
+                new SuccessItem { ID=3, SuccessNote = "Vater angerufen", Date = Today.AddDays(4).ToString("dd.MMM.yyyy") },
+                new SuccessItem { ID=4, SuccessNote = "Brief weggebracht", Date = Today.AddDays(4).ToString("dd.MMM.yyyy") },
+                new SuccessItem { ID=5, SuccessNote = "Geld überwiesen", Date = Today.AddDays(5).ToString("dd.MMM.yyyy") },
+                new SuccessItem { ID=6, SuccessNote = "Mit Frau ausgegangen", Date = Today.AddDays(6).ToString("dd.MMM.yyyy") },
             };
             
             MyListView.ItemsSource = Items;

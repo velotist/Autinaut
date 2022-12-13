@@ -11,19 +11,21 @@ namespace AwesomeApp.Views
     {
         public ObservableCollection<MoodItem> Items { get; set; }
 
+        private DateTime Today = DateTime.Now;
+
         public MoodItemsPage()
         {
             InitializeComponent();
 
             Items = new ObservableCollection<MoodItem>
             {
-                new MoodItem { Mood = "Angry", Date = DateTime.Now.ToString() },
-                new MoodItem { Mood = "Sad", Date = DateTime.Now.ToString() },
-                new MoodItem { Mood = "Disgusted", Date = DateTime.Now.ToString() },
-                new MoodItem { Mood = "Enjoying", Date = DateTime.Now.ToString() },
-                new MoodItem { Mood = "Sad", Date = DateTime.Now.ToString() },
-                new MoodItem { Mood = "Angry", Date = DateTime.Now.ToString() },
-                new MoodItem { Mood = "Fear", Date = DateTime.Now.ToString() },
+                new MoodItem { ID=1, Mood = "Angry", Date = Today.AddDays(1).ToString("dd.MMM.yyyy") },
+                new MoodItem { ID=2, Mood = "Sad", Date = Today.AddDays(1).ToString("dd.MMM.yyyy") },
+                new MoodItem { ID=3, Mood = "Disgusted", Date = Today.AddDays(2).ToString("dd.MMM.yyyy") },
+                new MoodItem { ID=4, Mood = "Enjoying", Date = Today.AddDays(3).ToString("dd.MMM.yyyy") },
+                new MoodItem { ID=5, Mood = "Sad", Date = Today.AddDays(4).ToString("dd.MMM.yyyy") },
+                new MoodItem { ID=6, Mood = "Angry", Date = Today.AddDays(5).ToString("dd.MMM.yyyy") },
+                new MoodItem { ID=7, Mood = "Fear", Date = Today.AddDays(5).ToString("dd.MMM.yyyy") },
             };
             
             MyListView.ItemsSource = Items;
