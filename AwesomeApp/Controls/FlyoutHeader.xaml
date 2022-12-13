@@ -4,7 +4,7 @@
              x:Class="AwesomeApp.Controls.FlyoutHeader"
              HeightRequest="200">
     <Grid BackgroundColor="Black">
-        <Label Text="AutInOut"
+        <Label Text="AUTINAUT"
                TextColor="White"
                FontSize="Title"
                FontAttributes="Bold"
