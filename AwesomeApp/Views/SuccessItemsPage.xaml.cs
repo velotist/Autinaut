@@ -18,12 +18,12 @@ namespace AwesomeApp.Views
 
             Items = new ObservableCollection<SuccessItem>
             {
-                new SuccessItem { ID=1, SuccessNote = "Zähne geputzt", Date = Today.AddDays(1).ToString("dd.MMM.yyyy") },
-                new SuccessItem { ID=2, SuccessNote = "Meditiert", Date = Today.AddDays(2).ToString("dd.MMM.yyyy") },
-                new SuccessItem { ID=3, SuccessNote = "Vater angerufen", Date = Today.AddDays(4).ToString("dd.MMM.yyyy") },
-                new SuccessItem { ID=4, SuccessNote = "Brief weggebracht", Date = Today.AddDays(4).ToString("dd.MMM.yyyy") },
-                new SuccessItem { ID=5, SuccessNote = "Geld überwiesen", Date = Today.AddDays(5).ToString("dd.MMM.yyyy") },
-                new SuccessItem { ID=6, SuccessNote = "Mit Frau ausgegangen", Date = Today.AddDays(6).ToString("dd.MMM.yyyy") },
+                new SuccessItem { ID=1, SuccessNote = "Zähne geputzt", Date = Today.AddDays(1).ToString() },
+                new SuccessItem { ID=2, SuccessNote = "Meditiert", Date = Today.AddDays(2).ToString() },
+                new SuccessItem { ID=3, SuccessNote = "Vater angerufen", Date = Today.AddDays(4).ToString() },
+                new SuccessItem { ID=4, SuccessNote = "Brief weggebracht", Date = Today.AddDays(4).ToString() },
+                new SuccessItem { ID=5, SuccessNote = "Geld überwiesen", Date = Today.AddDays(5).ToString() },
+                new SuccessItem { ID=6, SuccessNote = "Mit Frau ausgegangen", Date = Today.AddDays(6).ToString() },
             };
             
             MyListView.ItemsSource = Items;
