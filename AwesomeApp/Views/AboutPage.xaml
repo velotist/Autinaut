@@ -19,33 +19,6 @@
                FontSize="Title"
                Padding="30,10,30,10"
                Margin="0,0,0,50"/>
-        <StackLayout>
-            <Button TextColor="{DynamicResource TextSecondaryColor}"
-                    Text="Add Mood"
-                    FontSize="Medium" BorderWidth="2" BorderColor="Orange"
-                    Margin="10"
-                    CornerRadius="10"
-                    WidthRequest="200"
-                    HorizontalOptions="Center" />
-            <Button Text="Show Moods"
-                    TextColor="{DynamicResource TextSecondaryColor}"
-                    FontSize="Medium"
-                    BorderWidth="2"
-                    BorderColor="Orange" 
-                    Margin="10" 
-                    CornerRadius="10"
-                    WidthRequest="200" 
-                    HorizontalOptions="Center"></Button>
-            <Button Text="Daily Chart"
-                    TextColor="{DynamicResource TextSecondaryColor}"
-                    FontSize="Medium"
-                    BorderWidth="2"
-                    BorderColor="Orange"
-                    Margin="10"
-                    CornerRadius="10"
-                    WidthRequest="200"
-                    HorizontalOptions="Center"></Button>
-        </StackLayout>
         <StackLayout Orientation="Horizontal"
                      VerticalOptions="EndAndExpand"
                      HorizontalOptions="Center">
