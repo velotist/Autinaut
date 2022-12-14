@@ -33,8 +33,8 @@ namespace AwesomeApp.Views
         {
             if (e.Item == null)
                 return;
-
-            await DisplayAlert("Item Tapped", "An item was tapped.", "OK");
+            var selectedItem = e.Item as SuccessItem;
+            await DisplayActionSheet("Details Page:", "Cancel", null, selectedItem.Date.ToString(), selectedItem.SuccessNote.ToString());
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
