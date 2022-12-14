@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AwesomeApp.AboutPage"
+             x:Class="AwesomeApp.Views.AboutPage"
              BackgroundColor="{DynamicResource BackgroundColor}">
 
     <StackLayout>
@@ -10,12 +10,12 @@
                Margin="10,50,10,20"
                CornerRadius="10">
             <Label TextColor="{DynamicResource TextSecondaryColor}"
-                   Text="Your Moods Matter"
+                   Text="You Matter"
                    HorizontalTextAlignment="Center"
                    FontSize="36"/>
         </Frame>
         <Label TextColor="{DynamicResource TextSecondaryColor}"
-               Text="Have an daily overview how your mood is changing."
+               Text="For an autistic person it is essential to have control and to aggregate routines in life. This app will help you to protocol successes and moods and visualize your data in charts."
                FontSize="Title"
                Padding="30,10,30,10"
                Margin="0,0,0,50"/>
@@ -30,11 +30,6 @@
             <Label TextColor="{DynamicResource TextSecondaryColor}"
                    Text="Dark Mode" />
         </StackLayout>
-        <ImageButton Source="spi.png"
-                     WidthRequest="100"
-                     HeightRequest="100"
-                     Clicked="ImageButton_Clicked"></ImageButton>
-
     </StackLayout>
 
 </ContentPage>

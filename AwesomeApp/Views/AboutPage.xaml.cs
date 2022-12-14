@@ -4,7 +4,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using static AwesomeApp.App;
 
-namespace AwesomeApp
+namespace AwesomeApp.Views
 {
     public partial class AboutPage : ContentPage
     {
@@ -42,10 +42,5 @@ namespace AwesomeApp
             Theme themeRequested = status ? Theme.Dark : Theme.Light;
             DependencyService.Get<IAppTheme>().SetAppTheme(themeRequested);
         }
-
-        //private async void AddButton_Clicked(object sender, EventArgs e)
-        //{
-        //    await Shell.Current.GoToAsync(nameof(MoodItemPage));
-        //}
     }
 }
