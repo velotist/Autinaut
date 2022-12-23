@@ -27,11 +27,6 @@ namespace AwesomeApp.Data
             return Database.Table<SuccessItem>().ToListAsync();
         }
 
-        public Task<List<SuccessItem>> GetItemsNotDoneAsync()
-        {
-            return Database.QueryAsync<SuccessItem>("SELECT * FROM [SuccessItem]");
-        }
-
         public Task<SuccessItem> GetItemAsync(int id)
         {
             return Database.Table<SuccessItem>()
