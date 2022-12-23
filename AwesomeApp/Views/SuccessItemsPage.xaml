@@ -1,51 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AwesomeApp.Views.SuccessItemsPage">
+             x:Class="AwesomeApp.Views.SuccessItemsPage"
+             Title="Successes">
 
-    <StackLayout>
-        <Button Text="+"
-                TextColor="Black"
-                BackgroundColor="Aquamarine"
-                WidthRequest="50"
-                Margin="10,10,0,0"
-                HorizontalOptions="Start"
-                Clicked="NavigateButton_OnClicked">
-        </Button>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="+"
+                     Clicked="OnItemAdded">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android, UWP"
+                        Value="plus.png" />
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
 
-        <ListView x:Name="MyListView"
-                  BackgroundColor="Transparent"
-                  ItemsSource="{Binding Items}"
-                  ItemTapped="Handle_ItemTapped"
-                  CachingStrategy="RecycleElement"
-                  HasUnevenRows="True">
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid Padding="10">
-                            <Frame>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label VerticalOptions="Start"
+    <ListView x:Name="myListView"
+              Margin="10"
+              ItemSelected="OnListItemSelected"
+              HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Frame>
+                            <StackLayout Orientation="Horizontal">
+                                <Label VerticalOptions="Start"
                                            Text="{Binding ID}"
                                            FontSize="Title"
                                            TextColor="ForestGreen" />
-                                    <StackLayout>
-                                        <Label VerticalOptions="Center"
-                                               Text="{Binding SuccessNote}"
-                                               FontSize="Large"
-                                               TextColor="Black" />
-                                        <Label VerticalOptions="Center"
-                                               Text="{Binding Date}"
-                                               FontSize="Medium"
-                                               TextColor="Black" />
-                                        </StackLayout>
+                                <StackLayout>
+                                    <Label VerticalOptions="Center"
+                                           Text="{Binding SuccessNote}"
+                                           FontSize="Large"
+                                           TextColor="Black" />
+                                    <Label VerticalOptions="Center"
+                                           Text="{Binding Date}"
+                                           FontSize="Medium"
+                                           TextColor="Black" />
                                 </StackLayout>
-                            </Frame>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
 </ContentPage>

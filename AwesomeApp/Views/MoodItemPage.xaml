@@ -2,20 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AwesomeApp.Views.MoodItemPage"
-             Title="Moods">
+             Title="Mood">
+
     <StackLayout Margin="20"
                  VerticalOptions="StartAndExpand">
         <Label Text="Mood"
                TextColor="Black"/>
         <Entry Text="{Binding Mood}"
-               TextColor="Black"/>
-        <Label Text="Actual Date"
-               TextColor="Black"/>
-        <Entry Text="{Binding Date}"
-               TextColor="Black"/>
+               TextColor="Black"
+               Margin="10"
+               Placeholder="My actual mood"
+               PlaceholderColor="Olive"
+               BackgroundColor="Aquamarine"/>
         <Button Text="Save"
                 Clicked="OnSaveClicked" />
         <Button Text="Cancel"
                 Clicked="OnCancelClicked" />
     </StackLayout>
+
 </ContentPage>

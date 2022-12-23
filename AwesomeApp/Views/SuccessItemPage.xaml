@@ -3,13 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AwesomeApp.Views.SuccessItemPage"
              Title="Success Note">
+
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Enter your note"
                    TextColor="Black"/>
             <Entry Text="{Binding SuccessNote}"
                    TextColor="Black"
-                   BackgroundColor="Aquamarine"/>
+                   Margin="10"
+                   BackgroundColor="Aquamarine"
+                   Placeholder="My success note"
+                   PlaceholderColor="Olive" />
             <StackLayout HorizontalOptions="Center"
                          Orientation="Horizontal">
                 <Button Text="Save"
@@ -21,4 +25,5 @@
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

@@ -12,7 +12,6 @@ namespace AwesomeApp.Views
         public SuccessItemPage ()
         {
             InitializeComponent ();
-            BindingContext = new SuccessItem { Date = DateTime.Now.ToString() };
         }
 
         async void OnSaveClicked(object sender, EventArgs e)
