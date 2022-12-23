@@ -10,7 +10,7 @@ namespace AwesomeApp.Views
     public partial class SuccessItemsPage : ContentPage
     {
         public ObservableCollection<SuccessItem> Items { get; set; }
-        private DateTime Today = DateTime.Now;
+        private readonly DateTime Today = DateTime.Now;
 
         public SuccessItemsPage()
         {
@@ -38,6 +38,11 @@ namespace AwesomeApp.Views
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        async void NavigateButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SuccessItemPage());
         }
     }
 }

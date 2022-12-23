@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeApp.Views.SuccessItemPage"
+             Title="Success Note">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Enter your note"
+                   TextColor="Black"/>
+            <Entry Text="{Binding SuccessNote}"
+                   TextColor="Black"
+                   BackgroundColor="Aquamarine"/>
+            <StackLayout HorizontalOptions="Center"
+                         Orientation="Horizontal">
+                <Button Text="Save"
+                        WidthRequest="100"
+                        Clicked="OnSaveClicked" />
+                <Button Text="Cancel"
+                        WidthRequest="100"
+                        Clicked="OnCancelClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

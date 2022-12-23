@@ -11,7 +11,7 @@ namespace AwesomeApp.Views
     {
         public ObservableCollection<MoodItem> Items { get; set; }
 
-        private DateTime Today = DateTime.Now;
+        private readonly DateTime Today = DateTime.Now;
 
         public MoodItemsPage()
         {
@@ -40,6 +40,11 @@ namespace AwesomeApp.Views
 
             //Deselect Item
             ((ListView)sender).SelectedItem = null;
+        }
+
+        async void NavigateButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MoodItemPage());
         }
     }
 }

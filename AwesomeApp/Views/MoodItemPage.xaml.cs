@@ -10,22 +10,14 @@ namespace AwesomeApp.Views
         public MoodItemPage()
         {
             InitializeComponent();
-            BindingContext = new MoodItem();
+            BindingContext = new MoodItem { Date = DateTime.Now.ToString() };
         }
 
         async void OnSaveClicked(object sender, EventArgs e)
         {
-            var MoodItem = (MoodItem)BindingContext;
+            var moodItem = (MoodItem)BindingContext;
             MoodItemDatabase database = await MoodItemDatabase.Instance;
-            await database.SaveItemAsync(MoodItem);
-            await Navigation.PopAsync();
-        }
-
-        async void OnDeleteClicked(object sender, EventArgs e)
-        {
-            var MoodItem = (MoodItem)BindingContext;
-            MoodItemDatabase database = await MoodItemDatabase.Instance;
-            await database.DeleteItemAsync(MoodItem);
+            await database.SaveItemAsync(moodItem);
             await Navigation.PopAsync();
         }
 

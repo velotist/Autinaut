@@ -9,7 +9,8 @@
                 BackgroundColor="Aquamarine"
                 WidthRequest="50"
                 Margin="10,10,0,0"
-                HorizontalOptions="Start">
+                HorizontalOptions="Start"
+                Clicked="NavigateButton_OnClicked">>
         </Button>
 
         <ListView x:Name="MyListView"

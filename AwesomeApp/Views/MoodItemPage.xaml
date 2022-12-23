@@ -15,8 +15,6 @@
                TextColor="Black"/>
         <Button Text="Save"
                 Clicked="OnSaveClicked" />
-        <Button Text="Delete"
-                Clicked="OnDeleteClicked" />
         <Button Text="Cancel"
                 Clicked="OnCancelClicked" />
     </StackLayout>
