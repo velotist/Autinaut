@@ -43,5 +43,13 @@ namespace AwesomeApp.Views
                 BindingContext = new MoodItem()
             });
         }
+
+        async void OnChartClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MoodChartPage
+            {
+                BindingContext = Items
+            });
+        }
     }
 }
