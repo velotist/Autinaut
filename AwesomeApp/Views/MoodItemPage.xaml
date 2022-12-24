@@ -14,10 +14,15 @@
                Placeholder="My actual mood"
                PlaceholderColor="Olive"
                BackgroundColor="Aquamarine"/>
-        <Button Text="Save"
-                Clicked="OnSaveClicked" />
-        <Button Text="Cancel"
-                Clicked="OnCancelClicked" />
+       <StackLayout HorizontalOptions="Center"
+                    Orientation="Horizontal">
+           <Button Text="Save"
+                   WidthRequest="100"
+                   Clicked="OnSaveClicked" />
+           <Button Text="Cancel"
+                   WidthRequest="100"
+                   Clicked="OnCancelClicked" />
+       </StackLayout>
     </StackLayout>
 
 </ContentPage>
