@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AwesomeApp.Views.InfoPage"
+             BackgroundColor="White">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3"
+               Padding="24"
+               Margin="20,50,20,20"
+               CornerRadius="10">
+            <Label TextColor="GhostWhite"
+                   Text="You Matter"
+                   HorizontalTextAlignment="Center"
+                   FontSize="36" />
+        </Frame>
+        <Label TextColor="Black"
+               Text="For an autistic person it is essential to have control and to aggregate routines in life."
+               FontSize="28"
+               Margin="30,0,30,0"/>
+        <Label TextColor="Black"
+               Text="This app will help you to protocol successes and moods and visualize your data in charts."
+               FontSize="28"
+               Margin="30,0,30,0"/>
+    </StackLayout>
+
+</ContentPage>
