@@ -4,7 +4,6 @@ namespace AwesomeApp
 {
     public partial class App : Application
     {
-        public static Theme AppTheme { get; set; }
         public App()
         {
             InitializeComponent();
@@ -21,12 +20,6 @@ namespace AwesomeApp
 
         protected override void OnResume()
         {
-        }
-
-        public enum Theme
-        {
-            Dark,
-            Light
         }
     }
 }
