@@ -6,10 +6,10 @@ using static AwesomeApp.App;
 
 namespace AwesomeApp.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class InfoPage : ContentPage
     {
         private readonly Uri SpiHome = new Uri("https://google.de");
-        public AboutPage()
+        public InfoPage()
         {
             InitializeComponent();
         }
@@ -29,18 +29,6 @@ namespace AwesomeApp.Views
             {
                 await DisplayAlert("Error", ex.ToString(), "OK");
             }
-        }
-
-        private void Switch_Toggled(object sender, ToggledEventArgs e)
-        {
-            var toggleStatus = themeToggle.IsToggled;
-            SetTheme(toggleStatus);
-        }
-
-        private void SetTheme(bool status)
-        {
-            Theme themeRequested = status ? Theme.Dark : Theme.Light;
-            DependencyService.Get<IAppTheme>().SetAppTheme(themeRequested);
         }
     }
 }

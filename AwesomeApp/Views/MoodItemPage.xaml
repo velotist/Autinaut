@@ -6,16 +6,15 @@
 
     <StackLayout Margin="20"
                  VerticalOptions="StartAndExpand">
-        <Label Text="Mood"
-               TextColor="Black"/>
         <Entry Text="{Binding Mood}"
                TextColor="Black"
-               Margin="10"
-               Placeholder="My actual mood"
-               PlaceholderColor="Olive"
-               BackgroundColor="Aquamarine"/>
-       <StackLayout HorizontalOptions="Center"
-                    Orientation="Horizontal">
+               Margin="10,0,20,0"
+               Placeholder="Enter here"
+               PlaceholderColor="Black"
+               BackgroundColor="GhostWhite"/>
+       <StackLayout HorizontalOptions="EndAndExpand"
+                    Orientation="Horizontal"
+                    Margin="0,0,20,0">
            <Button Text="Save"
                    WidthRequest="100"
                    Clicked="OnSaveClicked" />

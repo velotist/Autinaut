@@ -21,21 +21,21 @@
                 Title="Protocols">
         <ShellContent Route="moods"
                       Title="Moods"
-                      Icon="enjoying.png"
+                      Icon="mood.png"
                       ContentTemplate="{DataTemplate views:MoodItemsPage}">
         </ShellContent>
         <ShellContent Route="successes"
                       Title="Successes"
-                      Icon="success.png"
+                      Icon="star.png"
                       ContentTemplate="{DataTemplate views:SuccessItemsPage}" />
-        <ShellContent Route="about"
-                      Title="About"
-                      Icon="about.jpg"
-                      ContentTemplate="{DataTemplate views:AboutPage}" />
+        <ShellContent Route="info"
+                      Title="Info"
+                      Icon="info.png"
+                      ContentTemplate="{DataTemplate views:InfoPage}" />
     </FlyoutItem>
     
     <MenuItem Text="For Developers"
-              IconImageSource="github.png"
+              IconImageSource="code.png"
               Command="{Binding HelpCommand}"
-              CommandParameter="https://github.com/velotist" />
+              CommandParameter="https://github.com/velotist/AwesomeApp" />
 </Shell>

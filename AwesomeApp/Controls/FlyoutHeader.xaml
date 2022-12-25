@@ -3,12 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AwesomeApp.Controls.FlyoutHeader"
              HeightRequest="200">
-    <Grid BackgroundColor="Black">
+
+    <StackLayout BackgroundColor="#2196F3" >
+        <Image Source="diversity.png"
+               WidthRequest="100"
+               HeightRequest="100"
+               Margin="20"/>
         <Label Text="AUTINAUT"
                TextColor="White"
                FontSize="Title"
                FontAttributes="Bold"
                HorizontalTextAlignment="Center"
                VerticalTextAlignment="Center" />
-    </Grid>
+    </StackLayout>
+
 </ContentView>
