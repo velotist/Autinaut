@@ -1,41 +1,66 @@
 ﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:controls="clr-namespace:AwesomeApp.Controls"
        xmlns:views="clr-namespace:AwesomeApp.Views"
-       xmlns:awesomeapp="clr-namespace:AwesomeApp"
-       x:DataType="awesomeapp:AppShell"
-       x:Class="AwesomeApp.AppShell"
-       FlyoutHeaderBehavior="CollapseOnScroll"
-       FlyoutWidth="250">
-
-    <Shell.FlyoutHeader>
-        <controls:FlyoutHeader />
-    </Shell.FlyoutHeader>
-
-    <Shell.FlyoutFooter>
-        <controls:FlyoutFooter />
-    </Shell.FlyoutFooter>
-
-    <FlyoutItem Route="protocols"
-                FlyoutDisplayOptions="AsMultipleItems"
-                Title="Protocols">
-        <ShellContent Route="moods"
-                      Title="Moods"
-                      Icon="mood.png"
-                      ContentTemplate="{DataTemplate views:MoodItemsPage}">
-        </ShellContent>
-        <ShellContent Route="successes"
-                      Title="Successes"
-                      Icon="star.png"
-                      ContentTemplate="{DataTemplate views:SuccessItemsPage}" />
-        <ShellContent Route="info"
-                      Title="Info"
-                      Icon="info.png"
-                      ContentTemplate="{DataTemplate views:InfoPage}" />
-    </FlyoutItem>
+       x:Class="AwesomeApp.AppShell">
     
-    <MenuItem Text="For Developers"
-              IconImageSource="code.png"
-              Command="{Binding HelpCommand}"
-              CommandParameter="https://github.com/velotist/AwesomeApp" />
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64" />
+            <Setter Property="Shell.ForegroundColor"
+                    Value="White" />
+            <Setter Property="Shell.TitleColor"
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor"
+                    Value="#95FFFFFF" />
+        </Style>
+        <Style TargetType="ShellItem"
+               BasedOn="{StaticResource BaseStyle}" />
+        <Style x:Key="DomesticShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#039BE6" />
+        </Style>
+        <Style x:Key="MoodShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#689F39" />
+        </Style>
+        <Style x:Key="SuccessShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#ED3B3B" />
+        </Style>
+        <Style x:Key="InfoShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#546DFE" />
+        </Style>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Moods"
+             Icon="mood.png">
+            <ShellContent ContentTemplate="{DataTemplate views:MoodItemsPage}"
+                          Style="{StaticResource MoodShell}"/>
+        </Tab>
+        <Tab Title="Successes"
+             Icon="star.png">
+            <ShellContent ContentTemplate="{DataTemplate views:SuccessItemsPage}"
+                          Style="{StaticResource SuccessShell}"/>
+        </Tab>
+        <Tab Title="Info"
+             Icon="info.png">
+            <ShellContent x:Name="infoItem"
+                          ContentTemplate="{DataTemplate views:InfoPage}"
+                          Style="{StaticResource InfoShell}"/>
+        </Tab>
+    </TabBar>
+
 </Shell>

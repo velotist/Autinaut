@@ -2,26 +2,107 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AwesomeApp.Views.MoodItemPage"
-             Title="Mood">
+             Title="Mood"
+             >
 
-    <StackLayout Margin="20"
-                 VerticalOptions="StartAndExpand">
-        <Entry Text="{Binding Mood}"
+    <StackLayout Margin="10"
+                 VerticalOptions="CenterAndExpand">
+        <!--<Entry Text="{Binding Mood}"
                TextColor="Black"
                Margin="10,0,20,0"
                Placeholder="Enter here"
                PlaceholderColor="Black"
-               BackgroundColor="GhostWhite"/>
-       <StackLayout HorizontalOptions="EndAndExpand"
-                    Orientation="Horizontal"
-                    Margin="0,0,20,0">
-           <Button Text="Save"
-                   WidthRequest="100"
-                   Clicked="OnSaveClicked" />
-           <Button Text="Cancel"
-                   WidthRequest="100"
-                   Clicked="OnCancelClicked" />
-       </StackLayout>
+               BackgroundColor="GhostWhite"/>-->
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     Margin="10">
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="anger.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Anger"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="anxious.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Anxious"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="contempt.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Contempt"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="disgust.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Disgust"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="joy.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Joy"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="sadness.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Sadness"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <ImageButton Source="surprise.png"
+                             CornerRadius="50"
+                             WidthRequest="50"
+                             HeightRequest="50"
+                             Margin="10" />
+                <Label Text="Surprise"
+                       TextColor="Black"
+                       FontSize="Subtitle"
+                       VerticalTextAlignment="Center" />
+            </StackLayout>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="EndAndExpand"
+                     Orientation="Horizontal">
+            <Button Text="Save"
+                    WidthRequest="100"
+                    Clicked="OnSaveClicked" />
+            <Button Text="Cancel"
+                    WidthRequest="100"
+                    Clicked="OnCancelClicked" />
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

@@ -8,13 +8,13 @@ namespace AwesomeApp.Views
 {
     public partial class InfoPage : ContentPage
     {
-        private readonly Uri SpiHome = new Uri("https://google.de");
+        private readonly Uri SpiHome = new Uri("https://ITsmus.de");
         public InfoPage()
         {
             InitializeComponent();
         }
 
-        private async void ImageButton_Clicked(object sender, EventArgs e)
+        private async void GoToGithubButton_Clicked(object sender, EventArgs e)
         {
             await OpenBrowser(SpiHome);
         }

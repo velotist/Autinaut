@@ -6,12 +6,13 @@
 
     <StackLayout Margin="20"
                  VerticalOptions="StartAndExpand">
-        <Entry Text="{Binding SuccessNote}"
-                   TextColor="Black"
-                   Margin="10,0,20,0"
-                   Placeholder="Enter here"
-                   PlaceholderColor="Black"
-                   BackgroundColor="GhostWhite" />
+        <Editor Text="{Binding SuccessNote}"
+                TextColor="Black"
+                AutoSize="TextChanges"
+                Margin="10,0,20,0"
+                Placeholder="Enter here"
+                PlaceholderColor="Black"
+                BackgroundColor="GhostWhite" />
         <StackLayout HorizontalOptions="EndAndExpand"
                      Orientation="Horizontal"
                      Margin="0,0,20,0">

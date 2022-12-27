@@ -2,26 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AwesomeApp.Views.InfoPage"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             Title="You Matter">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3"
-               Padding="24"
-               Margin="20,50,20,20"
-               CornerRadius="10">
-            <Label TextColor="GhostWhite"
-                   Text="You Matter"
-                   HorizontalTextAlignment="Center"
-                   FontSize="36" />
-        </Frame>
-        <Label TextColor="Black"
-               Text="For an autistic person it is essential to have control and to aggregate routines in life."
-               FontSize="28"
-               Margin="30,0,30,0"/>
-        <Label TextColor="Black"
-               Text="This app will help you to protocol successes and moods and visualize your data in charts."
-               FontSize="28"
-               Margin="30,0,30,0"/>
+        <StackLayout Margin="10">
+            <Frame BackgroundColor="#2196F3"
+                   Padding="20"
+                   Margin="10"
+                   CornerRadius="10"
+                   HasShadow="True">
+                <Label TextColor="GhostWhite"
+                       Text="For an autistic person it is essential to have control and to aggregate routines in life."
+                       FontSize="28"
+                       Margin="20,0,20,0"/>
+            </Frame>
+            <Frame BackgroundColor="#2196F3"
+                   Padding="20"
+                   Margin="10"
+                   CornerRadius="10"
+                   HasShadow="True">
+                <Label TextColor="GhostWhite"
+                       Text="This app will help you to protocol successes and moods and visualize your data in charts."
+                       FontSize="28"
+                       Margin="20,0,20,0"/>
+            </Frame>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand"
+                     VerticalOptions="EndAndExpand">
+            <ImageButton Source="black_spicon.png"
+                         BackgroundColor="Transparent"
+                         WidthRequest="100"
+                         HeightRequest="100"
+                         Clicked="GoToGithubButton_Clicked"/>
+        </StackLayout>
     </StackLayout>
+    
 
 </ContentPage>
