@@ -6,8 +6,9 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Daily Trend"
+            <Label Text="Not Enough Data"
                    TextColor="Black"
+                   FontSize="36"
                    VerticalOptions="CenterAndExpand" 
                    HorizontalOptions="CenterAndExpand" />
         </StackLayout>
