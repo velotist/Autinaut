@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              x:Class="AwesomeApp.Views.SuccessItemPage"
              Title="Success Note">
 
@@ -9,19 +10,25 @@
         <Editor Text="{Binding SuccessNote}"
                 TextColor="Black"
                 AutoSize="TextChanges"
-                Margin="10,0,20,0"
+                Margin="10,0,20,30"
                 Placeholder="Enter here"
                 PlaceholderColor="Black"
                 BackgroundColor="GhostWhite" />
         <StackLayout HorizontalOptions="EndAndExpand"
                      Orientation="Horizontal"
                      Margin="0,0,20,0">
-            <Button Text="Save"
-                    WidthRequest="100"
-                    Clicked="OnSaveClicked" />
-            <Button Text="Cancel"
-                    WidthRequest="100"
-                    Clicked="OnCancelClicked" />
+            <buttons:SfButton x:Name="SfButtonSave"
+                              Text="Save"
+                              WidthRequest="100"
+                              CornerRadius="20"
+                              IsCheckable="True"
+                              Clicked="OnSaveClicked"/>
+            <buttons:SfButton x:Name="SfButtonCancel"
+                              Text="Cancel"
+                              WidthRequest="100"
+                              CornerRadius="20"
+                              IsCheckable="True"
+                              Clicked="OnCancelClicked"/>
         </StackLayout>
     </StackLayout>
 

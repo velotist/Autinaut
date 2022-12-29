@@ -1,108 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
              x:Class="AwesomeApp.Views.MoodItemPage"
              Title="Mood"
-             >
+             BackgroundColor="GhostWhite">
 
-    <StackLayout Margin="10"
-                 VerticalOptions="CenterAndExpand">
-        <!--<Entry Text="{Binding Mood}"
-               TextColor="Black"
-               Margin="10,0,20,0"
-               Placeholder="Enter here"
-               PlaceholderColor="Black"
-               BackgroundColor="GhostWhite"/>-->
-        <StackLayout HorizontalOptions="CenterAndExpand"
-                     Margin="10">
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="anger.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Anger"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="anxious.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Anxious"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="contempt.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Contempt"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="disgust.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Disgust"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="joy.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Joy"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="sadness.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Sadness"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <ImageButton Source="surprise.png"
-                             CornerRadius="50"
-                             WidthRequest="50"
-                             HeightRequest="50"
-                             Margin="10" />
-                <Label Text="Surprise"
-                       TextColor="Black"
-                       FontSize="Subtitle"
-                       VerticalTextAlignment="Center" />
-            </StackLayout>
-        </StackLayout>
-        <StackLayout HorizontalOptions="CenterAndExpand"
-                     VerticalOptions="EndAndExpand"
-                     Orientation="Horizontal">
-            <Button Text="Save"
-                    WidthRequest="100"
-                    Clicked="OnSaveClicked" />
-            <Button Text="Cancel"
-                    WidthRequest="100"
-                    Clicked="OnCancelClicked" />
-        </StackLayout>
-    </StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="itemTemplate">
+                <StackLayout>
+                    <Frame HasShadow="True"
+                           CornerRadius="5"
+                           HeightRequest="200"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <StackLayout>
+                            <Image Source="{Binding MoodIcon}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="150"
+                                   WidthRequest="150"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="{Binding Name}"
+                                   TextColor="#689F39"
+                                   FontAttributes="Bold"
+                                   FontSize="Large"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <carousel:SfCarousel x:Name="moodsCarouselView"
+                         ItemsSource="{Binding Feelings}"
+                         ItemTemplate="{StaticResource itemTemplate}">
+    </carousel:SfCarousel>
 
 </ContentPage>

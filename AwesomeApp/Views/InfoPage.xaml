@@ -7,7 +7,7 @@
 
     <StackLayout>
         <StackLayout Margin="10">
-            <Frame BackgroundColor="#2196F3"
+            <Frame BackgroundColor="#546DFE"
                    Padding="20"
                    Margin="10"
                    CornerRadius="10"
@@ -17,7 +17,7 @@
                        FontSize="28"
                        Margin="20,0,20,0"/>
             </Frame>
-            <Frame BackgroundColor="#2196F3"
+            <Frame BackgroundColor="#546DFE"
                    Padding="20"
                    Margin="10"
                    CornerRadius="10"

@@ -13,6 +13,8 @@
   <ItemGroup>
     <PackageReference Include="NuGet.Common" Version="6.4.0" />
     <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.4.0.41" />
+    <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="20.4.0.41" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
   </ItemGroup>
@@ -41,9 +43,6 @@
   <ItemGroup>
     <EmbeddedResource Update="AppShell.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Controls\FlyoutHeader.xaml">
-      <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\InfoPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
