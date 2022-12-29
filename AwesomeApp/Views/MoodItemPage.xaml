@@ -1,64 +1,41 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
              x:Class="AwesomeApp.Views.MoodItemPage"
              Title="Mood"
              BackgroundColor="GhostWhite">
 
-    <StackLayout>
-        <CarouselView x:Name="moodsCarouselView"
-                      IndicatorView="indicatorView"
-                      ItemsSource="{Binding Feelings}"
-                      PeekAreaInsets="150">
-            <CarouselView.ItemsLayout>
-                <LinearItemsLayout Orientation="Vertical"
-                                   SnapPointsType="MandatorySingle"
-                                   SnapPointsAlignment="Center"
-                                   ItemSpacing="50"/>
-            </CarouselView.ItemsLayout>
-            <CarouselView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Frame HasShadow="True"
-                               CornerRadius="5"
-                               HeightRequest="200"
-                               HorizontalOptions="Center"
-                               VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Image Source="{Binding MoodIcon}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="150"
-                                       WidthRequest="150"
-                                       HorizontalOptions="Center"/>
-                                <Label Text="{Binding Name}"
-                                       TextColor="#689F39"
-                                       FontAttributes="Bold"
-                                       FontSize="Large"
-                                       HorizontalOptions="Center"
-                                       VerticalOptions="Center" />
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
-                </DataTemplate>
-            </CarouselView.ItemTemplate>
-        </CarouselView>
-        <IndicatorView x:Name="indicatorView"
-                       IndicatorColor="DarkGray"
-                       SelectedIndicatorColor="Black"
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"
-                       Margin="0,50,0,50"/>
-        <!--<StackLayout HorizontalOptions="CenterAndExpand"
-                     VerticalOptions="EndAndExpand"
-                     Orientation="Horizontal"
-                     Margin="0,0,0,50">
-            <Button Text="Save"
-                    WidthRequest="100"
-                    Clicked="OnSaveClicked" />
-            <Button Text="Cancel"
-                    WidthRequest="100"
-                    Clicked="OnCancelClicked" />
-        </StackLayout>-->
-    </StackLayout>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="itemTemplate">
+                <StackLayout>
+                    <Frame HasShadow="True"
+                           CornerRadius="5"
+                           HeightRequest="200"
+                           HorizontalOptions="Center"
+                           VerticalOptions="CenterAndExpand">
+                        <StackLayout>
+                            <Image Source="{Binding MoodIcon}"
+                                   Aspect="AspectFill"
+                                   HeightRequest="150"
+                                   WidthRequest="150"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="{Binding Name}"
+                                   TextColor="#689F39"
+                                   FontAttributes="Bold"
+                                   FontSize="Large"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center" />
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <carousel:SfCarousel x:Name="moodsCarouselView"
+                         ItemsSource="{Binding Feelings}"
+                         ItemTemplate="{StaticResource itemTemplate}">
+    </carousel:SfCarousel>
 
 </ContentPage>
