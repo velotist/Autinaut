@@ -18,11 +18,6 @@
                         <StackLayout>
                             <Image Source="{Binding MoodIcon}"
                                    Aspect="AspectFill">
-                                <Image.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                                          NumberOfTapsRequired="1"
-                                                          CommandParameter="{Binding Index}" />
-                                </Image.GestureRecognizers>
                             </Image>
                             <Label Text="{Binding Name}"
                                    TextColor="#689F39"
@@ -43,8 +38,12 @@
                                ItemTemplate="{StaticResource itemTemplate}"
                                HeightRequest="400"
                                WidthRequest="400"
-                               ItemWidth="100"
-                               ItemHeight="200">
+                               ItemWidth="150"
+                               ItemHeight="200"
+                               SelectionChanged="Carousel_SelectionChanged"
+                               SelectedIndex="3"
+                               Offset="20"
+                               RotationAngle="45">
         </syncfusion:SfCarousel>
     </ContentPage.Content>
 
