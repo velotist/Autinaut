@@ -19,8 +19,8 @@ namespace AwesomeApp
         {
             get
             {
-                var basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                
+                string basePath = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+
                 return Path.Combine(basePath, DatabaseFilename);
             }
         }

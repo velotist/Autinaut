@@ -4,7 +4,7 @@ namespace AwesomeApp
 {
     public partial class App : Application
     {
-        public App()
+        public App ()
         {
             // From https://www.syncfusion.com/forums/177811/storing-licensing-key-best-practices
             // If you use this license key without Syncfusion account,
@@ -15,15 +15,15 @@ namespace AwesomeApp
             MainPage = new AppShell();
         }
 
-        protected override void OnStart()
+        protected override void OnStart ()
         {
         }
 
-        protected override void OnSleep()
+        protected override void OnSleep ()
         {
         }
 
-        protected override void OnResume()
+        protected override void OnResume ()
         {
         }
     }

@@ -11,20 +11,20 @@ namespace AwesomeApp.Views
     {
         public SuccessItemPage ()
         {
-            InitializeComponent ();
+            InitializeComponent();
         }
 
-        async void OnSaveClicked(object sender, EventArgs e)
+        private async void OnSaveClicked (object sender, EventArgs e)
         {
-            var successItem = (SuccessItem)BindingContext;
+            SuccessItem successItem = (SuccessItem)BindingContext;
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
-            await database.SaveItemAsync(successItem);
-            await Navigation.PopAsync();
+            _ = await database.SaveItemAsync(successItem);
+            _ = await Navigation.PopAsync();
         }
 
-        async void OnCancelClicked(object sender, EventArgs e)
+        private async void OnCancelClicked (object sender, EventArgs e)
         {
-            await Navigation.PopAsync();
+            _ = await Navigation.PopAsync();
         }
     }
 }

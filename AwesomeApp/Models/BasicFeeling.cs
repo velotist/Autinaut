@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AwesomeApp.Models
+﻿namespace AwesomeApp.Models
 {
     public class BasicFeeling
     {

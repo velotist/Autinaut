@@ -1,9 +1,7 @@
 ﻿using AwesomeApp.Data;
 using AwesomeApp.Models;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,20 +12,20 @@ namespace AwesomeApp.Views
     {
         public ObservableCollection<SuccessItem> Items { get; set; }
 
-        public SuccessItemsPage()
+        public SuccessItemsPage ()
         {
             InitializeComponent();
         }
 
-        protected override async void OnAppearing()
+        protected override async void OnAppearing ()
         {
             base.OnAppearing();
 
-            var database = await SuccessItemDatabase.Instance;
+            SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             myListView.ItemsSource = await database.GetItemsAsync();
         }
 
-        async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnListItemSelected (object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
             {
@@ -38,7 +36,7 @@ namespace AwesomeApp.Views
             }
         }
 
-        async void OnItemAdded(object sender, EventArgs e)
+        private async void OnItemAdded (object sender, EventArgs e)
         {
             await Navigation.PushAsync(new SuccessItemPage
             {
