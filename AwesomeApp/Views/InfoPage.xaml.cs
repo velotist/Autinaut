@@ -8,17 +8,17 @@ namespace AwesomeApp.Views
     public partial class InfoPage : ContentPage
     {
         private readonly Uri SpiHome = new Uri("https://ITsmus.de");
-        public InfoPage ()
+        public InfoPage()
         {
             InitializeComponent();
         }
 
-        private async void GoToGithubButton_Clicked (object sender, EventArgs e)
+        private async void GoToGithubButton_Clicked(object sender, EventArgs e)
         {
             await OpenBrowser(SpiHome);
         }
 
-        private async Task OpenBrowser (Uri uri)
+        private async Task OpenBrowser(Uri uri)
         {
             try
             {
