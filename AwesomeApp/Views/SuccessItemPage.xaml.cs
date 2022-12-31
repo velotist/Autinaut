@@ -9,12 +9,12 @@ namespace AwesomeApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessItemPage : ContentPage
     {
-        public SuccessItemPage ()
+        public SuccessItemPage()
         {
             InitializeComponent();
         }
 
-        private async void OnSaveClicked (object sender, EventArgs e)
+        private async void OnSaveClicked(object sender, EventArgs e)
         {
             SuccessItem successItem = (SuccessItem)BindingContext;
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
@@ -22,7 +22,7 @@ namespace AwesomeApp.Views
             _ = await Navigation.PopAsync();
         }
 
-        private async void OnCancelClicked (object sender, EventArgs e)
+        private async void OnCancelClicked(object sender, EventArgs e)
         {
             _ = await Navigation.PopAsync();
         }

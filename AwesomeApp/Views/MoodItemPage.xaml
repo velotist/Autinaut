@@ -20,7 +20,7 @@
                                    Aspect="AspectFill">
                                 <Image.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                                          NumberOfTapsRequired="2"
+                                                          NumberOfTapsRequired="1"
                                                           CommandParameter="{Binding Index}" />
                                 </Image.GestureRecognizers>
                             </Image>

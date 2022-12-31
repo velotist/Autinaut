@@ -7,7 +7,7 @@ namespace AwesomeApp
     public partial class AppShell : Shell
     {
         public ICommand HelpCommand => new Command<string>(async (url) => await Launcher.OpenAsync(url));
-        public AppShell ()
+        public AppShell()
         {
             InitializeComponent();
             BindingContext = this;

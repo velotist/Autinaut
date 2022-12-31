@@ -6,7 +6,7 @@ namespace AwesomeApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MoodChartPage : ContentPage
     {
-        public MoodChartPage ()
+        public MoodChartPage()
         {
             InitializeComponent();
         }
