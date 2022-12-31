@@ -12,21 +12,7 @@ namespace AwesomeApp.Views
         public MoodItemPage()
         {
             InitializeComponent();
-            moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
-            BindingContext = new MoodItem() { Date = DateTime.Now.ToString() };
-
-            Feelings = new ObservableCollection<BasicFeeling>
-            {
-                new BasicFeeling { Name = "Anger", MoodIcon = "anger.png" },
-                new BasicFeeling { Name = "Fear", MoodIcon = "fear.png" },
-                new BasicFeeling { Name = "Contempt", MoodIcon = "contempt.png" },
-                new BasicFeeling { Name = "Disgust", MoodIcon = "disgust.png" },
-                new BasicFeeling { Name = "Joy", MoodIcon = "joy.png" },
-                new BasicFeeling { Name = "Sadness", MoodIcon = "sadness.png" },
-                new BasicFeeling { Name = "Surprise", MoodIcon = "surprise.png" }
-            };
-
-            moodsCarouselView.ItemsSource = Feelings;
+            BindingContext = new MoodItem { Date = DateTime.Now.ToString() };
         }
 
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
