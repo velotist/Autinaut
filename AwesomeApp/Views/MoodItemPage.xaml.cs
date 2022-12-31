@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using AwesomeApp.Data;
 using AwesomeApp.Models;
+using Syncfusion.SfCarousel.XForms;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -18,6 +19,7 @@ namespace AwesomeApp.Views
         public MoodItemPage()
         {
             InitializeComponent();
+            moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
             BindingContext = new MoodItem() { Date=DateTime.Now.ToString() };
 
             Feelings = new ObservableCollection<BasicFeeling>
@@ -34,9 +36,16 @@ namespace AwesomeApp.Views
             moodsCarouselView.ItemsSource = Feelings;
         }
 
+        private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
+        {
+            OnSaveClicked(sender, e);
+        }
+
         async void OnSaveClicked(object sender, EventArgs e)
         {
             var moodItem = (MoodItem)BindingContext;
+            moodItem.MoodIcon = "anger.png";
+            moodItem.Mood = "Angry";
             MoodItemDatabase database = await MoodItemDatabase.Instance;
             await database.SaveItemAsync(moodItem);
             await Navigation.PopAsync();
@@ -45,14 +54,6 @@ namespace AwesomeApp.Views
         async void OnCancelClicked(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
-        }
-
-        void OnImageTapped(object sender, EventArgs e)
-        {
-            Image image = sender as Image;
-            image.HeightRequest = image.WidthRequest = image.HeightRequest.Equals(150) ? 200 : 150;
-            Frame frame = (Frame)image.Parent.Parent;
-            frame.HeightRequest = frame.HeightRequest.Equals(300) ? 350 : 300;
         }
     }
 }
