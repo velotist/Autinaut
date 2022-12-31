@@ -12,12 +12,12 @@ namespace AwesomeApp.Views
     {
         public ObservableCollection<MoodItem> Items { get; set; }
 
-        public MoodItemsPage ()
+        public MoodItemsPage()
         {
             InitializeComponent();
         }
 
-        protected override async void OnAppearing ()
+        protected override async void OnAppearing()
         {
             base.OnAppearing();
 
@@ -25,7 +25,7 @@ namespace AwesomeApp.Views
             myListView.ItemsSource = await database.GetItemsAsync();
         }
 
-        private async void OnListItemSelected (object sender, SelectedItemChangedEventArgs e)
+        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem != null)
             {
@@ -36,7 +36,7 @@ namespace AwesomeApp.Views
             }
         }
 
-        private async void OnItemAdded (object sender, EventArgs e)
+        private async void OnItemAdded(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MoodItemPage
             {
@@ -44,7 +44,7 @@ namespace AwesomeApp.Views
             });
         }
 
-        private async void OnChartClicked (object sender, EventArgs e)
+        private async void OnChartClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MoodChartPage
             {
