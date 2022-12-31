@@ -34,18 +34,18 @@
                     <ViewCell>
                         <Grid Padding="10">
                             <Frame>
-                                <StackLayout Orientation="Horizontal">
-                                    <Label VerticalOptions="Start"
-                                           Text="{Binding ID}"
-                                           FontSize="Title"
-                                           TextColor="ForestGreen" />
-                                    <StackLayout>
-                                        <Label VerticalOptions="Center"
+                                <StackLayout>
+                                    <Label Text="{Binding Date}"
+                                           FontSize="Medium"
+                                           TextColor="ForestGreen"
+                                           Margin="0,0,0,20"/>
+                                    <StackLayout HorizontalOptions="Center">
+                                        <Image Source="{Binding MoodIcon}"
+                                               WidthRequest="100"
+                                               HeightRequest="100" />
+                                        <Label HorizontalOptions="Center"
                                                Text="{Binding Mood}"
-                                               FontSize="Large"
-                                               TextColor="Black" />
-                                        <Label VerticalOptions="Center"
-                                               Text="{Binding Date}"
+                                               Margin="0,10,0,0"
                                                FontSize="Medium"
                                                TextColor="Black" />
                                     </StackLayout>

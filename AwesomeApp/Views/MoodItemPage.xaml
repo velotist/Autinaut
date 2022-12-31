@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
              x:Class="AwesomeApp.Views.MoodItemPage"
              Title="Mood"
              BackgroundColor="GhostWhite">
@@ -17,14 +17,17 @@
                            VerticalOptions="CenterAndExpand">
                         <StackLayout>
                             <Image Source="{Binding MoodIcon}"
-                                   Aspect="AspectFill"
-                                   HeightRequest="150"
-                                   WidthRequest="150"
-                                   HorizontalOptions="Center"/>
+                                   Aspect="AspectFill">
+                                <Image.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
+                                                          NumberOfTapsRequired="2"
+                                                          CommandParameter="{Binding Index}" />
+                                </Image.GestureRecognizers>
+                            </Image>
                             <Label Text="{Binding Name}"
                                    TextColor="#689F39"
                                    FontAttributes="Bold"
-                                   FontSize="Large"
+                                   FontSize="Medium"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center" />
                         </StackLayout>
@@ -33,9 +36,16 @@
             </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <carousel:SfCarousel x:Name="moodsCarouselView"
-                         ItemsSource="{Binding Feelings}"
-                         ItemTemplate="{StaticResource itemTemplate}">
-    </carousel:SfCarousel>
+    
+    <ContentPage.Content>
+        <syncfusion:SfCarousel x:Name="moodsCarouselView"
+                               ItemsSource="{Binding Feelings}"
+                               ItemTemplate="{StaticResource itemTemplate}"
+                               HeightRequest="400"
+                               WidthRequest="400"
+                               ItemWidth="100"
+                               ItemHeight="200">
+        </syncfusion:SfCarousel>
+    </ContentPage.Content>
 
 </ContentPage>
