@@ -10,10 +10,8 @@ namespace Autinaut.Views
         public MoodItemPage()
         {
             InitializeComponent();
-            CarouselMoodViewModel carouselMoodViewModel = new CarouselMoodViewModel();
-
-            BindingContext = new MoodItem { Date = DateTime.Now.ToString() };
-            moodsCarouselView.BindingContext = carouselMoodViewModel;
+            BindingContext = new MoodItem();
+            moodsCarouselView.BindingContext = new CarouselMoodViewModel();
             moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
 
