@@ -72,11 +72,15 @@ namespace Autinaut.Views
         private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
             double value = args.NewValue;
+            MoodItem moodItem = (MoodItem)BindingContext;
+            moodItem.PositiveAffectBalance = value;
             positiveLabel.Text = string.Format("The Slider value is {0}", value);
         }
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
             double value = args.NewValue;
+            MoodItem moodItem = (MoodItem)BindingContext;
+            moodItem.NegativeAffectBalance = value;
             negativeLabel.Text = string.Format("The Slider value is {0}", value);
         }
     }
