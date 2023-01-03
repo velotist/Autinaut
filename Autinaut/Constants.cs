@@ -5,7 +5,7 @@ namespace Autinaut
 {
     public static class Constants
     {
-        public const string DatabaseFilename = "AutinautSQLite.db3";
+        public const string DatabaseFilename = "Autinaut.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode
