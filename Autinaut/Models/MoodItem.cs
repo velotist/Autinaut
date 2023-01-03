@@ -10,6 +10,8 @@ namespace Autinaut.Models
         public string Mood { get; set; } = "Fear";
         public string MoodSituation { get; set; }
         public string MoodIcon { get; set; } = "fear.png";
+        public double PositiveAffectBalance { get; set; }
+        public double NegativeAffectBalance { get; set; }
         public string Date { get; set; } = DateTime.Now.ToString();
     }
 }

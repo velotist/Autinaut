@@ -43,7 +43,7 @@
                                            FontSize="Large"
                                            TextColor="Black"
                                            Margin="0,0,0,20"/>
-                                <StackLayout HorizontalOptions="StartAndExpand"
+                                    <StackLayout HorizontalOptions="StartAndExpand"
                                              VerticalOptions="Center"
                                              Orientation="Horizontal">
                                         <Image Source="{Binding MoodIcon}"
@@ -53,6 +53,26 @@
                                                Margin="20,30,0,0"
                                                FontSize="Large"
                                                TextColor="Black" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Positive Affect Balance"
+                                               TextColor="Black"
+                                               FontSize="Medium"
+                                               VerticalOptions="Center" />
+                                    <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %'}"
+                                               TextColor="Black"
+                                               FontSize="Large"
+                                               HorizontalOptions="EndAndExpand" />
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Negative Affect Balance"
+                                               TextColor="Black"
+                                               FontSize="Medium"
+                                               VerticalOptions="Center" />
+                                    <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %'}"
+                                               TextColor="Black"
+                                               FontSize="Large"
+                                               HorizontalOptions="EndAndExpand" />
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
