@@ -68,5 +68,16 @@ namespace Autinaut.Views
         {
             _ = await Navigation.PopAsync();
         }
+
+        private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            double value = args.NewValue;
+            positiveLabel.Text = string.Format("The Slider value is {0}", value);
+        }
+        private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
+        {
+            double value = args.NewValue;
+            negativeLabel.Text = string.Format("The Slider value is {0}", value);
+        }
     }
 }

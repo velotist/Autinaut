@@ -27,7 +27,7 @@
                             <Label Text="{Binding Name}"
                                    TextColor="#689F39"
                                    FontAttributes="Bold"
-                                   FontSize="Medium"
+                                   FontSize="12"
                                    HorizontalOptions="Center"
                                    VerticalOptions="Center" />
                         </StackLayout>
@@ -41,13 +41,14 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="3*" />
-            <RowDefinition Height="3*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="4*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <StackLayout Grid.Row="0">
             <Label Text="Situation"
                    TextColor="Black"
-                   FontSize="Title"
+                   FontSize="Medium"
                    Margin="20,20,0,0" />
             <Frame BackgroundColor="GhostWhite"
                    Margin="20,0,20,0"
@@ -56,26 +57,63 @@
                         PlaceholderColor="Olive"
                         AutoSize="TextChanges"
                         Text="{Binding MoodSituation}"
-                        TextColor="Black"/>
+                        TextColor="Black"
+                        MaxLength="200" />
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="1">
             <Label Text="Mood"
                    TextColor="Black"
-                   FontSize="Title"
-                   Margin="20,20,0,0" />
+                   FontSize="Medium"
+                   Margin="20,0,0,0" />
             <carousel:SfCarousel x:Name="moodsCarouselView"
                                  ItemTemplate="{StaticResource itemTemplate}"
                                  ItemsSource="{Binding ImageCollection}"
-                                 HeightRequest="200"
-                                 WidthRequest="400"
-                                 ItemWidth="150"
-                                 ItemHeight="200"
+                                 HeightRequest="120"
+                                 WidthRequest="220"
+                                 ItemWidth="100"
+                                 ItemHeight="120"
                                  SelectionChanged="Carousel_SelectionChanged"
                                  SelectedIndex="3"
                                  Offset="20"
                                  RotationAngle="45">
             </carousel:SfCarousel>
+        </StackLayout>
+        <StackLayout Grid.Row="2">
+            <Label Text="Positive affect balance"
+                   TextColor="Black"
+                   FontSize="Medium"
+                   Margin="20,20,0,0" />
+            <Frame BackgroundColor="GhostWhite"
+                   Margin="20,0,20,0"
+                   Padding="10">
+                <Slider Maximum="100"
+                        MinimumTrackColor="YellowGreen"
+                        ThumbColor="Yellow"
+                        ValueChanged="OnPositiveSliderValueChanged" />
+            </Frame>
+            <Label x:Name="positiveLabel"
+                   Text="(uninitialized)"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
+            <Label Text="Negative affect balance"
+                   TextColor="Black"
+                   FontSize="Medium"
+                   Margin="20,20,0,0" />
+            <Frame BackgroundColor="GhostWhite"
+                   Margin="20,0,20,0"
+                   Padding="10">
+                <Slider Maximum="100"
+                        MinimumTrackColor="PaleVioletRed"
+                        ThumbColor="Red"
+                        ValueChanged="OnNegativeSliderValueChanged" />
+            </Frame>
+            <Label x:Name="negativeLabel"
+                   Text="(uninitialized)"
+                   TextColor="Black"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand" />
         </StackLayout>
         <StackLayout Orientation="Horizontal"
                      VerticalOptions="CenterAndExpand"
