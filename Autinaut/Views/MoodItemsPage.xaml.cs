@@ -15,6 +15,10 @@ namespace Autinaut.Views
         public MoodItemsPage()
         {
             InitializeComponent();
+            myListView.ItemTapped += (object sender, ItemTappedEventArgs e) =>
+            {
+                OnListItemTapped(sender, e);
+            };
         }
 
         protected override async void OnAppearing()
@@ -25,13 +29,13 @@ namespace Autinaut.Views
             myListView.ItemsSource = await database.GetItemsAsync();
         }
 
-        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e.SelectedItem != null)
+            if (e.Item != null)
             {
                 await Navigation.PushAsync(new MoodItemPage
                 {
-                    BindingContext = e.SelectedItem as MoodItem
+                    BindingContext = e.Item
                 });
             }
         }
