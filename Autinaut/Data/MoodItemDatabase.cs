@@ -27,11 +27,6 @@ namespace Autinaut.Data
             return Database.Table<MoodItem>().ToListAsync();
         }
 
-        public Task<List<MoodItem>> GetItemsNotDoneAsync()
-        {
-            return Database.QueryAsync<MoodItem>("SELECT * FROM [MoodItem]");
-        }
-
         public Task<MoodItem> GetItemAsync(int id)
         {
             return Database.Table<MoodItem>()
@@ -42,11 +37,6 @@ namespace Autinaut.Data
         public Task<int> SaveItemAsync(MoodItem item)
         {
             return item.ID != 0 ? Database.UpdateAsync(item) : Database.InsertAsync(item);
-        }
-
-        public Task<int> DeleteItemAsync(MoodItem item)
-        {
-            return Database.DeleteAsync(item);
         }
     }
 }

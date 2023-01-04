@@ -10,7 +10,6 @@ namespace Autinaut.Views
         public MoodItemPage()
         {
             InitializeComponent();
-            BindingContext = new MoodItem();
             moodsCarouselView.BindingContext = new CarouselMoodViewModel();
             moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
@@ -18,7 +17,6 @@ namespace Autinaut.Views
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
         {
             MoodItem moodItem = (MoodItem)BindingContext;
-            _ = e.SelectedIndex;
             switch (e.SelectedIndex)
             {
                 case 0:
@@ -56,17 +54,17 @@ namespace Autinaut.Views
             }
         }
 
-        private async void OnSaveClicked(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
+        private async void OnSaveClicked(object sender, EventArgs e)
         {
             MoodItem moodItem = (MoodItem)BindingContext;
             MoodItemDatabase database = await MoodItemDatabase.Instance;
             _ = await database.SaveItemAsync(moodItem);
-            _ = await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
 
         private async void OnCancelClicked(object sender, EventArgs e)
         {
-            _ = await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
 
         private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)

@@ -27,7 +27,7 @@
     
     <ListView x:Name="myListView"
               Margin="10"
-              ItemTapped="OnListItemSelected"
+              ItemTapped="OnListItemTapped"
               HasUnevenRows="True">
         <ListView.ItemTemplate>
                 <DataTemplate>
@@ -35,6 +35,8 @@
                         <Grid Padding="10">
                             <Frame>
                                 <StackLayout>
+                                    <Label Text="{Binding ID}"
+                                           TextColor="Black" />
                                     <Label Text="{Binding Date}"
                                            FontSize="Medium"
                                            TextColor="ForestGreen"
