@@ -2,7 +2,11 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Autinaut.Views"
        x:Class="Autinaut.AppShell">
-    
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding GoBack}"
+                            IconOverride="arrow_back.png" />
+    </Shell.BackButtonBehavior>
     <Shell.Resources>
         <Style x:Key="BaseStyle"
                TargetType="Element">

@@ -62,17 +62,27 @@ namespace Autinaut.Views
             await Navigation.PopToRootAsync();
         }
 
+        private async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            MoodItem moodItem = (MoodItem)BindingContext;
+            MoodItemDatabase database = await MoodItemDatabase.Instance;
+            _ = await database.DeleteItemAsync(moodItem);
+            await Navigation.PopToRootAsync();
+        }
+
         private async void OnCancelClicked(object sender, EventArgs e)
         {
             await Navigation.PopToRootAsync();
         }
 
-        private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
+        private async void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
             double value = args.NewValue;
             MoodItem moodItem = (MoodItem)BindingContext;
             moodItem.PositiveAffectBalance = value;
             positiveLabel.Text = string.Format("The Slider value is {0}", value);
+
+            await scrollView.ScrollToAsync(0, 100, true);
         }
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {

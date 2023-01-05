@@ -38,5 +38,10 @@ namespace Autinaut.Data
         {
             return item.ID != 0 ? Database.UpdateAsync(item) : Database.InsertAsync(item);
         }
+
+        public Task<int> DeleteItemAsync(MoodItem item)
+        {
+            return Database.DeleteAsync(item);
+        }
     }
 }
