@@ -24,7 +24,11 @@ namespace Autinaut.Data
 
         public Task<List<SuccessItem>> GetItemsAsync()
         {
-            return Database.Table<SuccessItem>().ToListAsync();
+            Task<List<SuccessItem>> successes = Database.Table<SuccessItem>()
+                .OrderByDescending(p => p.Date)
+                .ToListAsync();
+
+            return successes;
         }
 
         public Task<SuccessItem> GetItemAsync(int id)

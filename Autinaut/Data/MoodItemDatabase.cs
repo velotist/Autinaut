@@ -22,9 +22,13 @@ namespace Autinaut.Data
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public Task<List<MoodItem>> GetItemsAsync()
+        public async Task<List<MoodItem>> GetItemsAsync()
         {
-            return Database.Table<MoodItem>().ToListAsync();
+            List<MoodItem> moods = await Database.Table<MoodItem>()
+                .OrderByDescending(p => p.Date)
+                .ToListAsync();
+
+            return moods;
         }
 
         public Task<MoodItem> GetItemAsync(int id)
