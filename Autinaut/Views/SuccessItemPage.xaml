@@ -8,7 +8,7 @@
     <StackLayout Margin="20"
                  VerticalOptions="StartAndExpand">
         <Frame BackgroundColor="GhostWhite"
-               Margin="20,0,0,0"
+               Margin="20,0,20,0"
                Padding="10">
             <Editor Text="{Binding SuccessNote}"
                     TextColor="Black"
@@ -20,7 +20,7 @@
         </Frame>
         <StackLayout HorizontalOptions="CenterAndExpand"
                      Orientation="Horizontal"
-                     Margin="0,20,20,0">
+                     Margin="20,20,20,0">
             <buttons:SfButton x:Name="SfButtonSave"
                               Text="Save"
                               WidthRequest="100"
