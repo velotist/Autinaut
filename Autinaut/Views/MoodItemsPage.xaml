@@ -35,8 +35,6 @@
                         <Grid Padding="10">
                             <Frame>
                                 <StackLayout>
-                                    <Label Text="{Binding ID}"
-                                           TextColor="Black" />
                                     <Label Text="{Binding Date}"
                                            FontSize="Medium"
                                            TextColor="ForestGreen"
@@ -46,8 +44,8 @@
                                            TextColor="Black"
                                            Margin="0,0,0,20"/>
                                     <StackLayout HorizontalOptions="StartAndExpand"
-                                             VerticalOptions="Center"
-                                             Orientation="Horizontal">
+                                                 VerticalOptions="Center"
+                                                 Orientation="Horizontal">
                                         <Image Source="{Binding MoodIcon}"
                                                WidthRequest="100"
                                                HeightRequest="100" />
