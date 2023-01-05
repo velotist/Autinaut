@@ -25,18 +25,16 @@
                 <ViewCell>
                     <Grid Padding="10">
                         <Frame>
-                            
-                                <StackLayout>
-                                    <Label VerticalOptions="Center"
-                                           Text="{Binding Date}"
-                                           FontSize="Medium"
-                                           TextColor="Black" />
-                                    <Label VerticalOptions="Center"
-                                           Text="{Binding SuccessNote}"
-                                           FontSize="Large"
-                                           TextColor="Black" />
-                                </StackLayout>
-                    
+                            <StackLayout>
+                                <Label VerticalOptions="Center"
+                                       Text="{Binding Date}"
+                                       FontSize="Medium"
+                                       TextColor="Black" />
+                                <Label VerticalOptions="Center"
+                                       Text="{Binding SuccessNote}"
+                                       FontSize="Large"
+                                       TextColor="Black" />
+                            </StackLayout>
                         </Frame>
                     </Grid>
                 </ViewCell>
