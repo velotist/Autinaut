@@ -22,6 +22,14 @@ namespace Autinaut.Views
             _ = await Navigation.PopAsync();
         }
 
+        private async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            SuccessItem successItem = (SuccessItem)BindingContext;
+            SuccessItemDatabase database = await SuccessItemDatabase.Instance;
+            _ = await database.DeleteItemAsync(successItem);
+            await Navigation.PopToRootAsync();
+        }
+
         private async void OnCancelClicked(object sender, EventArgs e)
         {
             _ = await Navigation.PopAsync();

@@ -53,12 +53,14 @@
             <Frame BackgroundColor="GhostWhite"
                    Margin="20,0,20,0"
                    Padding="10">
-                <Editor Placeholder="Describe the situation here"
-                        PlaceholderColor="Olive"
-                        AutoSize="TextChanges"
-                        Text="{Binding MoodSituation}"
-                        TextColor="Black"
-                        MaxLength="200" />
+                    <Editor Text="{Binding MoodSituation}"
+                            TextColor="Black"
+                            AutoSize="TextChanges"
+                            Margin="10,0,20,30"
+                            Placeholder="Describe the situation here"
+                            PlaceholderColor="Olive"
+                            BackgroundColor="GhostWhite" 
+                            MaxLength="200" />
             </Frame>
         </StackLayout>
         <StackLayout Grid.Row="1">
@@ -127,6 +129,12 @@
                               CornerRadius="20"
                               IsCheckable="True"
                               Clicked="OnSaveClicked"/>
+            <buttons:SfButton x:Name="SfButtonDelete"
+                              Text="Delete"
+                              WidthRequest="100"
+                              CornerRadius="20"
+                              IsCheckable="True"
+                              Clicked="OnDeleteClicked"/>
             <buttons:SfButton x:Name="SfButtonCancel"
                               Text="Cancel"
                               WidthRequest="100"

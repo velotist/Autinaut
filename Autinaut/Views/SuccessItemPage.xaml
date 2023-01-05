@@ -8,15 +8,15 @@
     <StackLayout Margin="20"
                  VerticalOptions="StartAndExpand">
         <Frame BackgroundColor="GhostWhite"
-                   Margin="20,0,0,0"
-                   Padding="10">
+               Margin="20,0,0,0"
+               Padding="10">
             <Editor Text="{Binding SuccessNote}"
-                TextColor="Black"
-                AutoSize="TextChanges"
-                Margin="10,0,20,30"
-                Placeholder="Describe your success here"
-                PlaceholderColor="Olive"
-                BackgroundColor="GhostWhite" />
+                    TextColor="Black"
+                    AutoSize="TextChanges"
+                    Margin="10,0,20,30"
+                    Placeholder="Describe your success here"
+                    PlaceholderColor="Olive"
+                    BackgroundColor="GhostWhite" />
         </Frame>
         <StackLayout HorizontalOptions="CenterAndExpand"
                      Orientation="Horizontal"
@@ -27,6 +27,12 @@
                               CornerRadius="20"
                               IsCheckable="True"
                               Clicked="OnSaveClicked"/>
+            <buttons:SfButton x:Name="SfButtonDelete"
+                              Text="Delete"
+                              WidthRequest="100"
+                              CornerRadius="20"
+                              IsCheckable="True"
+                              Clicked="OnDeleteClicked"/>
             <buttons:SfButton x:Name="SfButtonCancel"
                               Text="Cancel"
                               WidthRequest="100"

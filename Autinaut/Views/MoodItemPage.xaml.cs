@@ -62,6 +62,14 @@ namespace Autinaut.Views
             await Navigation.PopToRootAsync();
         }
 
+        private async void OnDeleteClicked(object sender, EventArgs e)
+        {
+            MoodItem moodItem = (MoodItem)BindingContext;
+            MoodItemDatabase database = await MoodItemDatabase.Instance;
+            _ = await database.DeleteItemAsync(moodItem);
+            await Navigation.PopToRootAsync();
+        }
+
         private async void OnCancelClicked(object sender, EventArgs e)
         {
             await Navigation.PopToRootAsync();
