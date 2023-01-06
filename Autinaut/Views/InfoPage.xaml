@@ -3,18 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Autinaut.Views.InfoPage"
              BackgroundColor="White"
-             Title="You Matter">
+             Title="Sei Dein Autinaut">
 
-    <StackLayout>
-        <StackLayout Margin="10">
+    <ScrollView VerticalScrollBarVisibility="Always">
+        <StackLayout>
+            <StackLayout Margin="10">
             <Frame BackgroundColor="#546DFE"
                    Padding="20"
                    Margin="10"
                    CornerRadius="10"
                    HasShadow="True">
                 <Label TextColor="GhostWhite"
-                       Text="For an autistic person it is essential to have control and to aggregate routines in life."
-                       FontSize="28"
+                       Text="Für Autisten von Autisten. Im Zuge des FASTER-Programms des Universitätsklinikums Freiburg wird auch das Thema Gefühlserkennung behandelt. Unter diesem Hintergrund entstand die App."
+                       FontSize="20"
                        Margin="20,0,20,0"/>
             </Frame>
             <Frame BackgroundColor="#546DFE"
@@ -23,8 +24,8 @@
                    CornerRadius="10"
                    HasShadow="True">
                 <Label TextColor="GhostWhite"
-                       Text="This app will help you to protocol successes and moods and visualize your data in charts."
-                       FontSize="28"
+                       Text="Mit dieser App kannst Du die sieben Grundgefühle nach Paul Ekman sowie Deine individuellen Erfolge protokollieren. In vielen Situationen entstehen Gefühle. Die Protokollierung kann Dir dabei helfen, Dich mit diesen auseinanderzusetzen und sie in der jeweiligen Situation inklusive einer Affektbilanz festzuhalten. Zudem kann es helfen sich immer wieder seine Erfolge vor 'Augen' zu halten."
+                       FontSize="20"
                        Margin="20,0,20,0"/>
             </Frame>
         </StackLayout>
@@ -34,9 +35,9 @@
                          BackgroundColor="Transparent"
                          WidthRequest="100"
                          HeightRequest="100"
-                         Clicked="GoToGithubButton_Clicked"/>
+                         Clicked="GoToWebsite_Clicked"/>
         </StackLayout>
     </StackLayout>
-    
+    </ScrollView>
 
 </ContentPage>

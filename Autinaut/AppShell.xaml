@@ -1,7 +1,8 @@
 ﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:Autinaut.Views"
-       x:Class="Autinaut.AppShell">
+       x:Class="Autinaut.AppShell"
+       Title="Autinaut">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior Command="{Binding GoBack}"
@@ -49,12 +50,12 @@
         </Style>
     </Shell.Resources>
     <TabBar>
-        <Tab Title="Moods"
+        <Tab Title="Gefühle"
              Icon="mood.png">
             <ShellContent ContentTemplate="{DataTemplate views:MoodItemsPage}"
                           Style="{StaticResource MoodShell}"/>
         </Tab>
-        <Tab Title="Successes"
+        <Tab Title="Erfolge"
              Icon="star.png">
             <ShellContent ContentTemplate="{DataTemplate views:SuccessItemsPage}"
                           Style="{StaticResource SuccessShell}"/>

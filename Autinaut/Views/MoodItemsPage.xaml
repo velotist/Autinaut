@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Autinaut.Views.MoodItemsPage"
-             Title="Moods">
+             Title="Gefühle">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"
@@ -14,7 +14,7 @@
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <ToolbarItem Text="Open Chart"
+        <!--<ToolbarItem Text="Open Chart"
                      Clicked="OnChartClicked">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
@@ -22,7 +22,7 @@
                         Value="timeline.png" />
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
-        </ToolbarItem>
+        </ToolbarItem>-->
     </ContentPage.ToolbarItems>
     
     <ListView x:Name="myListView"
@@ -55,21 +55,21 @@
                                                TextColor="Black" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Positive Affect Balance"
+                                        <Label Text="Positive Affektbilanz"
                                                TextColor="Black"
                                                FontSize="Medium"
                                                VerticalOptions="Center" />
-                                    <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %'}"
+                                    <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %.'}"
                                                TextColor="Black"
                                                FontSize="Large"
                                                HorizontalOptions="EndAndExpand" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Negative Affect Balance"
+                                        <Label Text="Negative Affektbilanz"
                                                TextColor="Black"
                                                FontSize="Medium"
                                                VerticalOptions="Center" />
-                                    <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %'}"
+                                    <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %.'}"
                                                TextColor="Black"
                                                FontSize="Large"
                                                HorizontalOptions="EndAndExpand" />

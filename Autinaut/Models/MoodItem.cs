@@ -7,7 +7,7 @@ namespace Autinaut.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Mood { get; set; } = "Anger";
+        public string Mood { get; set; } = "Wut";
         public string MoodSituation { get; set; }
         public string MoodIcon { get; set; } = "anger.png";
         public double PositiveAffectBalance { get; set; }

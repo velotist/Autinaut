@@ -6,13 +6,13 @@ namespace Autinaut.Models
     {
         public CarouselMoodViewModel()
         {
-            ImageCollection.Add(new CarouselMoodModel("anger.png", "Anger"));
-            ImageCollection.Add(new CarouselMoodModel("contempt.png", "Contempt"));
-            ImageCollection.Add(new CarouselMoodModel("disgust.png", "Disgust"));
-            ImageCollection.Add(new CarouselMoodModel("fear.png", "Fear"));
-            ImageCollection.Add(new CarouselMoodModel("joy.png", "Joy"));
-            ImageCollection.Add(new CarouselMoodModel("sadness.png", "Sadness"));
-            ImageCollection.Add(new CarouselMoodModel("surprise.png", "Surprise"));
+            ImageCollection.Add(new CarouselMoodModel("anger.png", "Wut"));
+            ImageCollection.Add(new CarouselMoodModel("contempt.png", "Verachtung"));
+            ImageCollection.Add(new CarouselMoodModel("disgust.png", "Ekel"));
+            ImageCollection.Add(new CarouselMoodModel("fear.png", "Angst"));
+            ImageCollection.Add(new CarouselMoodModel("joy.png", "Freude"));
+            ImageCollection.Add(new CarouselMoodModel("sadness.png", "Trauer"));
+            ImageCollection.Add(new CarouselMoodModel("surprise.png", "Überraschung"));
         }
 
         public List<CarouselMoodModel> ImageCollection { get; set; } = new List<CarouselMoodModel>();

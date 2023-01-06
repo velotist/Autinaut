@@ -5,7 +5,7 @@
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:local="clr-namespace:Autinaut.Models"
              x:Class="Autinaut.Views.MoodItemPage"
-             Title="Mood"
+             Title="Gefühle"
              BackgroundColor="GhostWhite">
 
     <ContentPage.BindingContext>
@@ -59,14 +59,14 @@
                                 TextColor="Black"
                                 AutoSize="TextChanges"
                                 Margin="10,0,20,30"
-                                Placeholder="Describe the situation here"
+                                Placeholder="Beschreibe die Situation"
                                 PlaceholderColor="Olive"
                                 BackgroundColor="GhostWhite" 
                                 MaxLength="200" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Grid.Row="1">
-                    <Label Text="Mood"
+                    <Label Text="Gefühl"
                            TextColor="Black"
                            FontSize="Medium"
                            Margin="20,0,0,0" />
@@ -84,7 +84,7 @@
                     </carousel:SfCarousel>
                 </StackLayout>
                 <StackLayout Grid.Row="2">
-                    <Label Text="Positive affect balance"
+                    <Label Text="Positive Affektbilanz"
                            TextColor="Black"
                            FontSize="Medium"
                            Margin="20,20,0,0" />
@@ -98,11 +98,11 @@
                                 ValueChanged="OnPositiveSliderValueChanged" />
                     </Frame>
                     <Label x:Name="positiveLabel"
-                           Text="The Slider value is 0"
+                           Text="Die Affektbilanz liegt bei 0."
                            TextColor="Black"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand" />
-                    <Label Text="Negative affect balance"
+                    <Label Text="Negative Affektbilanz"
                            TextColor="Black"
                            FontSize="Medium"
                            Margin="20,20,0,0" />
@@ -116,7 +116,7 @@
                                 ValueChanged="OnNegativeSliderValueChanged" />
                     </Frame>
                     <Label x:Name="negativeLabel"
-                           Text="The Slider value is 0"
+                           Text="Die Affektbilanz liegt bei 0."
                            TextColor="Black"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand" />
@@ -128,19 +128,19 @@
                              Grid.Row="3"
                              Margin="30">
                     <buttons:SfButton x:Name="SfButtonSave"
-                                      Text="Save"
+                                      Text="Speichern"
                                       WidthRequest="100"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnSaveClicked" />
                     <buttons:SfButton x:Name="SfButtonDelete"
-                                      Text="Delete"
+                                      Text="Löschen"
                                       WidthRequest="100"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnDeleteClicked" />
                     <buttons:SfButton x:Name="SfButtonCancel"
-                                      Text="Cancel"
+                                      Text="Abbrechen"
                                       WidthRequest="100"
                                       CornerRadius="20"
                                       IsCheckable="True"

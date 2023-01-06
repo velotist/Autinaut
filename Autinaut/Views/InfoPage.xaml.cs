@@ -7,13 +7,13 @@ namespace Autinaut.Views
 {
     public partial class InfoPage : ContentPage
     {
-        private readonly Uri SpiHome = new Uri("https://ITsmus.de");
+        private readonly Uri SpiHome = new Uri("https://autinaut.net");
         public InfoPage()
         {
             InitializeComponent();
         }
 
-        private async void GoToGithubButton_Clicked(object sender, EventArgs e)
+        private async void GoToWebsite_Clicked(object sender, EventArgs e)
         {
             await OpenBrowser(SpiHome);
         }
