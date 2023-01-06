@@ -21,35 +21,35 @@ namespace Autinaut.Views
             {
                 case 0:
                     moodItem.MoodIcon = "anger.png";
-                    moodItem.Mood = "Angry";
+                    moodItem.Mood = "Wut";
                     break;
                 case 1:
                     moodItem.MoodIcon = "contempt.png";
-                    moodItem.Mood = "Contempt";
+                    moodItem.Mood = "Verachtung";
                     break;
                 case 2:
                     moodItem.MoodIcon = "disgust.png";
-                    moodItem.Mood = "Disgust";
+                    moodItem.Mood = "Ekel";
                     break;
                 case 3:
                     moodItem.MoodIcon = "fear.png";
-                    moodItem.Mood = "Fear";
+                    moodItem.Mood = "Angst";
                     break;
                 case 4:
                     moodItem.MoodIcon = "joy.png";
-                    moodItem.Mood = "Joy";
+                    moodItem.Mood = "Freude";
                     break;
                 case 5:
                     moodItem.MoodIcon = "sadness.png";
-                    moodItem.Mood = "Sadness";
+                    moodItem.Mood = "Trauer";
                     break;
                 case 6:
                     moodItem.MoodIcon = "surprise.png";
-                    moodItem.Mood = "Surprise";
+                    moodItem.Mood = "Überraschung";
                     break;
                 default:
-                    moodItem.MoodIcon = "disgust.png";
-                    moodItem.Mood = "Disgust";
+                    moodItem.MoodIcon = "anger.png";
+                    moodItem.Mood = "Wut";
                     break;
             }
         }
@@ -80,7 +80,7 @@ namespace Autinaut.Views
             double value = args.NewValue;
             MoodItem moodItem = (MoodItem)BindingContext;
             moodItem.PositiveAffectBalance = value;
-            positiveLabel.Text = string.Format("The Slider value is {0}", value);
+            positiveLabel.Text = string.Format("Die Affektbilanz liegt bei {0}.", value);
 
             await scrollView.ScrollToAsync(0, 100, true);
         }
@@ -89,7 +89,7 @@ namespace Autinaut.Views
             double value = args.NewValue;
             MoodItem moodItem = (MoodItem)BindingContext;
             moodItem.NegativeAffectBalance = value;
-            negativeLabel.Text = string.Format("The Slider value is {0}", value);
+            negativeLabel.Text = string.Format("Die Affektbilanz liegt bei {0}.", value);
         }
     }
 }
