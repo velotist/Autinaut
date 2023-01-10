@@ -24,14 +24,15 @@
                    CornerRadius="10"
                    HasShadow="True">
                 <Label TextColor="GhostWhite"
-                       Text="Mit dieser App kannst Du die sieben Grundgefühle nach Paul Ekman sowie Deine individuellen Erfolge protokollieren. In vielen Situationen entstehen Gefühle. Die Protokollierung kann Dir dabei helfen, Dich mit diesen auseinanderzusetzen und sie in der jeweiligen Situation inklusive einer Affektbilanz festzuhalten. Zudem kann es helfen sich immer wieder seine Erfolge vor 'Augen' zu halten."
+                       Text="Mit dieser App kannst Du die sieben Grundgefühle nach Paul Ekman sowie Deine individuellen Erfolge protokollieren. In vielen Situationen entstehen Gefühle. Die Protokollierung kann Dir dabei helfen, Dich mit diesen auseinanderzusetzen und sie in der jeweiligen Situation inklusive einer Affektbilanz festzuhalten. Zudem kann es helfen sich immer wieder seine Erfolge 'vor Augen zu halten'."
                        FontSize="20"
                        Margin="20,0,20,0"/>
             </Frame>
         </StackLayout>
         <StackLayout HorizontalOptions="CenterAndExpand"
                      VerticalOptions="EndAndExpand">
-            <ImageButton Source="black_spicon.png"
+            <ImageButton AutomationProperties.Name="Go To autinaut dot net"
+                         Source="black_spicon.png"
                          BackgroundColor="Transparent"
                          WidthRequest="100"
                          HeightRequest="100"

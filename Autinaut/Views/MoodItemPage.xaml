@@ -98,6 +98,7 @@
                                 ValueChanged="OnPositiveSliderValueChanged" />
                     </Frame>
                     <Label x:Name="positiveLabel"
+                           AutomationProperties.Name="Positive Affektbilanz"
                            Text="Die Affektbilanz liegt bei 0."
                            TextColor="Black"
                            HorizontalOptions="Center"
@@ -116,6 +117,7 @@
                                 ValueChanged="OnNegativeSliderValueChanged" />
                     </Frame>
                     <Label x:Name="negativeLabel"
+                           AutomationProperties.Name="Negative Affektbilanz"
                            Text="Die Affektbilanz liegt bei 0."
                            TextColor="Black"
                            HorizontalOptions="Center"
@@ -128,18 +130,21 @@
                              Grid.Row="3"
                              Margin="30">
                     <buttons:SfButton x:Name="SfButtonSave"
+                                      AutomationProperties.Name="Speichern"
                                       Text="Speichern"
                                       WidthRequest="100"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnSaveClicked" />
                     <buttons:SfButton x:Name="SfButtonDelete"
+                                      AutomationProperties.Name="Löschen"
                                       Text="Löschen"
                                       WidthRequest="100"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnDeleteClicked" />
                     <buttons:SfButton x:Name="SfButtonCancel"
+                                      AutomationProperties.Name="Abbrechen"
                                       Text="Abbrechen"
                                       WidthRequest="100"
                                       CornerRadius="20"

@@ -59,7 +59,7 @@
                                                TextColor="Black"
                                                FontSize="Medium"
                                                VerticalOptions="Center" />
-                                    <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %.'}"
+                                    <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %'}"
                                                TextColor="Black"
                                                FontSize="Large"
                                                HorizontalOptions="EndAndExpand" />
@@ -69,7 +69,7 @@
                                                TextColor="Black"
                                                FontSize="Medium"
                                                VerticalOptions="Center" />
-                                    <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %.'}"
+                                    <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %'}"
                                                TextColor="Black"
                                                FontSize="Large"
                                                HorizontalOptions="EndAndExpand" />

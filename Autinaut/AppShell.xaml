@@ -51,16 +51,19 @@
     </Shell.Resources>
     <TabBar>
         <Tab Title="Gefühle"
+             AutomationProperties.Name="Gefühle"
              Icon="mood.png">
             <ShellContent ContentTemplate="{DataTemplate views:MoodItemsPage}"
                           Style="{StaticResource MoodShell}"/>
         </Tab>
         <Tab Title="Erfolge"
+             AutomationProperties.Name="Erfolge"
              Icon="star.png">
             <ShellContent ContentTemplate="{DataTemplate views:SuccessItemsPage}"
                           Style="{StaticResource SuccessShell}"/>
         </Tab>
         <Tab Title="Info"
+             AutomationProperties.Name="Information"
              Icon="info.png">
             <ShellContent x:Name="infoItem"
                           ContentTemplate="{DataTemplate views:InfoPage}"
