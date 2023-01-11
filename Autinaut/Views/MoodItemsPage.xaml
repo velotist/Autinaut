@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Autinaut.Views.MoodItemsPage"
-             Title="Gefühle">
+             Title="Meine Gefühle">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"
@@ -14,15 +14,6 @@
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
-        <!--<ToolbarItem Text="Open Chart"
-                     Clicked="OnChartClicked">
-            <ToolbarItem.IconImageSource>
-                <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android, UWP"
-                        Value="timeline.png" />
-                </OnPlatform>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>-->
     </ContentPage.ToolbarItems>
     
     <ListView x:Name="myListView"
@@ -37,12 +28,12 @@
                                 <StackLayout>
                                     <Label Text="{Binding Date}"
                                            FontSize="Medium"
-                                           TextColor="ForestGreen"
-                                           Margin="0,0,0,10"/>
+                                           TextColor="Black"
+                                           Margin="0,0,0,10" />
                                     <Label Text="{Binding MoodSituation}"
                                            FontSize="Large"
                                            TextColor="Black"
-                                           Margin="0,0,0,20"/>
+                                           Margin="0,0,0,20" />
                                     <StackLayout HorizontalOptions="StartAndExpand"
                                                  VerticalOptions="Center"
                                                  Orientation="Horizontal">

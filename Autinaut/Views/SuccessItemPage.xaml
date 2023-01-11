@@ -15,6 +15,7 @@
                     TextColor="Black"
                     AutoSize="TextChanges"
                     Margin="10,0,20,30"
+                    MinimumWidthRequest="48"
                     Placeholder="Beschreibe den Erfolg"
                     PlaceholderColor="Olive"
                     BackgroundColor="GhostWhite" />
@@ -26,6 +27,8 @@
                               AutomationProperties.Name="Speichern"
                               Text="Speichern"
                               WidthRequest="100"
+                              HeightRequest="48"
+                              MinimumHeightRequest="48"
                               CornerRadius="20"
                               IsCheckable="True"
                               Clicked="OnSaveClicked"/>
@@ -33,6 +36,8 @@
                               AutomationProperties.Name="Löschen"
                               Text="Löschen"
                               WidthRequest="100"
+                              HeightRequest="48"
+                              MinimumHeightRequest="48"
                               CornerRadius="20"
                               IsCheckable="True"
                               Clicked="OnDeleteClicked"/>
@@ -40,6 +45,8 @@
                               AutomationProperties.Name="Abbrechen"
                               Text="Abbrechen"
                               WidthRequest="100"
+                              HeightRequest="48"
+                              MinimumHeightRequest="48"
                               CornerRadius="20"
                               IsCheckable="True"
                               Clicked="OnCancelClicked"/>

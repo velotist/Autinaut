@@ -5,7 +5,7 @@
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:local="clr-namespace:Autinaut.Models"
              x:Class="Autinaut.Views.MoodItemPage"
-             Title="Gefühle"
+             Title="Mein Gefühl"
              BackgroundColor="GhostWhite">
 
     <ContentPage.BindingContext>
@@ -62,7 +62,8 @@
                                 Placeholder="Beschreibe die Situation"
                                 PlaceholderColor="Olive"
                                 BackgroundColor="GhostWhite" 
-                                MaxLength="200" />
+                                MaxLength="200"
+                                MinimumWidthRequest="48" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Grid.Row="1">
@@ -133,6 +134,8 @@
                                       AutomationProperties.Name="Speichern"
                                       Text="Speichern"
                                       WidthRequest="100"
+                                      HeightRequest="48"
+                                      MinimumHeightRequest="48"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnSaveClicked" />
@@ -140,6 +143,8 @@
                                       AutomationProperties.Name="Löschen"
                                       Text="Löschen"
                                       WidthRequest="100"
+                                      HeightRequest="48"
+                                      MinimumHeightRequest="48"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnDeleteClicked" />
@@ -147,6 +152,8 @@
                                       AutomationProperties.Name="Abbrechen"
                                       Text="Abbrechen"
                                       WidthRequest="100"
+                                      HeightRequest="48"
+                                      MinimumHeightRequest="48"
                                       CornerRadius="20"
                                       IsCheckable="True"
                                       Clicked="OnCancelClicked" />
