@@ -5,40 +5,40 @@
              BackgroundColor="White"
              Title="Sei Dein Autinaut">
 
-    <ScrollView VerticalScrollBarVisibility="Always">
+    <ScrollView>
         <StackLayout>
             <StackLayout Margin="10">
-            <Frame BackgroundColor="#546DFE"
-                   Padding="20"
-                   Margin="10"
-                   CornerRadius="10"
-                   HasShadow="True">
-                <Label TextColor="GhostWhite"
-                       Text="Für Autisten von Autisten. Im Zuge des FASTER-Programms des Universitätsklinikums Freiburg wird auch das Thema Gefühlserkennung behandelt. Unter diesem Hintergrund entstand die App."
-                       FontSize="20"
-                       Margin="20,0,20,0"/>
-            </Frame>
-            <Frame BackgroundColor="#546DFE"
-                   Padding="20"
-                   Margin="10"
-                   CornerRadius="10"
-                   HasShadow="True">
-                <Label TextColor="GhostWhite"
-                       Text="Mit dieser App kannst Du die sieben Grundgefühle nach Paul Ekman sowie Deine individuellen Erfolge protokollieren. In vielen Situationen entstehen Gefühle. Die Protokollierung kann Dir dabei helfen, Dich mit diesen auseinanderzusetzen und sie in der jeweiligen Situation inklusive einer Affektbilanz festzuhalten. Zudem kann es helfen sich immer wieder seine Erfolge 'vor Augen zu halten'."
-                       FontSize="20"
-                       Margin="20,0,20,0"/>
-            </Frame>
+                <Frame BackgroundColor="#546DFE"
+                       Padding="10,20,10,20"
+                       Margin="0,10,0,10"
+                       CornerRadius="10"
+                       HasShadow="True">
+                    <Label TextColor="GhostWhite"
+                           Text="In erster Linie für Menschen im Autismusspektrum. Im Zuge des FASTER-Programms des Universitätsklinikums Freiburg wird auch das Thema Gefühlserkennung behandelt. Unter diesem Hintergrund entstand die App."
+                           FontSize="20"
+                           Margin="10,0,10,0" />
+                </Frame>
+                <Frame BackgroundColor="#546DFE"
+                       Padding="10,20,10,20"
+                       CornerRadius="10"
+                       HasShadow="True">
+                    <Label TextColor="GhostWhite"
+                           Text="Mit dieser App kannst Du die sieben Grundgefühle nach Paul Ekman sowie Deine individuellen Erfolge protokollieren. In vielen Situationen entstehen Gefühle. Die Protokollierung kann Dir dabei helfen, Dich mit diesen auseinanderzusetzen und sie in der jeweiligen Situation inklusive einer Affektbilanz festzuhalten. Zudem kann es helfen sich immer wieder seine Erfolge 'vor Augen zu halten'."
+                           FontSize="20"
+                           Margin="20,0,20,0" />
+                </Frame>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand"
+                         VerticalOptions="EndAndExpand"
+                         Margin="0,0,0,20">
+                <ImageButton Source="spicon.png"
+                             AutomationProperties.Name="Go to autinaut dot net"
+                             BackgroundColor="Transparent"
+                             WidthRequest="48"
+                             HeightRequest="48"
+                             Clicked="GoToWebsite_Clicked" />
+            </StackLayout>
         </StackLayout>
-        <StackLayout HorizontalOptions="CenterAndExpand"
-                     VerticalOptions="EndAndExpand">
-            <ImageButton AutomationProperties.Name="Go To autinaut dot net"
-                         Source="black_spicon.png"
-                         BackgroundColor="Transparent"
-                         WidthRequest="100"
-                         HeightRequest="100"
-                         Clicked="GoToWebsite_Clicked"/>
-        </StackLayout>
-    </StackLayout>
     </ScrollView>
 
 </ContentPage>
