@@ -12,6 +12,12 @@ namespace Autinaut.Views
         public SuccessItemPage()
         {
             InitializeComponent();
+            succesNoteEditor.Unfocused += EditorUnfocused;
+        }
+
+        private async void EditorUnfocused(object sender, EventArgs e)
+        {
+            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
@@ -19,7 +25,7 @@ namespace Autinaut.Views
             SuccessItem successItem = (SuccessItem)BindingContext;
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             _ = await database.SaveItemAsync(successItem);
-            _ = await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
 
         private async void OnDeleteClicked(object sender, EventArgs e)
@@ -32,7 +38,7 @@ namespace Autinaut.Views
 
         private async void OnCancelClicked(object sender, EventArgs e)
         {
-            _ = await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
     }
 }

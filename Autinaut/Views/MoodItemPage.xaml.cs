@@ -10,8 +10,14 @@ namespace Autinaut.Views
         public MoodItemPage()
         {
             InitializeComponent();
+            moodNoteEditor.Unfocused += EditorUnfocused;
             moodsCarouselView.BindingContext = new CarouselMoodViewModel();
             moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
+        }
+
+        private async void EditorUnfocused(object sender, EventArgs e)
+        {
+            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
         }
 
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
@@ -82,7 +88,7 @@ namespace Autinaut.Views
             moodItem.PositiveAffectBalance = value;
             positiveLabel.Text = string.Format("Die Affektbilanz liegt bei {0}.", value);
 
-            await scrollView.ScrollToAsync(0, 100, true);
+            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
         }
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {

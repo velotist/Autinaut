@@ -39,7 +39,8 @@
     
     <ContentPage.Content>
         <ScrollView x:Name="scrollView"
-                    VerticalScrollBarVisibility="Always">
+                    VerticalScrollBarVisibility="Always"
+                    Margin="0,0,0,20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -55,7 +56,8 @@
                     <Frame BackgroundColor="GhostWhite"
                            Margin="20,0,20,0"
                            Padding="10">
-                        <Editor Text="{Binding MoodSituation}"
+                        <Editor x:Name="moodNoteEditor"
+                                Text="{Binding MoodSituation}"
                                 TextColor="Black"
                                 AutoSize="TextChanges"
                                 Margin="10,0,20,30"
@@ -63,7 +65,8 @@
                                 PlaceholderColor="Olive"
                                 BackgroundColor="GhostWhite" 
                                 MaxLength="200"
-                                MinimumWidthRequest="48" />
+                                MinimumWidthRequest="48"
+                                Completed="EditorUnfocused" />
                     </Frame>
                 </StackLayout>
                 <StackLayout Grid.Row="1">
