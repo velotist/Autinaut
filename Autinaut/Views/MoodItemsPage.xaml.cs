@@ -15,10 +15,6 @@ namespace Autinaut.Views
         public MoodItemsPage()
         {
             InitializeComponent();
-            myListView.ItemTapped += (object sender, ItemTappedEventArgs e) =>
-            {
-                OnListItemTapped(sender, e);
-            };
         }
 
         protected override async void OnAppearing()
@@ -31,13 +27,15 @@ namespace Autinaut.Views
 
         private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e.Item != null)
+            if (e.Item == null)
             {
-                await Navigation.PushAsync(new MoodItemPage
-                {
-                    BindingContext = e.Item
-                });
+                return;
             }
+
+            await Navigation.PushAsync(new MoodItemPage
+            {
+                BindingContext = e.Item
+            });
         }
 
         private async void OnItemAdded(object sender, EventArgs e)
@@ -45,14 +43,6 @@ namespace Autinaut.Views
             await Navigation.PushAsync(new MoodItemPage
             {
                 BindingContext = new MoodItem()
-            });
-        }
-
-        private async void OnChartClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MoodChartPage
-            {
-                BindingContext = Items
             });
         }
     }
