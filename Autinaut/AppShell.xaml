@@ -12,16 +12,10 @@
         <Style x:Key="BaseStyle"
                TargetType="Element">
             <Setter Property="Shell.TitleColor"
-                    Value="White" />
+                    Value="GhostWhite" />
         </Style>
         <Style TargetType="ShellItem"
                BasedOn="{StaticResource BaseStyle}" />
-        <Style x:Key="DomesticShell"
-               TargetType="Element"
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="#039BE6" />
-        </Style>
         <Style x:Key="MoodShell"
                TargetType="Element"
                BasedOn="{StaticResource BaseStyle}">
