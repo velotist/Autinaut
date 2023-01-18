@@ -19,6 +19,7 @@
 
     <StackLayout>
         <ListView x:Name="myListView"
+                  SelectionMode="None"
                   Margin="10"
                   ItemTapped="OnListItemTapped"
                   HasUnevenRows="True">
