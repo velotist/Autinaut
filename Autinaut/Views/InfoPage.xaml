@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Autinaut.Views.InfoPage"
-             BackgroundColor="White"
+             BackgroundColor="Gray"
              Title="Sei Dein Autinaut">
 
     <ScrollView>
@@ -32,10 +32,11 @@
                          VerticalOptions="EndAndExpand"
                          Margin="0,0,0,20">
                 <ImageButton Source="spicon.png"
+                             CornerRadius="20"
+                             Padding="10"
                              AutomationProperties.Name="Go to autinaut dot net"
-                             BackgroundColor="Transparent"
-                             WidthRequest="48"
-                             HeightRequest="48"
+                             WidthRequest="100"
+                             HeightRequest="50"
                              Clicked="GoToWebsite_Clicked" />
             </StackLayout>
         </StackLayout>
