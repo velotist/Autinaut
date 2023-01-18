@@ -1,6 +1,8 @@
 ﻿using Autinaut.Data;
 using Autinaut.Models;
+using Syncfusion.SfCarousel.XForms;
 using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace Autinaut.Views
@@ -10,7 +12,137 @@ namespace Autinaut.Views
         public MoodItemPage()
         {
             InitializeComponent();
-            moodsCarouselView.BindingContext = new CarouselMoodViewModel();
+            ObservableCollection<SfCarouselItem> carouselItems = new ObservableCollection<SfCarouselItem>
+            {
+                new SfCarouselItem()
+                {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "anger.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Wut",
+                                HorizontalTextAlignment = TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+                new SfCarouselItem() {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "contempt.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Verachtung",
+                                HorizontalTextAlignment = TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+                new SfCarouselItem() {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "disgust.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Ekel",
+                                HorizontalTextAlignment = TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+                new SfCarouselItem() {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "fear.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Angst",
+                                HorizontalTextAlignment = TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+                new SfCarouselItem() {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "joy.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Freude",
+                                HorizontalTextAlignment = TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+               new SfCarouselItem() {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "sadness.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Trauer",
+                                HorizontalTextAlignment=TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+                new SfCarouselItem() {
+                    ItemContent = new StackLayout
+                    {
+                        Children =
+                        {
+                            new Image()
+                            {
+                                Source = "surprise.png",
+                                Aspect = Aspect.AspectFit
+                            },
+                            new Label
+                            {
+                                Text = "Überraschung",
+                                HorizontalTextAlignment=TextAlignment.Center
+                            }
+                        }
+                    }
+                },
+            };
+            moodsCarouselView.ItemsSource = carouselItems;
             moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
 

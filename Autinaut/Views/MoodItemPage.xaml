@@ -4,38 +4,10 @@
              xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
              xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             xmlns:local="clr-namespace:Autinaut.Models"
              x:Class="Autinaut.Views.MoodItemPage"
              Title="Mein Gefühl"
              BackgroundColor="Gray">
 
-    <ContentPage.BindingContext>
-        <local:CarouselMoodViewModel/>
-    </ContentPage.BindingContext>
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="itemTemplate">
-                <StackLayout>
-                    <Frame CornerRadius="20"
-                           HorizontalOptions="Center"
-                           VerticalOptions="Center">
-                        <StackLayout>
-                            <Image Source="{Binding Image}"
-                                   Aspect="AspectFit">
-                            </Image>
-                            <Label Text="{Binding Name}"
-                                   TextColor="#689F39"
-                                   FontAttributes="Bold"
-                                   FontSize="12"
-                                   HorizontalOptions="Center"
-                                   VerticalOptions="Center" />
-                        </StackLayout>
-                    </Frame>
-                </StackLayout>
-            </DataTemplate>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    
     <ContentPage.Content>
         <ScrollView x:Name="scrollView"
                     VerticalScrollBarVisibility="Always"
@@ -78,25 +50,22 @@
                            FontSize="Medium"
                            Margin="10,0,0,0" />
                     <carousel:SfCarousel x:Name="moodsCarouselView"
-                                         ItemTemplate="{StaticResource itemTemplate}"
-                                         ItemsSource="{Binding ImageCollection}"
-                                         HeightRequest="250"
-                                         WidthRequest="300"
-                                         ItemWidth="150"
+                                         HeightRequest="200"
                                          ItemHeight="200"
+                                         ItemWidth="100"
                                          SelectionChanged="Carousel_SelectionChanged"
-                                         SelectedIndex="0"
-                                         Offset="20"
-                                         RotationAngle="45">
+                                         SelectedIndex="3"
+                                         Offset="30"
+                                         RotationAngle="60">
                     </carousel:SfCarousel>
                 </StackLayout>
                 <StackLayout Grid.Row="2">
                     <Label Text="Positive Affektbilanz"
                            TextColor="GhostWhite"
                            FontSize="Medium"
-                           Margin="10,20,0,0" />
+                           Margin="10,-40,0,0" />
                     <Frame BackgroundColor="GhostWhite"
-                           Margin="10,0,20,0"
+                           Margin="20,0,20,0"
                            Padding="10"
                            CornerRadius="10">
                         <Slider Maximum="100"
