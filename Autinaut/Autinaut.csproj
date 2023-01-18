@@ -26,12 +26,6 @@
     <Compile Update="Views\InfoPage.xaml.cs">
       <DependentUpon>InfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\MoodChartPage.xaml.cs">
-      <DependentUpon>MoodChartPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Update="Views\MoodChartPage.xaml.cs">
-      <DependentUpon>MoodChartPage.xaml</DependentUpon>
-    </Compile>
     <Compile Update="Views\SuccessItemsPage.xaml.cs">
       <DependentUpon>SuccessItemsPage.xaml</DependentUpon>
     </Compile>
@@ -45,12 +39,6 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\InfoPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\MoodChartPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Views\MoodChartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SuccessItemPage.xaml">
