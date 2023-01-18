@@ -2,29 +2,31 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Autinaut.Views.MoodItemsPage"
-             Title="Meine Gefühle">
+             Title="Meine Gefühle"
+             BackgroundColor="Gray">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+"
                      Clicked="OnItemAdded">
             <ToolbarItem.IconImageSource>
                 <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android, UWP"
+                    <On Platform="Android"
                         Value="addreaction.png" />
                 </OnPlatform>
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    
-    <ListView x:Name="myListView"
-              Margin="10"
-              ItemTapped="OnListItemTapped"
-              HasUnevenRows="True">
-        <ListView.ItemTemplate>
+
+    <StackLayout>
+        <ListView x:Name="myListView"
+                  Margin="10"
+                  ItemTapped="OnListItemTapped"
+                  HasUnevenRows="True">
+            <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Frame>
+                            <Frame CornerRadius="20">
                                 <StackLayout>
                                     <Label Text="{Binding Date}"
                                            FontSize="Medium"
@@ -50,20 +52,20 @@
                                                TextColor="Black"
                                                FontSize="Medium"
                                                VerticalOptions="Center" />
-                                    <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %'}"
-                                               TextColor="Black"
-                                               FontSize="Large"
-                                               HorizontalOptions="EndAndExpand" />
+                                        <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %'}"
+                                           TextColor="Black"
+                                           FontSize="Large"
+                                           HorizontalOptions="EndAndExpand" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="Negative Affektbilanz"
                                                TextColor="Black"
                                                FontSize="Medium"
                                                VerticalOptions="Center" />
-                                    <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %'}"
-                                               TextColor="Black"
-                                               FontSize="Large"
-                                               HorizontalOptions="EndAndExpand" />
+                                        <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %'}"
+                                           TextColor="Black"
+                                           FontSize="Large"
+                                           HorizontalOptions="EndAndExpand" />
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>
@@ -72,5 +74,6 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+    </StackLayout>
 
 </ContentPage>

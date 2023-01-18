@@ -2,32 +2,35 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+             xmlns:local="clr-namespace:Autinaut.Models"
              x:Class="Autinaut.Views.SuccessItemPage"
-             Title="Mein Erfolg">
+             Title="Mein Erfolg"
+             BackgroundColor="Gray">
+
+    <ContentPage.BindingContext>
+        <local:SuccessItem/>
+    </ContentPage.BindingContext>
 
     <ScrollView x:Name="scrollView"
                 VerticalScrollBarVisibility="Always"
                 Margin="0,0,0,20">
         <StackLayout Margin="20"
-                     VerticalOptions="StartAndExpand">
+                     VerticalOptions="FillAndExpand">
             <Frame BackgroundColor="GhostWhite"
-                   Margin="20,0,20,0"
-                   Padding="10">
-                <Editor x:Name="succesNoteEditor"
-                        Text="{Binding SuccessNote}"
-                        AutomationProperties.Name="Beschreibe den Erfolg"
-                        TextColor="Black"
-                        MaxLength="500"
-                        AutoSize="TextChanges"
-                        Margin="10,0,20,30"
-                        MinimumWidthRequest="48"
-                        Keyboard="Chat"
-                        IsSpellCheckEnabled="True"
-                        IsTextPredictionEnabled="True"
-                        Placeholder="Beschreibe den Erfolg"
-                        PlaceholderColor="Olive"
-                        BackgroundColor="GhostWhite"
-                        Completed="EditorUnfocused" />
+                   Margin="10,0,10,0"
+                   Padding="10"
+                   CornerRadius="20">
+                <inputLayout:SfTextInputLayout Hint="Beschreibe Deinen Erfolg"
+                                               ContainerType="Outlined"                                    OutlineCornerRadius="10"
+                                               FocusedColor="#AD3B3B"
+                                               UnfocusedColor="#ED3B3B">
+                    <Editor x:Name="editorSuccessNote"
+                            Text="{Binding SuccessNote}"
+                            TextColor="Black"
+                            MaxLength="700"
+                            AutoSize="TextChanges" />
+                </inputLayout:SfTextInputLayout>
             </Frame>
             <StackLayout x:Name="buttons"
                          HorizontalOptions="CenterAndExpand"

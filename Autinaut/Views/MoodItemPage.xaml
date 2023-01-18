@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
              xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:local="clr-namespace:Autinaut.Models"
              x:Class="Autinaut.Views.MoodItemPage"
              Title="Mein Gefühl"
-             BackgroundColor="GhostWhite">
+             BackgroundColor="Gray">
 
     <ContentPage.BindingContext>
         <local:CarouselMoodViewModel/>
@@ -15,14 +16,12 @@
         <ResourceDictionary>
             <DataTemplate x:Key="itemTemplate">
                 <StackLayout>
-                    <Frame HasShadow="True"
-                           CornerRadius="5"
-                           HeightRequest="200"
+                    <Frame CornerRadius="20"
                            HorizontalOptions="Center"
-                           VerticalOptions="CenterAndExpand">
+                           VerticalOptions="Center">
                         <StackLayout>
                             <Image Source="{Binding Image}"
-                                   Aspect="AspectFill">
+                                   Aspect="AspectFit">
                             </Image>
                             <Label Text="{Binding Name}"
                                    TextColor="#689F39"
@@ -49,38 +48,42 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Row="0">
-                    <Label Text="Situation"
-                           TextColor="Black"
+                    <Label x:Name="labelSituation"
+                           Text="Situation"
+                           TextColor="GhostWhite"
                            FontSize="Medium"
-                           Margin="20,20,0,0" />
-                    <Frame BackgroundColor="GhostWhite"
-                           Margin="20,0,20,0"
-                           Padding="10">
-                        <Editor x:Name="moodNoteEditor"
-                                Text="{Binding MoodSituation}"
-                                TextColor="Black"
-                                AutoSize="TextChanges"
-                                Margin="10,0,20,30"
-                                Placeholder="Beschreibe die Situation"
-                                PlaceholderColor="Olive"
-                                BackgroundColor="GhostWhite" 
-                                MaxLength="200"
-                                MinimumWidthRequest="48"
-                                Completed="EditorUnfocused" />
+                           Margin="10,20,0,0" />
+                    <Frame x:Name="editorFrame"
+                           BackgroundColor="GhostWhite"
+                           Margin="20,0,20,20"
+                           Padding="10"
+                           CornerRadius="20">
+                        <inputLayout:SfTextInputLayout Hint="Beschreibe die Situation"
+                                               ContainerType="Outlined"                                    OutlineCornerRadius="10"
+                                               FocusedColor="#089F39"
+                                               UnfocusedColor="#689F39">
+                            <Editor x:Name="moodNoteEditor"
+                                    Text="{Binding MoodSituation}"
+                                    TextColor="Black"
+                                    MaxLength="400"
+                                    AutoSize="TextChanges"
+                                    Keyboard="Text"
+                                    Completed="EditorUnfocused" />
+                        </inputLayout:SfTextInputLayout>
                     </Frame>
                 </StackLayout>
                 <StackLayout Grid.Row="1">
                     <Label Text="Gefühl"
-                           TextColor="Black"
+                           TextColor="GhostWhite"
                            FontSize="Medium"
-                           Margin="20,0,0,0" />
+                           Margin="10,0,0,0" />
                     <carousel:SfCarousel x:Name="moodsCarouselView"
                                          ItemTemplate="{StaticResource itemTemplate}"
                                          ItemsSource="{Binding ImageCollection}"
-                                         HeightRequest="120"
-                                         WidthRequest="220"
-                                         ItemWidth="100"
-                                         ItemHeight="120"
+                                         HeightRequest="250"
+                                         WidthRequest="300"
+                                         ItemWidth="150"
+                                         ItemHeight="200"
                                          SelectionChanged="Carousel_SelectionChanged"
                                          SelectedIndex="0"
                                          Offset="20"
@@ -89,33 +92,35 @@
                 </StackLayout>
                 <StackLayout Grid.Row="2">
                     <Label Text="Positive Affektbilanz"
-                           TextColor="Black"
+                           TextColor="GhostWhite"
                            FontSize="Medium"
-                           Margin="20,20,0,0" />
+                           Margin="10,20,0,0" />
                     <Frame BackgroundColor="GhostWhite"
-                           Margin="20,0,20,0"
-                           Padding="10">
+                           Margin="10,0,20,0"
+                           Padding="10"
+                           CornerRadius="10">
                         <Slider Maximum="100"
                                 MinimumTrackColor="YellowGreen"
-                                ThumbColor="Yellow"
+                                ThumbColor="YellowGreen"
                                 Value="{Binding PositiveAffectBalance}"
                                 ValueChanged="OnPositiveSliderValueChanged" />
                     </Frame>
                     <Label x:Name="positiveLabel"
                            AutomationProperties.Name="Positive Affektbilanz"
                            Text="Die Affektbilanz liegt bei 0."
-                           TextColor="Black"
+                           TextColor="GhostWhite"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand" />
                     <Label Text="Negative Affektbilanz"
-                           TextColor="Black"
+                           TextColor="GhostWhite"
                            FontSize="Medium"
-                           Margin="20,20,0,0" />
+                           Margin="10,20,0,0" />
                     <Frame BackgroundColor="GhostWhite"
                            Margin="20,0,20,0"
-                           Padding="10">
+                           Padding="10"
+                           CornerRadius="10">
                         <Slider Maximum="100"
-                                MinimumTrackColor="PaleVioletRed"
+                                MinimumTrackColor="Red"
                                 ThumbColor="Red"
                                 Value="{Binding NegativeAffectBalance}"
                                 ValueChanged="OnNegativeSliderValueChanged" />
@@ -123,7 +128,7 @@
                     <Label x:Name="negativeLabel"
                            AutomationProperties.Name="Negative Affektbilanz"
                            Text="Die Affektbilanz liegt bei 0."
-                           TextColor="Black"
+                           TextColor="GhostWhite"
                            HorizontalOptions="Center"
                            VerticalOptions="CenterAndExpand" />
                 </StackLayout>

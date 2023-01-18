@@ -1,7 +1,6 @@
 ﻿using Autinaut.Data;
 using Autinaut.Models;
 using System;
-using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,8 +9,6 @@ namespace Autinaut.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessItemsPage : ContentPage
     {
-        public ObservableCollection<SuccessItem> Items { get; set; }
-
         public SuccessItemsPage()
         {
             InitializeComponent();
@@ -20,9 +17,27 @@ namespace Autinaut.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             myListView.ItemsSource = await database.GetItemsAsync();
+            System.Collections.Generic.List<SuccessItem> items = await database.GetItemsAsync();
+            if (items.Count == 0)
+            {
+                Label hintLabel = new Label
+                {
+                    Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste, um Deinen ersten Eintrag zu erstellen.",
+                    TextColor = Color.GhostWhite,
+                    FontSize = 24,
+                    Margin = 20,
+                    HorizontalOptions = LayoutOptions.Center,
+                    VerticalOptions = LayoutOptions.Center
+                };
+
+                Content = hintLabel;
+            }
+            else
+            {
+                Content = myListView;
+            }
         }
 
         private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)

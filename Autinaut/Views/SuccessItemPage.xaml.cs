@@ -12,7 +12,6 @@ namespace Autinaut.Views
         public SuccessItemPage()
         {
             InitializeComponent();
-            succesNoteEditor.Unfocused += EditorUnfocused;
         }
 
         private async void EditorUnfocused(object sender, EventArgs e)
@@ -23,6 +22,15 @@ namespace Autinaut.Views
         private async void OnSaveClicked(object sender, EventArgs e)
         {
             SuccessItem successItem = (SuccessItem)BindingContext;
+            if (string.IsNullOrEmpty(successItem.SuccessNote))
+            {
+                _ = DisplayAlert("Meldung", "Bitte trage Deinen Erfolg ein.", "OK");
+                SfButtonSave.IsChecked = false;
+                await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);
+
+                return;
+            }
+
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             _ = await database.SaveItemAsync(successItem);
             await Navigation.PopToRootAsync();

@@ -10,14 +10,13 @@ namespace Autinaut.Views
         public MoodItemPage()
         {
             InitializeComponent();
-            moodNoteEditor.Unfocused += EditorUnfocused;
             moodsCarouselView.BindingContext = new CarouselMoodViewModel();
             moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
 
         private async void EditorUnfocused(object sender, EventArgs e)
         {
-            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
+            await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
         }
 
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
@@ -60,9 +59,23 @@ namespace Autinaut.Views
             }
         }
 
+        private async void ScrollToEnd()
+        {
+            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
+        }
+
         private async void OnSaveClicked(object sender, EventArgs e)
         {
             MoodItem moodItem = (MoodItem)BindingContext;
+            if (string.IsNullOrEmpty(moodItem.MoodSituation))
+            {
+                await DisplayAlert("Meldung", "Bitte trage eine Situation ein.", "OK");
+                SfButtonSave.IsChecked = false;
+                await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);
+
+                return;
+            }
+
             MoodItemDatabase database = await MoodItemDatabase.Instance;
             _ = await database.SaveItemAsync(moodItem);
             await Navigation.PopToRootAsync();
@@ -81,14 +94,14 @@ namespace Autinaut.Views
             await Navigation.PopToRootAsync();
         }
 
-        private async void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
+        private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
             double value = args.NewValue;
             MoodItem moodItem = (MoodItem)BindingContext;
             moodItem.PositiveAffectBalance = value;
             positiveLabel.Text = string.Format("Die Affektbilanz liegt bei {0}.", value);
 
-            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
+            ScrollToEnd();
         }
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
