@@ -1,68 +1,87 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-             xmlns:local="clr-namespace:Autinaut.Models"
-             x:Class="Autinaut.Views.SuccessItemPage"
-             Title="Mein Erfolg"
-             BackgroundColor="Gray">
+<ContentPage
+    x:Class="Autinaut.Views.SuccessItemPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:Autinaut.Models"
+    Title="Mein Erfolg">
+
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="arrow_back_filled.png" AutomationProperties.HelpText="Zurück Button" AutomationProperties.Name="Zurück" />
+    </Shell.BackButtonBehavior>
 
     <ContentPage.BindingContext>
-        <local:SuccessItem/>
+        <local:SuccessItem />
     </ContentPage.BindingContext>
 
-    <ScrollView x:Name="scrollView"
-                VerticalScrollBarVisibility="Always"
-                Margin="0,0,0,20">
-        <StackLayout Margin="20"
-                     VerticalOptions="FillAndExpand">
-            <Frame BackgroundColor="GhostWhite"
-                   Margin="10,0,10,0"
-                   Padding="10"
-                   CornerRadius="20">
-                <inputLayout:SfTextInputLayout Hint="Beschreibe Deinen Erfolg"
-                                               ContainerType="Outlined"                                    OutlineCornerRadius="10"
-                                               FocusedColor="#AD3B3B"
-                                               UnfocusedColor="#ED3B3B">
-                    <Editor x:Name="editorSuccessNote"
-                            Text="{Binding SuccessNote}"
-                            TextColor="Black"
-                            MaxLength="700"
-                            AutoSize="TextChanges" />
+    <ScrollView
+        x:Name="scrollView"
+        Margin="0,20,0,20"
+        VerticalScrollBarVisibility="Always">
+        <StackLayout Margin="20,0,20,20" VerticalOptions="CenterAndExpand">
+            <Frame
+                Margin="10,0,10,0"
+                Padding="10"
+                BackgroundColor="#cbdadf"
+                CornerRadius="20">
+                <inputLayout:SfTextInputLayout
+                    ContainerBackgroundColor="#cbdadf"
+                    FocusedColor="#562b28"
+                    FocusedStrokeWidth="0"
+                    Hint="Beschreibe die Situation"
+                    OutlineCornerRadius="10"
+                    UnfocusedColor="Black"
+                    UnfocusedStrokeWidth="1">
+                    <Editor
+                        x:Name="editorSuccessNote"
+                        AutoSize="TextChanges"
+                        Completed="EditorUnfocused"
+                        Keyboard="Text"
+                        MaxLength="700"
+                        Text="{Binding SuccessNote}"
+                        TextColor="Black" />
                 </inputLayout:SfTextInputLayout>
             </Frame>
-            <StackLayout x:Name="buttons"
-                         HorizontalOptions="CenterAndExpand"
-                         Orientation="Horizontal"
-                         Margin="20,20,20,0">
-                <buttons:SfButton x:Name="SfButtonSave"
-                                  AutomationProperties.Name="Speichern"
-                                  Text="Speichern"
-                                  WidthRequest="100"
-                                  HeightRequest="48"
-                                  MinimumHeightRequest="48"
-                                  CornerRadius="20"
-                                  IsCheckable="True"
-                                  Clicked="OnSaveClicked"/>
-                <buttons:SfButton x:Name="SfButtonDelete"
-                                  AutomationProperties.Name="Löschen"
-                                  Text="Löschen"
-                                  WidthRequest="100"
-                                  HeightRequest="48"
-                                  MinimumHeightRequest="48"
-                                  CornerRadius="20"
-                                  IsCheckable="True"
-                                  Clicked="OnDeleteClicked"/>
-                <buttons:SfButton x:Name="SfButtonCancel"
-                                  AutomationProperties.Name="Abbrechen"
-                                  Text="Abbrechen"
-                                  WidthRequest="100"
-                                  HeightRequest="48"
-                                  MinimumHeightRequest="48"
-                                  CornerRadius="20"
-                                  IsCheckable="True"
-                                  Clicked="OnCancelClicked"/>
+            <StackLayout
+                x:Name="buttons"
+                Margin="20,20,20,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal">
+                <buttons:SfButton
+                    x:Name="SfButtonSave"
+                    AutomationProperties.Name="Speichern"
+                    BackgroundColor="#40614d"
+                    Clicked="OnSaveClicked"
+                    CornerRadius="20"
+                    HeightRequest="48"
+                    IsCheckable="True"
+                    MinimumHeightRequest="48"
+                    Text="Speichern"
+                    WidthRequest="100" />
+                <buttons:SfButton
+                    x:Name="SfButtonDelete"
+                    AutomationProperties.Name="Löschen"
+                    BackgroundColor="#40614d"
+                    Clicked="OnDeleteClicked"
+                    CornerRadius="20"
+                    HeightRequest="48"
+                    IsCheckable="True"
+                    MinimumHeightRequest="48"
+                    Text="Löschen"
+                    WidthRequest="100" />
+                <buttons:SfButton
+                    x:Name="SfButtonCancel"
+                    AutomationProperties.Name="Abbrechen"
+                    BackgroundColor="#40614d"
+                    Clicked="OnCancelClicked"
+                    CornerRadius="20"
+                    HeightRequest="48"
+                    IsCheckable="True"
+                    MinimumHeightRequest="48"
+                    Text="Abbrechen"
+                    WidthRequest="100" />
             </StackLayout>
         </StackLayout>
     </ScrollView>

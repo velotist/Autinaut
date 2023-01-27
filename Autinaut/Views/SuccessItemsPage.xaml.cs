@@ -25,9 +25,9 @@ namespace Autinaut.Views
                 Label hintLabel = new Label
                 {
                     Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste, um Deinen ersten Eintrag zu erstellen.",
-                    TextColor = Color.GhostWhite,
-                    FontSize = 24,
-                    Margin = 20,
+                    TextColor = Color.Black,
+                    FontSize = 22,
+                    Margin = 40,
                     HorizontalOptions = LayoutOptions.Center,
                     VerticalOptions = LayoutOptions.Center
                 };
@@ -40,15 +40,17 @@ namespace Autinaut.Views
             }
         }
 
-        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e.SelectedItem != null)
+            if (e.Item == null)
             {
-                await Navigation.PushAsync(new SuccessItemPage
-                {
-                    BindingContext = e.SelectedItem as SuccessItem
-                });
+                return;
             }
+
+            await Navigation.PushAsync(new SuccessItemPage
+            {
+                BindingContext = e.Item as SuccessItem
+            });
         }
 
         private async void OnItemAdded(object sender, EventArgs e)
