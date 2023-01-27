@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
-
-  <style name="MainTheme" parent="MainTheme.Base">
-    <item name="android:colorActivatedHighlight">@color/listViewActivated</item>
-    <item name="android:colorFocusedHighlight">@color/listViewActivated</item>
-    <item name="android:colorPressedHighlight">@color/listViewActivated</item>
-  </style>
-
+  <style name="MainTheme" parent="MainTheme.Base" />
 </resources>
