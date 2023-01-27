@@ -1,59 +1,70 @@
-﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:views="clr-namespace:Autinaut.Views"
-       x:Class="Autinaut.AppShell"
-       Title="Autinaut">
+﻿<Shell
+    x:Class="Autinaut.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Autinaut.Views"
+    Title="Autinaut">
 
-    <Shell.BackButtonBehavior>
-        <BackButtonBehavior Command="{Binding GoBack}"
-                            IconOverride="arrow_back.png" />
-    </Shell.BackButtonBehavior>
     <Shell.Resources>
-        <Style x:Key="BaseStyle"
-               TargetType="Element">
-            <Setter Property="Shell.TitleColor"
-                    Value="GhostWhite" />
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.TitleColor" Value="#0f0104" />
+            <Setter Property="Shell.NavBarHasShadow" Value="True" />
+            <Setter Property="Shell.ForegroundColor" Value="Transparent" />
         </Style>
-        <Style TargetType="ShellItem"
-               BasedOn="{StaticResource BaseStyle}" />
-        <Style x:Key="MoodShell"
-               TargetType="Element"
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="#689F39" />
+        <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" />
+        <Style
+            x:Key="MoodShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#a2b9ab" />
         </Style>
-        <Style x:Key="SuccessShell"
-               TargetType="Element"
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="#ED3B3B" />
+        <Style
+            x:Key="SuccessShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#ecefe8" />
         </Style>
-        <Style x:Key="InfoShell"
-               TargetType="Element"
-               BasedOn="{StaticResource BaseStyle}">
-            <Setter Property="Shell.BackgroundColor"
-                    Value="#546DFE" />
+        <Style
+            x:Key="InfoShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#a4a373" />
         </Style>
     </Shell.Resources>
 
-    <Tab Title="Gefühle"
-         AutomationProperties.Name="Gefühle"
-         Icon="mood.png">
-        <ShellContent ContentTemplate="{DataTemplate views:MoodItemsPage}"
-                      Style="{StaticResource MoodShell}"/>
+    <Tab
+        Title="Gefühle"
+        AutomationProperties.Name="Gefühle"
+        Icon="mood.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:MoodItemsPage}"
+            Shell.TabBarBackgroundColor="#a2b9ab"
+            Shell.TabBarTitleColor="#110634"
+            Shell.TabBarUnselectedColor="#fcfcfc"
+            Style="{StaticResource MoodShell}" />
     </Tab>
-    <Tab Title="Erfolge"
-         AutomationProperties.Name="Erfolge"
-         Icon="star.png">
-        <ShellContent ContentTemplate="{DataTemplate views:SuccessItemsPage}"
-                      Style="{StaticResource SuccessShell}"/>
+    <Tab
+        Title="Erfolge"
+        AutomationProperties.Name="Erfolge"
+        Icon="star.png">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:SuccessItemsPage}"
+            Shell.TabBarBackgroundColor="#ecefe8"
+            Shell.TabBarTitleColor="#0c0c0c"
+            Shell.TabBarUnselectedColor="#465C69"
+            Style="{StaticResource SuccessShell}" />
     </Tab>
-    <Tab Title="Info"
-         AutomationProperties.Name="Information"
-         Icon="info.png">
-        <ShellContent x:Name="infoItem"
-                      ContentTemplate="{DataTemplate views:InfoPage}"
-                      Style="{StaticResource InfoShell}"/>
+    <Tab
+        Title="Info"
+        AutomationProperties.Name="Information"
+        Icon="info.png">
+        <ShellContent
+            x:Name="infoItem"
+            ContentTemplate="{DataTemplate views:InfoPage}"
+            Shell.TabBarBackgroundColor="#a4a373"
+            Shell.TabBarTitleColor="#0f0104"
+            Shell.TabBarUnselectedColor="#465C69"
+            Style="{StaticResource InfoShell}" />
     </Tab>
 
 </Shell>
