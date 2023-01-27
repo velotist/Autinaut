@@ -25,9 +25,9 @@ namespace Autinaut.Views
                 Label hintLabel = new Label
                 {
                     Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste, um Deinen ersten Eintrag zu erstellen.",
-                    TextColor = Color.GhostWhite,
-                    FontSize = 24,
-                    Margin = 20,
+                    TextColor = Color.Black,
+                    FontSize = 22,
+                    Margin = 40,
                     HorizontalOptions = LayoutOptions.Center,
                     VerticalOptions = LayoutOptions.Center
                 };
@@ -49,7 +49,7 @@ namespace Autinaut.Views
 
             await Navigation.PushAsync(new MoodItemPage
             {
-                BindingContext = e.Item
+                BindingContext = e.Item as MoodItem
             });
         }
 

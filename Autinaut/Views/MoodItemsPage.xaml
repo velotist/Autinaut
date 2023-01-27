@@ -1,72 +1,77 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Autinaut.Views.MoodItemsPage"
-             Title="Meine Gefühle"
-             BackgroundColor="Gray">
+<ContentPage
+    x:Class="Autinaut.Views.MoodItemsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Meine Gefühle">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="+"
-                     Clicked="OnItemAdded">
-            <ToolbarItem.IconImageSource>
-                <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android"
-                        Value="addreaction.png" />
-                </OnPlatform>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
+        <ToolbarItem Clicked="OnItemAdded" IconImageSource="add_reaction_filled.png" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>
-        <ListView x:Name="myListView"
-                  SelectionMode="None"
-                  Margin="10"
-                  ItemTapped="OnListItemTapped"
-                  HasUnevenRows="True">
+        <ListView
+            x:Name="myListView"
+            Margin="10"
+            HasUnevenRows="True"
+            ItemTapped="OnListItemTapped"
+            SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Frame CornerRadius="20">
+                            <Frame
+                                BorderColor="#cbdadf"
+                                CornerRadius="20"
+                                HasShadow="True">
                                 <StackLayout>
-                                    <Label Text="{Binding Date}"
-                                           FontSize="Medium"
-                                           TextColor="Black"
-                                           Margin="0,0,0,10" />
-                                    <Label Text="{Binding MoodSituation}"
-                                           FontSize="Large"
-                                           TextColor="Black"
-                                           Margin="0,0,0,20" />
-                                    <StackLayout HorizontalOptions="StartAndExpand"
-                                                 VerticalOptions="Center"
-                                                 Orientation="Horizontal">
-                                        <Image Source="{Binding MoodIcon}"
-                                               WidthRequest="100"
-                                               HeightRequest="100" />
-                                        <Label Text="{Binding Mood}"
-                                               Margin="20,30,0,0"
-                                               FontSize="Large"
-                                               TextColor="Black" />
+                                    <Label
+                                        Margin="0,0,0,10"
+                                        FontSize="Medium"
+                                        Text="{Binding Date}"
+                                        TextColor="Black" />
+                                    <Label
+                                        Margin="0,0,0,20"
+                                        FontSize="Large"
+                                        Text="{Binding MoodSituation}"
+                                        TextColor="Black" />
+                                    <StackLayout
+                                        HorizontalOptions="StartAndExpand"
+                                        Orientation="Horizontal"
+                                        VerticalOptions="Center">
+                                        <Image
+                                            HeightRequest="100"
+                                            Source="{Binding MoodIcon}"
+                                            WidthRequest="100" />
+                                        <Label
+                                            Margin="20,30,0,0"
+                                            FontSize="Large"
+                                            Text="{Binding Mood}"
+                                            TextColor="Black" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Positive Affektbilanz"
-                                               TextColor="Black"
-                                               FontSize="Medium"
-                                               VerticalOptions="Center" />
-                                        <Label Text="{Binding PositiveAffectBalance,StringFormat='\{0\} %'}"
-                                           TextColor="Black"
-                                           FontSize="Large"
-                                           HorizontalOptions="EndAndExpand" />
+                                        <Label
+                                            FontSize="Medium"
+                                            Text="Positive Affektbilanz"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            FontSize="Large"
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="{Binding PositiveAffectBalance, StringFormat='\{0\} %'}"
+                                            TextColor="Black" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
-                                        <Label Text="Negative Affektbilanz"
-                                               TextColor="Black"
-                                               FontSize="Medium"
-                                               VerticalOptions="Center" />
-                                        <Label Text="{Binding NegativeAffectBalance,StringFormat='\{0\} %'}"
-                                           TextColor="Black"
-                                           FontSize="Large"
-                                           HorizontalOptions="EndAndExpand" />
+                                        <Label
+                                            FontSize="Medium"
+                                            Text="Negative Affektbilanz"
+                                            TextColor="Black"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            FontSize="Large"
+                                            HorizontalOptions="EndAndExpand"
+                                            Text="{Binding NegativeAffectBalance, StringFormat='\{0\} %'}"
+                                            TextColor="Black" />
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>

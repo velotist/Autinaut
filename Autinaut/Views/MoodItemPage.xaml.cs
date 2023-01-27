@@ -28,6 +28,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Wut",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
                         }
@@ -46,6 +47,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Verachtung",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
                         }
@@ -64,6 +66,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Ekel",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
                         }
@@ -82,6 +85,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Angst",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
                         }
@@ -100,6 +104,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Freude",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
                         }
@@ -118,6 +123,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Trauer",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment=TextAlignment.Center
                             }
                         }
@@ -136,6 +142,7 @@ namespace Autinaut.Views
                             new Label
                             {
                                 Text = "Überraschung",
+                                TextColor = Color.Black,
                                 HorizontalTextAlignment=TextAlignment.Center
                             }
                         }
@@ -143,12 +150,48 @@ namespace Autinaut.Views
                 },
             };
             moodsCarouselView.ItemsSource = carouselItems;
+            moodsCarouselView.SelectedIndex = GetSelectedMood();
             moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
 
         private async void EditorUnfocused(object sender, EventArgs e)
         {
             await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
+        }
+
+        private int GetSelectedMood()
+        {
+            MoodItem moodItem = (MoodItem)BindingContext;
+
+            switch (moodItem.Mood)
+            {
+                case "Wut":
+                    moodItem.ImageID = 0;
+                    break;
+                case "Verachtung":
+                    moodItem.ImageID = 1;
+                    break;
+                case "Ekel":
+                    moodItem.ImageID = 2;
+                    break;
+                case "Angst":
+                    moodItem.ImageID = 3;
+                    break;
+                case "Freude":
+                    moodItem.ImageID = 4;
+                    break;
+                case "Trauer":
+                    moodItem.ImageID = 5;
+                    break;
+                case "Überraschung":
+                    moodItem.ImageID = 6;
+                    break;
+                default:
+                    moodItem.ImageID = 3;
+                    break;
+            }
+
+            return moodItem.ImageID;
         }
 
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
@@ -193,7 +236,7 @@ namespace Autinaut.Views
 
         private async void ScrollToEnd()
         {
-            await scrollView.ScrollToAsync(buttons, ScrollToPosition.End, true);
+            await scrollView.ScrollToAsync(buttons, ScrollToPosition.Start, true);
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
@@ -228,19 +271,18 @@ namespace Autinaut.Views
 
         private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            double value = args.NewValue;
             MoodItem moodItem = (MoodItem)BindingContext;
-            moodItem.PositiveAffectBalance = value;
-            positiveLabel.Text = string.Format("Die Affektbilanz liegt bei {0}.", value);
+            moodItem.PositiveAffectBalance = (int)Math.Round(args.NewValue);
+            positiveLabel.Text = string.Format("Die Affektbilanz liegt bei {0} %.", moodItem.PositiveAffectBalance);
 
             ScrollToEnd();
         }
+
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            double value = args.NewValue;
             MoodItem moodItem = (MoodItem)BindingContext;
-            moodItem.NegativeAffectBalance = value;
-            negativeLabel.Text = string.Format("Die Affektbilanz liegt bei {0}.", value);
+            moodItem.NegativeAffectBalance = (int)Math.Round(args.NewValue);
+            negativeLabel.Text = string.Format("Die Affektbilanz liegt bei {0} %.", moodItem.NegativeAffectBalance);
         }
     }
 }

@@ -1,17 +1,28 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
-             xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-             x:Class="Autinaut.Views.MoodItemPage"
-             Title="Mein Gefühl"
-             BackgroundColor="Gray">
+<ContentPage
+    x:Class="Autinaut.Views.MoodItemPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:autinaut="clr-namespace:Autinaut"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:Autinaut.Models"
+    Title="Mein Gefühl"
+    BackgroundColor="White">
 
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IconOverride="arrow_back_filled.png" />
+    </Shell.BackButtonBehavior>
+
+    <ContentPage.BindingContext>
+        <local:MoodItem />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
-        <ScrollView x:Name="scrollView"
-                    VerticalScrollBarVisibility="Always"
-                    Margin="0,0,0,20">
+        <ScrollView
+            x:Name="scrollView"
+            Margin="0,0,0,0"
+            VerticalScrollBarVisibility="Always">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -20,120 +31,144 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <StackLayout Grid.Row="0">
-                    <Label x:Name="labelSituation"
-                           Text="Situation"
-                           TextColor="GhostWhite"
-                           FontSize="Medium"
-                           Margin="10,20,0,0" />
-                    <Frame x:Name="editorFrame"
-                           BackgroundColor="GhostWhite"
-                           Margin="20,0,20,20"
-                           Padding="10"
-                           CornerRadius="20">
-                        <inputLayout:SfTextInputLayout Hint="Beschreibe die Situation"
-                                               ContainerType="Outlined"                                    OutlineCornerRadius="10"
-                                               FocusedColor="#089F39"
-                                               UnfocusedColor="#689F39">
-                            <Editor x:Name="moodNoteEditor"
-                                    Text="{Binding MoodSituation}"
-                                    TextColor="Black"
-                                    MaxLength="400"
-                                    AutoSize="TextChanges"
-                                    Keyboard="Text"
-                                    Completed="EditorUnfocused" />
+                    <Label
+                        x:Name="labelSituation"
+                        Margin="10,20,0,0"
+                        FontSize="Medium"
+                        Text="Situation"
+                        TextColor="Black" />
+                    <Frame
+                        x:Name="editorFrame"
+                        Margin="20,0,20,20"
+                        Padding="20,20,20,10"
+                        BackgroundColor="#cbdadf"
+                        BorderColor="#cbdadf"
+                        CornerRadius="20">
+                        <inputLayout:SfTextInputLayout
+                            ContainerBackgroundColor="#cbdadf"
+                            FocusedColor="#562b28"
+                            FocusedStrokeWidth="0"
+                            Hint="Beschreibe die Situation"
+                            UnfocusedColor="Black"
+                            UnfocusedStrokeWidth="1">
+                            <Editor
+                                x:Name="moodNoteEditor"
+                                AutoSize="TextChanges"
+                                BackgroundColor="#cbdadf"
+                                Completed="EditorUnfocused"
+                                Keyboard="Text"
+                                MaxLength="400"
+                                Text="{Binding MoodSituation}"
+                                TextColor="Black" />
                         </inputLayout:SfTextInputLayout>
                     </Frame>
                 </StackLayout>
                 <StackLayout Grid.Row="1">
-                    <Label Text="Gefühl"
-                           TextColor="GhostWhite"
-                           FontSize="Medium"
-                           Margin="10,0,0,0" />
-                    <carousel:SfCarousel x:Name="moodsCarouselView"
-                                         HeightRequest="200"
-                                         ItemHeight="200"
-                                         ItemWidth="100"
-                                         SelectionChanged="Carousel_SelectionChanged"
-                                         SelectedIndex="3"
-                                         Offset="30"
-                                         RotationAngle="60">
-                    </carousel:SfCarousel>
+                    <Label
+                        Margin="10,0,0,0"
+                        FontSize="Medium"
+                        Text="Gefühl"
+                        TextColor="Black" />
+                    <carousel:SfCarousel
+                        x:Name="moodsCarouselView"
+                        HeightRequest="200"
+                        ItemHeight="200"
+                        ItemWidth="100"
+                        RotationAngle="60"
+                        SelectedIndex="{Binding ImageID, Mode=TwoWay}"
+                        SelectionChanged="Carousel_SelectionChanged"
+                        Offset="30" />
                 </StackLayout>
                 <StackLayout Grid.Row="2">
-                    <Label Text="Positive Affektbilanz"
-                           TextColor="GhostWhite"
-                           FontSize="Medium"
-                           Margin="10,-40,0,0" />
-                    <Frame BackgroundColor="GhostWhite"
-                           Margin="20,0,20,0"
-                           Padding="10"
-                           CornerRadius="10">
-                        <Slider Maximum="100"
-                                MinimumTrackColor="YellowGreen"
-                                ThumbColor="YellowGreen"
-                                Value="{Binding PositiveAffectBalance}"
-                                ValueChanged="OnPositiveSliderValueChanged" />
+                    <Label
+                        Margin="10,-40,0,0"
+                        FontSize="Medium"
+                        Text="Positive Affektbilanz"
+                        TextColor="Black" />
+                    <Frame
+                        Margin="20,0,20,0"
+                        Padding="10"
+                        BackgroundColor="#cbdadf"
+                        CornerRadius="10">
+                        <Slider
+                            Maximum="100"
+                            MinimumTrackColor="Yellow"
+                            ThumbColor="Yellow"
+                            ValueChanged="OnPositiveSliderValueChanged"
+                            Value="{Binding PositiveAffectBalance}" />
                     </Frame>
-                    <Label x:Name="positiveLabel"
-                           AutomationProperties.Name="Positive Affektbilanz"
-                           Text="Die Affektbilanz liegt bei 0."
-                           TextColor="GhostWhite"
-                           HorizontalOptions="Center"
-                           VerticalOptions="CenterAndExpand" />
-                    <Label Text="Negative Affektbilanz"
-                           TextColor="GhostWhite"
-                           FontSize="Medium"
-                           Margin="10,20,0,0" />
-                    <Frame BackgroundColor="GhostWhite"
-                           Margin="20,0,20,0"
-                           Padding="10"
-                           CornerRadius="10">
-                        <Slider Maximum="100"
-                                MinimumTrackColor="Red"
-                                ThumbColor="Red"
-                                Value="{Binding NegativeAffectBalance}"
-                                ValueChanged="OnNegativeSliderValueChanged" />
+                    <Label
+                        x:Name="positiveLabel"
+                        AutomationProperties.Name="Positive Affektbilanz"
+                        HorizontalOptions="Center"
+                        Text="Die Affektbilanz liegt bei 0 %."
+                        TextColor="Black"
+                        VerticalOptions="CenterAndExpand" />
+                    <Label
+                        Margin="10,20,0,0"
+                        FontSize="Medium"
+                        Text="Negative Affektbilanz"
+                        TextColor="Black" />
+                    <Frame
+                        Margin="20,0,20,0"
+                        Padding="10"
+                        BackgroundColor="#cbdadf"
+                        CornerRadius="10">
+                        <Slider
+                            Maximum="100"
+                            MinimumTrackColor="Blue"
+                            ThumbColor="Blue"
+                            ValueChanged="OnNegativeSliderValueChanged"
+                            Value="{Binding NegativeAffectBalance}" />
                     </Frame>
-                    <Label x:Name="negativeLabel"
-                           AutomationProperties.Name="Negative Affektbilanz"
-                           Text="Die Affektbilanz liegt bei 0."
-                           TextColor="GhostWhite"
-                           HorizontalOptions="Center"
-                           VerticalOptions="CenterAndExpand" />
+                    <Label
+                        x:Name="negativeLabel"
+                        AutomationProperties.Name="Negative Affektbilanz"
+                        HorizontalOptions="Center"
+                        Text="Die Affektbilanz liegt bei 0 %."
+                        TextColor="Black"
+                        VerticalOptions="CenterAndExpand" />
                 </StackLayout>
-                <StackLayout x:Name="buttons"
-                             Orientation="Horizontal"
-                             VerticalOptions="CenterAndExpand"
-                             HorizontalOptions="CenterAndExpand"
-                             Grid.Row="3"
-                             Margin="30">
-                    <buttons:SfButton x:Name="SfButtonSave"
-                                      AutomationProperties.Name="Speichern"
-                                      Text="Speichern"
-                                      WidthRequest="100"
-                                      HeightRequest="48"
-                                      MinimumHeightRequest="48"
-                                      CornerRadius="20"
-                                      IsCheckable="True"
-                                      Clicked="OnSaveClicked" />
-                    <buttons:SfButton x:Name="SfButtonDelete"
-                                      AutomationProperties.Name="Löschen"
-                                      Text="Löschen"
-                                      WidthRequest="100"
-                                      HeightRequest="48"
-                                      MinimumHeightRequest="48"
-                                      CornerRadius="20"
-                                      IsCheckable="True"
-                                      Clicked="OnDeleteClicked" />
-                    <buttons:SfButton x:Name="SfButtonCancel"
-                                      AutomationProperties.Name="Abbrechen"
-                                      Text="Abbrechen"
-                                      WidthRequest="100"
-                                      HeightRequest="48"
-                                      MinimumHeightRequest="48"
-                                      CornerRadius="20"
-                                      IsCheckable="True"
-                                      Clicked="OnCancelClicked" />
+                <StackLayout
+                    x:Name="buttons"
+                    Grid.Row="3"
+                    Margin="0,20,0,20"
+                    HorizontalOptions="CenterAndExpand"
+                    Orientation="Horizontal"
+                    VerticalOptions="CenterAndExpand">
+                    <buttons:SfButton
+                        x:Name="SfButtonSave"
+                        AutomationProperties.Name="Speichern"
+                        BackgroundColor="#40614d"
+                        Clicked="OnSaveClicked"
+                        CornerRadius="20"
+                        HeightRequest="48"
+                        IsCheckable="True"
+                        MinimumHeightRequest="48"
+                        Text="Speichern"
+                        WidthRequest="100" />
+                    <buttons:SfButton
+                        x:Name="SfButtonDelete"
+                        AutomationProperties.Name="Löschen"
+                        BackgroundColor="#40614d"
+                        Clicked="OnDeleteClicked"
+                        CornerRadius="20"
+                        HeightRequest="48"
+                        IsCheckable="True"
+                        MinimumHeightRequest="48"
+                        Text="Löschen"
+                        WidthRequest="100" />
+                    <buttons:SfButton
+                        x:Name="SfButtonCancel"
+                        AutomationProperties.Name="Abbrechen"
+                        BackgroundColor="#40614d"
+                        Clicked="OnCancelClicked"
+                        CornerRadius="20"
+                        HeightRequest="48"
+                        IsCheckable="True"
+                        MinimumHeightRequest="48"
+                        Text="Abbrechen"
+                        WidthRequest="100" />
                 </StackLayout>
             </Grid>
         </ScrollView>
