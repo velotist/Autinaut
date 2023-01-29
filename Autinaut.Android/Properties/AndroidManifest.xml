@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="5" android:versionName="1.4.0" package="com.ITsmus.Autinaut" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="6" android:versionName="1.5.0" package="com.ITsmus.Autinaut" android:installLocation="auto">
     <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="33" />
     <application android:label="Autinaut" android:theme="@style/MainTheme" android:icon="@drawable/ic_launcher"></application>
     <queries>
