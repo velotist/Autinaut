@@ -65,18 +65,20 @@
                 </StackLayout>
                 <StackLayout Grid.Row="1">
                     <Label
-                        Margin="10,0,0,0"
+                        Margin="10,0,0,-20"
                         FontSize="Medium"
                         Text="Gefühl"
                         TextColor="Black" />
                     <carousel:SfCarousel
                         x:Name="moodsCarouselView"
+                        Margin="20"
                         HeightRequest="200"
                         ItemHeight="200"
-                        ItemWidth="100"
+                        ItemWidth="150"
                         RotationAngle="60"
                         SelectedIndex="{Binding ImageID, Mode=TwoWay}"
                         SelectionChanged="Carousel_SelectionChanged"
+                        WidthRequest="200"
                         Offset="30" />
                 </StackLayout>
                 <StackLayout Grid.Row="2">
