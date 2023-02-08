@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autinaut.Android", "Autinau
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autinaut.iOS", "Autinaut.iOS\Autinaut.iOS.csproj", "{6D4368E7-F094-424A-9928-22CAF9E7D7F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autinaut", "Autinaut\Autinaut.csproj", "{3AFCD346-8C5A-4A8C-B3C3-25F9E273BAC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autinaut", "Autinaut\Autinaut.csproj", "{3AFCD346-8C5A-4A8C-B3C3-25F9E273BAC0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
