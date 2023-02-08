@@ -7,9 +7,9 @@ using Xamarin.Forms.Xaml;
 namespace Autinaut.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MoodItemsPage : ContentPage
+    public partial class EmotionItemsPage : ContentPage
     {
-        public MoodItemsPage()
+        public EmotionItemsPage()
         {
             InitializeComponent();
         }
@@ -17,9 +17,10 @@ namespace Autinaut.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            MoodItemDatabase database = await MoodItemDatabase.Instance;
-            myListView.ItemsSource = await database.GetItemsAsync();
-            System.Collections.Generic.List<MoodItem> items = await database.GetItemsAsync();
+
+            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            System.Collections.Generic.List<EmotionItemViewModel> items = await database.GetItemsAsync();
+            myListView.ItemsSource = items;
             if (items.Count == 0)
             {
                 Label hintLabel = new Label
@@ -28,8 +29,8 @@ namespace Autinaut.Views
                     TextColor = Color.Black,
                     FontSize = 22,
                     Margin = 40,
-                    HorizontalOptions = LayoutOptions.Center,
-                    VerticalOptions = LayoutOptions.Center
+                    HorizontalOptions = LayoutOptions.Fill,
+                    VerticalOptions = LayoutOptions.Fill
                 };
 
                 Content = hintLabel;
@@ -47,17 +48,17 @@ namespace Autinaut.Views
                 return;
             }
 
-            await Navigation.PushAsync(new MoodItemPage
+            await Navigation.PushAsync(new EmotionItemPage
             {
-                BindingContext = e.Item as MoodItem
+                BindingContext = e.Item as EmotionItemViewModel
             });
         }
 
         private async void OnItemAdded(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MoodItemPage
+            await Navigation.PushAsync(new EmotionItemPage
             {
-                BindingContext = new MoodItem()
+                BindingContext = new EmotionItemViewModel()
             });
         }
     }

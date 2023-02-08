@@ -9,22 +9,26 @@
     Title="Mein Erfolg">
 
     <Shell.BackButtonBehavior>
-        <BackButtonBehavior IconOverride="arrow_back_filled.png" AutomationProperties.HelpText="Zurück Button" AutomationProperties.Name="Zurück" />
+        <BackButtonBehavior
+            AutomationProperties.HelpText="Zurück Button"
+            AutomationProperties.Name="Zurück"
+            IconOverride="arrow_back_filled.png" />
     </Shell.BackButtonBehavior>
 
     <ContentPage.BindingContext>
-        <local:SuccessItem />
+        <local:SuccessItemViewModel />
     </ContentPage.BindingContext>
 
     <ScrollView
         x:Name="scrollView"
         Margin="0,20,0,20"
         VerticalScrollBarVisibility="Always">
-        <StackLayout Margin="20,0,20,20" VerticalOptions="CenterAndExpand">
+        <StackLayout VerticalOptions="CenterAndExpand">
             <Frame
-                Margin="10,0,10,0"
-                Padding="10"
+                Margin="20,0,20,20"
+                Padding="20,20,20,10"
                 BackgroundColor="#cbdadf"
+                BorderColor="#cbdadf"
                 CornerRadius="20">
                 <inputLayout:SfTextInputLayout
                     ContainerBackgroundColor="#cbdadf"
@@ -35,7 +39,6 @@
                     UnfocusedColor="Black"
                     UnfocusedStrokeWidth="1">
                     <Editor
-                        x:Name="editorSuccessNote"
                         AutoSize="TextChanges"
                         Completed="EditorUnfocused"
                         Keyboard="Text"
@@ -48,7 +51,8 @@
                 x:Name="buttons"
                 Margin="20,20,20,0"
                 HorizontalOptions="CenterAndExpand"
-                Orientation="Horizontal">
+                Orientation="Horizontal"
+                VerticalOptions="CenterAndExpand">
                 <buttons:SfButton
                     x:Name="SfButtonSave"
                     AutomationProperties.Name="Speichern"

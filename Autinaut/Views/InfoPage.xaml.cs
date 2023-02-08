@@ -8,23 +8,19 @@ namespace Autinaut.Views
 {
     public partial class InfoPage : ContentPage
     {
-        private readonly Uri SpiHome = new Uri("https://autinaut.net");
         private readonly string cancelDisplayAlert = "OK";
+        private readonly string feedbackMailAddress = "marcusgreiner@protonmail.com";
+        private readonly string subject = "Feedback On Autinaut";
         public InfoPage()
         {
             InitializeComponent();
         }
 
-        private async void GoToWebsite_Clicked(object sender, EventArgs e)
-        {
-            await OpenBrowser(SpiHome);
-        }
-
         private async void OnFeedbackClicked(object sender, EventArgs e)
         {
-            await SendEmail("Feedback On Autinaut", "", new List<string>
+            await SendEmail(subject, "", new List<string>
             {
-                "marcusgreiner@protonmail.com"
+                feedbackMailAddress
             });
         }
 
@@ -48,18 +44,6 @@ namespace Autinaut.Views
             catch (Exception ex)
             {
                 await DisplayAlert("Exception", ex.ToString(), cancelDisplayAlert);
-            }
-        }
-
-        private async Task OpenBrowser(Uri uri)
-        {
-            try
-            {
-                await Browser.OpenAsync(uri, BrowserLaunchMode.SystemPreferred);
-            }
-            catch (Exception ex)
-            {
-                await DisplayAlert("Error", ex.ToString(), "OK");
             }
         }
     }

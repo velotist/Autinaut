@@ -17,9 +17,10 @@ namespace Autinaut.Views
         protected override async void OnAppearing()
         {
             base.OnAppearing();
+
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
-            myListView.ItemsSource = await database.GetItemsAsync();
-            System.Collections.Generic.List<SuccessItem> items = await database.GetItemsAsync();
+            System.Collections.Generic.List<SuccessItemViewModel> items = await database.GetItemsAsync();
+            myListView.ItemsSource = items;
             if (items.Count == 0)
             {
                 Label hintLabel = new Label
@@ -49,7 +50,7 @@ namespace Autinaut.Views
 
             await Navigation.PushAsync(new SuccessItemPage
             {
-                BindingContext = e.Item as SuccessItem
+                BindingContext = e.Item as SuccessItemViewModel
             });
         }
 
@@ -57,7 +58,7 @@ namespace Autinaut.Views
         {
             await Navigation.PushAsync(new SuccessItemPage
             {
-                BindingContext = new SuccessItem()
+                BindingContext = new SuccessItemViewModel()
             });
         }
     }

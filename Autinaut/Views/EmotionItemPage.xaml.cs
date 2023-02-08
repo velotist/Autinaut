@@ -7,12 +7,27 @@ using Xamarin.Forms;
 
 namespace Autinaut.Views
 {
-    public partial class MoodItemPage : ContentPage
+    public partial class EmotionItemPage : ContentPage
     {
-        public MoodItemPage()
+        private readonly string affectBilanceText = "Die Affektbilanz liegt bei {0} %.";
+        public ObservableCollection<SfCarouselItem> CarouselItems { get; set; }
+        public EmotionItemPage()
         {
             InitializeComponent();
-            ObservableCollection<SfCarouselItem> carouselItems = new ObservableCollection<SfCarouselItem>
+            AddCarouselItems();
+            EmotionsCarouselView.ItemsSource = CarouselItems;
+            EmotionsCarouselView.SelectedIndex = GetSelectedEmotion();
+            EmotionsCarouselView.SelectionChanged += Carousel_SelectionChanged;
+        }
+
+        private async void EditorUnfocused(object sender, EventArgs e)
+        {
+            await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
+        }
+
+        private void AddCarouselItems()
+        {
+            CarouselItems = new ObservableCollection<SfCarouselItem>
             {
                 new SfCarouselItem()
                 {
@@ -149,87 +164,79 @@ namespace Autinaut.Views
                     }
                 },
             };
-            moodsCarouselView.ItemsSource = carouselItems;
-            moodsCarouselView.SelectedIndex = GetSelectedMood();
-            moodsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
 
-        private async void EditorUnfocused(object sender, EventArgs e)
+        private int GetSelectedEmotion()
         {
-            await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
-        }
+            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
 
-        private int GetSelectedMood()
-        {
-            MoodItem moodItem = (MoodItem)BindingContext;
-
-            switch (moodItem.Mood)
+            switch (EmotionItem.Emotion)
             {
                 case "Wut":
-                    moodItem.ImageID = 0;
+                    EmotionItem.ImageID = 0;
                     break;
                 case "Verachtung":
-                    moodItem.ImageID = 1;
+                    EmotionItem.ImageID = 1;
                     break;
                 case "Ekel":
-                    moodItem.ImageID = 2;
+                    EmotionItem.ImageID = 2;
                     break;
                 case "Angst":
-                    moodItem.ImageID = 3;
+                    EmotionItem.ImageID = 3;
                     break;
                 case "Freude":
-                    moodItem.ImageID = 4;
+                    EmotionItem.ImageID = 4;
                     break;
                 case "Trauer":
-                    moodItem.ImageID = 5;
+                    EmotionItem.ImageID = 5;
                     break;
                 case "Überraschung":
-                    moodItem.ImageID = 6;
+                    EmotionItem.ImageID = 6;
                     break;
                 default:
-                    moodItem.ImageID = 3;
+                    EmotionItem.ImageID = 3;
                     break;
             }
 
-            return moodItem.ImageID;
+            return EmotionItem.ImageID;
         }
 
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
         {
-            MoodItem moodItem = (MoodItem)BindingContext;
+            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
             switch (e.SelectedIndex)
             {
                 case 0:
-                    moodItem.MoodIcon = "anger.png";
-                    moodItem.Mood = "Wut";
+                    EmotionItem.EmotionIcon = "anger.png";
+                    EmotionItem.Emotion = "Wut";
                     break;
                 case 1:
-                    moodItem.MoodIcon = "contempt.png";
-                    moodItem.Mood = "Verachtung";
+                    EmotionItem.EmotionIcon = "contempt.png";
+                    EmotionItem.Emotion = "Verachtung";
                     break;
                 case 2:
-                    moodItem.MoodIcon = "disgust.png";
-                    moodItem.Mood = "Ekel";
+                    EmotionItem.EmotionIcon = "disgust.png";
+                    EmotionItem.Emotion = "Ekel";
                     break;
                 case 3:
-                    moodItem.MoodIcon = "fear.png";
-                    moodItem.Mood = "Angst";
+                    EmotionItem.EmotionIcon = "fear.png";
+                    EmotionItem.Emotion = "Angst";
                     break;
                 case 4:
-                    moodItem.MoodIcon = "joy.png";
-                    moodItem.Mood = "Freude";
+                    EmotionItem.EmotionIcon = "joy.png";
+                    EmotionItem.Emotion = "Freude";
                     break;
                 case 5:
-                    moodItem.MoodIcon = "sadness.png";
-                    moodItem.Mood = "Trauer";
+                    EmotionItem.EmotionIcon = "sadness.png";
+                    EmotionItem.Emotion = "Trauer";
                     break;
                 case 6:
-                    moodItem.MoodIcon = "surprise.png";
-                    moodItem.Mood = "Überraschung";
+                    EmotionItem.EmotionIcon = "surprise.png";
+                    EmotionItem.Emotion = "Überraschung";
                     break;
                 default:
-                    moodItem.MoodIcon = "anger.png";
-                    moodItem.Mood = "Wut";
+                    EmotionItem.EmotionIcon = "anger.png";
+                    EmotionItem.Emotion = "Wut";
                     break;
             }
         }
@@ -241,26 +248,29 @@ namespace Autinaut.Views
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            MoodItem moodItem = (MoodItem)BindingContext;
-            if (string.IsNullOrEmpty(moodItem.MoodSituation))
+            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            if (string.IsNullOrEmpty(EmotionItem.EmotionSituation))
             {
                 await DisplayAlert("Meldung", "Bitte trage eine Situation ein.", "OK");
                 SfButtonSave.IsChecked = false;
+
                 await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);
 
                 return;
             }
 
-            MoodItemDatabase database = await MoodItemDatabase.Instance;
-            _ = await database.SaveItemAsync(moodItem);
+            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            _ = await database.SaveItemAsync(EmotionItem);
+
             await Navigation.PopToRootAsync();
         }
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            MoodItem moodItem = (MoodItem)BindingContext;
-            MoodItemDatabase database = await MoodItemDatabase.Instance;
-            _ = await database.DeleteItemAsync(moodItem);
+            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            _ = await database.DeleteItemAsync(EmotionItem);
+
             await Navigation.PopToRootAsync();
         }
 
@@ -271,18 +281,18 @@ namespace Autinaut.Views
 
         private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            MoodItem moodItem = (MoodItem)BindingContext;
-            moodItem.PositiveAffectBalance = (int)Math.Round(args.NewValue);
-            positiveLabel.Text = string.Format("Die Affektbilanz liegt bei {0} %.", moodItem.PositiveAffectBalance);
+            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            EmotionItem.PositiveAffectBalance = (int)Math.Round(args.NewValue);
+            positiveLabel.Text = string.Format(affectBilanceText, EmotionItem.PositiveAffectBalance);
 
             ScrollToEnd();
         }
 
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            MoodItem moodItem = (MoodItem)BindingContext;
-            moodItem.NegativeAffectBalance = (int)Math.Round(args.NewValue);
-            negativeLabel.Text = string.Format("Die Affektbilanz liegt bei {0} %.", moodItem.NegativeAffectBalance);
+            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            EmotionItem.NegativeAffectBalance = (int)Math.Round(args.NewValue);
+            negativeLabel.Text = string.Format(affectBilanceText, EmotionItem.NegativeAffectBalance);
         }
     }
 }

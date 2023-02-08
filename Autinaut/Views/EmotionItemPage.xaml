@@ -1,27 +1,29 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage
-    x:Class="Autinaut.Views.MoodItemPage"
+    x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:autinaut="clr-namespace:Autinaut"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:Autinaut.Models"
-    Title="Mein Gefühl"
-    BackgroundColor="White">
+    Title="Mein Gefühl">
 
     <Shell.BackButtonBehavior>
-        <BackButtonBehavior IconOverride="arrow_back_filled.png" />
+        <BackButtonBehavior
+            AutomationProperties.HelpText="Zurück Button"
+            AutomationProperties.Name="Zurück"
+            IconOverride="arrow_back_filled.png" />
     </Shell.BackButtonBehavior>
 
     <ContentPage.BindingContext>
-        <local:MoodItem />
+        <local:EmotionItemViewModel />
     </ContentPage.BindingContext>
+
     <ContentPage.Content>
         <ScrollView
             x:Name="scrollView"
-            Margin="0,0,0,0"
+            Margin="0,20,0,20"
             VerticalScrollBarVisibility="Always">
             <Grid>
                 <Grid.RowDefinitions>
@@ -33,12 +35,11 @@
                 <StackLayout Grid.Row="0">
                     <Label
                         x:Name="labelSituation"
-                        Margin="10,20,0,0"
+                        Margin="10,0,0,0"
                         FontSize="Medium"
                         Text="Situation"
                         TextColor="Black" />
                     <Frame
-                        x:Name="editorFrame"
                         Margin="20,0,20,20"
                         Padding="20,20,20,10"
                         BackgroundColor="#cbdadf"
@@ -52,13 +53,12 @@
                             UnfocusedColor="Black"
                             UnfocusedStrokeWidth="1">
                             <Editor
-                                x:Name="moodNoteEditor"
                                 AutoSize="TextChanges"
                                 BackgroundColor="#cbdadf"
                                 Completed="EditorUnfocused"
                                 Keyboard="Text"
                                 MaxLength="400"
-                                Text="{Binding MoodSituation}"
+                                Text="{Binding EmotionSituation}"
                                 TextColor="Black" />
                         </inputLayout:SfTextInputLayout>
                     </Frame>
@@ -70,7 +70,7 @@
                         Text="Gefühl"
                         TextColor="Black" />
                     <carousel:SfCarousel
-                        x:Name="moodsCarouselView"
+                        x:Name="EmotionsCarouselView"
                         Margin="20"
                         HeightRequest="200"
                         ItemHeight="200"
@@ -134,7 +134,7 @@
                 <StackLayout
                     x:Name="buttons"
                     Grid.Row="3"
-                    Margin="0,20,0,20"
+                    Margin="20,20,20,0"
                     HorizontalOptions="CenterAndExpand"
                     Orientation="Horizontal"
                     VerticalOptions="CenterAndExpand">

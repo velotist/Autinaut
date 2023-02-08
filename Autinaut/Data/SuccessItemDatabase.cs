@@ -12,7 +12,7 @@ namespace Autinaut.Data
         public static readonly AsyncLazy<SuccessItemDatabase> Instance = new AsyncLazy<SuccessItemDatabase>(async () =>
         {
             SuccessItemDatabase instance = new SuccessItemDatabase();
-            CreateTableResult result = await Database.CreateTableAsync<SuccessItem>();
+            CreateTableResult result = await Database.CreateTableAsync<SuccessItemViewModel>();
 
             return instance;
         });
@@ -22,28 +22,28 @@ namespace Autinaut.Data
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
         }
 
-        public Task<List<SuccessItem>> GetItemsAsync()
+        public Task<List<SuccessItemViewModel>> GetItemsAsync()
         {
-            Task<List<SuccessItem>> successes = Database.Table<SuccessItem>()
+            Task<List<SuccessItemViewModel>> successes = Database.Table<SuccessItemViewModel>()
                 .OrderByDescending(p => p.Date)
                 .ToListAsync();
 
             return successes;
         }
 
-        public Task<SuccessItem> GetItemAsync(int id)
+        public Task<SuccessItemViewModel> GetItemAsync(int id)
         {
-            return Database.Table<SuccessItem>()
+            return Database.Table<SuccessItemViewModel>()
                 .Where(i => i.ID == id)
                 .FirstOrDefaultAsync();
         }
 
-        public Task<int> SaveItemAsync(SuccessItem item)
+        public Task<int> SaveItemAsync(SuccessItemViewModel item)
         {
             return item.ID != 0 ? Database.UpdateAsync(item) : Database.InsertAsync(item);
         }
 
-        public Task<int> DeleteItemAsync(SuccessItem item)
+        public Task<int> DeleteItemAsync(SuccessItemViewModel item)
         {
             return Database.DeleteAsync(item);
         }

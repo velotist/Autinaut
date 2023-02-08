@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="Autinaut.Views.MoodItemsPage"
+    x:Class="Autinaut.Views.EmotionItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     Title="Meine Gefühle">
@@ -33,7 +33,7 @@
                                     <Label
                                         Margin="0,0,0,20"
                                         FontSize="Large"
-                                        Text="{Binding MoodSituation}"
+                                        Text="{Binding EmotionSituation}"
                                         TextColor="Black" />
                                     <StackLayout
                                         HorizontalOptions="StartAndExpand"
@@ -41,12 +41,12 @@
                                         VerticalOptions="Center">
                                         <Image
                                             HeightRequest="100"
-                                            Source="{Binding MoodIcon}"
+                                            Source="{Binding EmotionIcon}"
                                             WidthRequest="100" />
                                         <Label
                                             Margin="20,30,0,0"
                                             FontSize="Large"
-                                            Text="{Binding Mood}"
+                                            Text="{Binding Emotion}"
                                             TextColor="Black" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">

@@ -3,7 +3,7 @@ using System;
 
 namespace Autinaut.Models
 {
-    public class SuccessItem
+    public class SuccessItemViewModel
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }

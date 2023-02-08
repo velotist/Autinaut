@@ -21,11 +21,12 @@ namespace Autinaut.Views
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            SuccessItem successItem = (SuccessItem)BindingContext;
+            SuccessItemViewModel successItem = (SuccessItemViewModel)BindingContext;
             if (string.IsNullOrEmpty(successItem.SuccessNote))
             {
                 _ = DisplayAlert("Meldung", "Bitte trage Deinen Erfolg ein.", "OK");
                 SfButtonSave.IsChecked = false;
+
                 await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);
 
                 return;
@@ -33,14 +34,16 @@ namespace Autinaut.Views
 
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             _ = await database.SaveItemAsync(successItem);
+
             await Navigation.PopToRootAsync();
         }
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            SuccessItem successItem = (SuccessItem)BindingContext;
+            SuccessItemViewModel successItem = (SuccessItemViewModel)BindingContext;
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             _ = await database.DeleteItemAsync(successItem);
+
             await Navigation.PopToRootAsync();
         }
 

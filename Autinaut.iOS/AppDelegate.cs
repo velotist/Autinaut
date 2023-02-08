@@ -19,6 +19,7 @@ namespace Autinaut.iOS
             Xamarin.Forms.Forms.Init();
             Syncfusion.SfCarousel.XForms.iOS.SfCarouselRenderer.Init();
             SfTextInputLayoutRenderer.Init();
+
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
