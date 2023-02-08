@@ -29,8 +29,8 @@ namespace Autinaut.Views
                     TextColor = Color.Black,
                     FontSize = 22,
                     Margin = 40,
-                    HorizontalOptions = LayoutOptions.Center,
-                    VerticalOptions = LayoutOptions.Center
+                    HorizontalOptions = LayoutOptions.Fill,
+                    VerticalOptions = LayoutOptions.Fill
                 };
 
                 Content = hintLabel;
