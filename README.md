@@ -4,8 +4,8 @@ An app for people on the autism spectrum. It is used to record various concerns.
 In the future, a visualization of the collected data is planned.
 
 ## Features
-* Protocol your moods at a specific time and date
-* Protocol your daily successes
+* Protocol your emotions at a specific date, time and situation
+* Protocol your successes
 
 <div style='background: #eea;
   padding-top: 1px;
