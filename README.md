@@ -21,6 +21,6 @@ In the future, a visualization of the collected data is planned.
 
 ## License
 
-See the [license file](LICENSE).
+See the [license file](https://github.com/velotist/Autinaut/blob/d442fe4e1311af054db7b1baea5af079ef1d8ca2/LICENSE.txt).
 
 If you have any questions, please create an issue.
