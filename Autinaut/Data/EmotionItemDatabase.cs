@@ -24,11 +24,9 @@ namespace Autinaut.Data
 
         public async Task<List<EmotionItemViewModel>> GetItemsAsync()
         {
-            List<EmotionItemViewModel> Emotions = await Database.Table<EmotionItemViewModel>()
+            return await Database.Table<EmotionItemViewModel>()
                 .OrderByDescending(p => p.Date)
                 .ToListAsync();
-
-            return Emotions;
         }
 
         public Task<EmotionItemViewModel> GetItemAsync(int id)

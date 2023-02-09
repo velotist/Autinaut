@@ -3,10 +3,10 @@
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
-    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:Autinaut.Models"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     Title="Mein Gefühl">
 
     <Shell.BackButtonBehavior>
@@ -36,7 +36,7 @@
                     <Label
                         x:Name="labelSituation"
                         Margin="10,0,0,0"
-                        FontSize="Medium"
+                        FontSize="Small"
                         Text="Situation"
                         TextColor="Black" />
                     <Frame
@@ -54,7 +54,6 @@
                             UnfocusedStrokeWidth="1">
                             <Editor
                                 AutoSize="TextChanges"
-                                BackgroundColor="#cbdadf"
                                 Completed="EditorUnfocused"
                                 Keyboard="Text"
                                 MaxLength="400"
@@ -66,7 +65,7 @@
                 <StackLayout Grid.Row="1">
                     <Label
                         Margin="10,0,0,-20"
-                        FontSize="Medium"
+                        FontSize="Small"
                         Text="Gefühl"
                         TextColor="Black" />
                     <carousel:SfCarousel
@@ -84,14 +83,14 @@
                 <StackLayout Grid.Row="2">
                     <Label
                         Margin="10,-40,0,0"
-                        FontSize="Medium"
+                        FontSize="Small"
                         Text="Positive Affektbilanz"
                         TextColor="Black" />
                     <Frame
                         Margin="20,0,20,0"
                         Padding="10"
                         BackgroundColor="#cbdadf"
-                        CornerRadius="10">
+                        CornerRadius="20">
                         <Slider
                             Maximum="100"
                             MinimumTrackColor="Yellow"
@@ -108,14 +107,14 @@
                         VerticalOptions="CenterAndExpand" />
                     <Label
                         Margin="10,20,0,0"
-                        FontSize="Medium"
+                        FontSize="Small"
                         Text="Negative Affektbilanz"
                         TextColor="Black" />
                     <Frame
                         Margin="20,0,20,0"
                         Padding="10"
                         BackgroundColor="#cbdadf"
-                        CornerRadius="10">
+                        CornerRadius="20">
                         <Slider
                             Maximum="100"
                             MinimumTrackColor="Blue"
@@ -175,5 +174,4 @@
             </Grid>
         </ScrollView>
     </ContentPage.Content>
-
 </ContentPage>

@@ -2,7 +2,7 @@
 
 namespace Autinaut.iOS
 {
-    public class Application
+    public static class Application
     {
         private static void Main(string[] args)
         {

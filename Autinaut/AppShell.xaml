@@ -66,5 +66,4 @@
             Shell.TabBarUnselectedColor="#465C69"
             Style="{StaticResource InfoShell}" />
     </Tab>
-
 </Shell>

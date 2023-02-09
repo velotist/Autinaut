@@ -27,7 +27,7 @@
                                 <StackLayout>
                                     <Label
                                         Margin="0,0,0,10"
-                                        FontSize="Medium"
+                                        FontSize="Small"
                                         Text="{Binding Date}"
                                         TextColor="Black" />
                                     <Label
@@ -51,7 +51,7 @@
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label
-                                            FontSize="Medium"
+                                            FontSize="Small"
                                             Text="Positive Affektbilanz"
                                             TextColor="Black"
                                             VerticalOptions="Center" />
@@ -63,7 +63,7 @@
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label
-                                            FontSize="Medium"
+                                            FontSize="Small"
                                             Text="Negative Affektbilanz"
                                             TextColor="Black"
                                             VerticalOptions="Center" />
@@ -81,5 +81,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
 </ContentPage>

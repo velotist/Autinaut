@@ -20,21 +20,20 @@
             <StackLayout Margin="10" VerticalOptions="CenterAndExpand">
                 <Label
                     Margin="20,0,20,0"
-                    FontSize="22"
-                    Text="In erster Linie für Menschen im Autismusspektrum. Im Zuge des FASTER-Programms des Universitätsklinikums Freiburg wird auch das Thema Gefühlserkennung behandelt. Unter diesem Hintergrund entstand die App."
+                    FontSize="20"
+                    Text="Die App entstand im Zuge des FASTER-Programms des Universitätsklinikums Freiburg. Sie richtet sich in erster Linie an Menschen im Autismusspektrum."
                     TextColor="Black" />
                 <Label
                     Margin="20,0,20,0"
-                    FontSize="22"
-                    Text="Mit dieser App kannst Du die sieben Grundgefühle nach Paul Ekman sowie Deine individuellen Erfolge protokollieren. In vielen Situationen entstehen Gefühle. Die Protokollierung kann Dir dabei helfen, Dich mit diesen auseinanderzusetzen und sie in der jeweiligen Situation inklusive einer Affektbilanz festzuhalten."
+                    FontSize="20"
+                    Text="In vielen Situationen entstehen Gefühle. Halte eines Deiner sieben Grundgefühle (nach Paul Ekman) in verschiedenen Situationen fest. Die Protokollierung kann Dir dabei helfen, Dich mit dem Thema Gefühlserkennung und Gefühlsbennenung auseinanderzusetzen. Zusätzlich kannst Du die Ausprägung des Gefühls mit einer sogenannten Affektbilanz verknüpfen."
                     TextColor="Black" />
                 <Label
                     Margin="20,0,20,0"
-                    FontSize="22"
-                    Text="Zudem kann es helfen sich immer wieder seine Erfolge 'vor Augen zu halten'."
+                    FontSize="20"
+                    Text="Weiterhin kann es sich als nützlich herausstellen, sich seine Erfolge niederzuschreiben. Diese kannst Du Dir dann immer 'vor Augen halten'."
                     TextColor="Black" />
             </StackLayout>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>

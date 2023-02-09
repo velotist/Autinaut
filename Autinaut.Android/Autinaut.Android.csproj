@@ -168,9 +168,6 @@
     <AndroidResource Include="Resources\drawable\ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\spicon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\drawable\add_reaction_filled.png">
       <Generator>MSBuild:UpdateGeneratedFiles</Generator>
     </AndroidResource>

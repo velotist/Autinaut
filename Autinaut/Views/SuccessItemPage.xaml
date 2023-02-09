@@ -3,9 +3,9 @@
     x:Class="Autinaut.Views.SuccessItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Autinaut.Models"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:Autinaut.Models"
     Title="Mein Erfolg">
 
     <Shell.BackButtonBehavior>
@@ -34,8 +34,7 @@
                     ContainerBackgroundColor="#cbdadf"
                     FocusedColor="#562b28"
                     FocusedStrokeWidth="0"
-                    Hint="Beschreibe die Situation"
-                    OutlineCornerRadius="10"
+                    Hint="Beschreibe Deinen Erfolg"
                     UnfocusedColor="Black"
                     UnfocusedStrokeWidth="1">
                     <Editor
@@ -89,5 +88,4 @@
             </StackLayout>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>

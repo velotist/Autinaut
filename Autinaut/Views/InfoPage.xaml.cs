@@ -11,6 +11,7 @@ namespace Autinaut.Views
         private readonly string cancelDisplayAlert = "OK";
         private readonly string feedbackMailAddress = "marcusgreiner@protonmail.com";
         private readonly string subject = "Feedback On Autinaut";
+
         public InfoPage()
         {
             InitializeComponent();

@@ -7,6 +7,7 @@ namespace Autinaut.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
+
         public string Emotion { get; set; } = "Angst";
         public string EmotionSituation { get; set; }
         public string EmotionIcon { get; set; } = "fear.png";

@@ -21,9 +21,8 @@ namespace Autinaut.Views
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             System.Collections.Generic.List<SuccessItemViewModel> items = await database.GetItemsAsync();
             myListView.ItemsSource = items;
-            if (items.Count == 0)
-            {
-                Label hintLabel = new Label
+            Content = items.Count == 0
+                ? new Label
                 {
                     Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste, um Deinen ersten Eintrag zu erstellen.",
                     TextColor = Color.Black,
@@ -31,14 +30,8 @@ namespace Autinaut.Views
                     Margin = 40,
                     HorizontalOptions = LayoutOptions.Fill,
                     VerticalOptions = LayoutOptions.Fill
-                };
-
-                Content = hintLabel;
-            }
-            else
-            {
-                Content = myListView;
-            }
+                }
+                : (View)myListView;
         }
 
         private async void OnListItemTapped(object sender, ItemTappedEventArgs e)

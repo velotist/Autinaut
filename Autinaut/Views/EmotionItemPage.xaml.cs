@@ -11,6 +11,7 @@ namespace Autinaut.Views
     {
         private readonly string affectBilanceText = "Die Affektbilanz liegt bei {0} %.";
         public ObservableCollection<SfCarouselItem> CarouselItems { get; set; }
+
         public EmotionItemPage()
         {
             InitializeComponent();
@@ -175,24 +176,31 @@ namespace Autinaut.Views
                 case "Wut":
                     EmotionItem.ImageID = 0;
                     break;
+
                 case "Verachtung":
                     EmotionItem.ImageID = 1;
                     break;
+
                 case "Ekel":
                     EmotionItem.ImageID = 2;
                     break;
+
                 case "Angst":
                     EmotionItem.ImageID = 3;
                     break;
+
                 case "Freude":
                     EmotionItem.ImageID = 4;
                     break;
+
                 case "Trauer":
                     EmotionItem.ImageID = 5;
                     break;
+
                 case "Überraschung":
                     EmotionItem.ImageID = 6;
                     break;
+
                 default:
                     EmotionItem.ImageID = 3;
                     break;
@@ -210,30 +218,37 @@ namespace Autinaut.Views
                     EmotionItem.EmotionIcon = "anger.png";
                     EmotionItem.Emotion = "Wut";
                     break;
+
                 case 1:
                     EmotionItem.EmotionIcon = "contempt.png";
                     EmotionItem.Emotion = "Verachtung";
                     break;
+
                 case 2:
                     EmotionItem.EmotionIcon = "disgust.png";
                     EmotionItem.Emotion = "Ekel";
                     break;
+
                 case 3:
                     EmotionItem.EmotionIcon = "fear.png";
                     EmotionItem.Emotion = "Angst";
                     break;
+
                 case 4:
                     EmotionItem.EmotionIcon = "joy.png";
                     EmotionItem.Emotion = "Freude";
                     break;
+
                 case 5:
                     EmotionItem.EmotionIcon = "sadness.png";
                     EmotionItem.Emotion = "Trauer";
                     break;
+
                 case 6:
                     EmotionItem.EmotionIcon = "surprise.png";
                     EmotionItem.Emotion = "Überraschung";
                     break;
+
                 default:
                     EmotionItem.EmotionIcon = "anger.png";
                     EmotionItem.Emotion = "Wut";

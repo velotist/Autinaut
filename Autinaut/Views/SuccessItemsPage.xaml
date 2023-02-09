@@ -32,7 +32,7 @@
                                 HasShadow="True">
                                 <StackLayout>
                                     <Label
-                                        FontSize="Medium"
+                                        FontSize="Small"
                                         Text="{Binding Date}"
                                         TextColor="Black"
                                         VerticalOptions="Center" />
@@ -49,5 +49,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-
 </ContentPage>
