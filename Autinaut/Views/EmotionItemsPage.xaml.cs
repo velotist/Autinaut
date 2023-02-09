@@ -27,9 +27,7 @@ namespace Autinaut.Views
                     Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste, um Deinen ersten Eintrag zu erstellen.",
                     TextColor = Color.Black,
                     FontSize = 22,
-                    Margin = 40,
-                    HorizontalOptions = LayoutOptions.Fill,
-                    VerticalOptions = LayoutOptions.Fill
+                    Margin = 40
                 }
                 : (View)myListView;
         }

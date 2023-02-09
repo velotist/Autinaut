@@ -13,6 +13,7 @@
         <ListView
             x:Name="myListView"
             Margin="10"
+            CachingStrategy="RecycleElementAndDataTemplate"
             HasUnevenRows="True"
             ItemTapped="OnListItemTapped"
             SelectionMode="None">
