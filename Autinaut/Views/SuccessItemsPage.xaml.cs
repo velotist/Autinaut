@@ -9,6 +9,8 @@ namespace Autinaut.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessItemsPage : ContentPage
     {
+        private bool _isRunning;
+
         public SuccessItemsPage()
         {
             InitializeComponent();
@@ -32,25 +34,53 @@ namespace Autinaut.Views
                 : (View)myListView;
         }
 
-        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
+        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.Item == null)
+            if (e.SelectedItem == null)
             {
                 return;
             }
 
-            await Navigation.PushAsync(new SuccessItemPage
+            if (_isRunning)
             {
-                BindingContext = e.Item as SuccessItemViewModel
-            });
+                return;
+            }
+
+            _isRunning = true;
+
+            try
+            {
+                await Navigation.PushAsync(new SuccessItemPage
+                {
+                    BindingContext = e.SelectedItem as SuccessItemViewModel
+                });
+            }
+            finally
+            {
+                _isRunning = false;
+            }
         }
 
         private async void OnItemAdded(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SuccessItemPage
+            if (_isRunning)
             {
-                BindingContext = new SuccessItemViewModel()
-            });
+                return;
+            }
+
+            _isRunning = true;
+
+            try
+            {
+                await Navigation.PushAsync(new SuccessItemPage
+                {
+                    BindingContext = new SuccessItemViewModel()
+                });
+            }
+            finally
+            {
+                _isRunning = false;
+            }
         }
     }
 }

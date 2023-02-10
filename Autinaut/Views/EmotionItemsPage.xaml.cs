@@ -9,6 +9,8 @@ namespace Autinaut.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EmotionItemsPage : ContentPage
     {
+        private bool _isRunning;
+
         public EmotionItemsPage()
         {
             InitializeComponent();
@@ -32,25 +34,53 @@ namespace Autinaut.Views
                 : (View)myListView;
         }
 
-        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
+        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.Item == null)
+            if (_isRunning)
             {
                 return;
             }
 
-            await Navigation.PushAsync(new EmotionItemPage
+            _isRunning = true;
+
+            if (e.SelectedItem == null)
             {
-                BindingContext = e.Item as EmotionItemViewModel
-            });
+                return;
+            }
+
+            try
+            {
+                await Navigation.PushAsync(new EmotionItemPage
+                {
+                    BindingContext = e.SelectedItem as EmotionItemViewModel
+                });
+            }
+            finally
+            {
+                _isRunning = false;
+            }
         }
 
         private async void OnItemAdded(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new EmotionItemPage
+            if (_isRunning)
             {
-                BindingContext = new EmotionItemViewModel()
-            });
+                return;
+            }
+
+            _isRunning = true;
+
+            try
+            {
+                await Navigation.PushAsync(new EmotionItemPage
+                {
+                    BindingContext = new EmotionItemViewModel()
+                });
+            }
+            finally
+            {
+                _isRunning = false;
+            }
         }
     }
 }

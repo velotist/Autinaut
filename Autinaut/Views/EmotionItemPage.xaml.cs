@@ -3,6 +3,7 @@ using Autinaut.Models;
 using Syncfusion.SfCarousel.XForms;
 using System;
 using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Autinaut.Views
@@ -10,6 +11,7 @@ namespace Autinaut.Views
     public partial class EmotionItemPage : ContentPage
     {
         private readonly string affectBilanceText = "Die Affektbilanz liegt bei {0} %.";
+
         public ObservableCollection<SfCarouselItem> CarouselItems { get; set; }
 
         public EmotionItemPage()
@@ -248,15 +250,10 @@ namespace Autinaut.Views
                     EmotionItem.EmotionIcon = "surprise.png";
                     EmotionItem.Emotion = "Überraschung";
                     break;
-
-                default:
-                    EmotionItem.EmotionIcon = "anger.png";
-                    EmotionItem.Emotion = "Wut";
-                    break;
             }
         }
 
-        private async void ScrollToEnd()
+        private async Task ScrollToEnd()
         {
             await scrollView.ScrollToAsync(buttons, ScrollToPosition.Start, true);
         }
@@ -300,7 +297,7 @@ namespace Autinaut.Views
             EmotionItem.PositiveAffectBalance = (int)Math.Round(args.NewValue);
             positiveLabel.Text = string.Format(affectBilanceText, EmotionItem.PositiveAffectBalance);
 
-            ScrollToEnd();
+            _ = ScrollToEnd();
         }
 
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
