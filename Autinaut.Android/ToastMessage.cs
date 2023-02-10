@@ -12,10 +12,5 @@ namespace Autinaut
         {
             Toast.MakeText(Android.App.Application.Context, message, ToastLength.Short).Show();
         }
-
-        public void LongToast(string message)
-        {
-            Toast.MakeText(Android.App.Application.Context, message, ToastLength.Long).Show();
-        }
     }
 }
