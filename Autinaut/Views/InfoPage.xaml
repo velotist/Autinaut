@@ -3,21 +3,12 @@
     x:Class="Autinaut.Views.InfoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     Title="Sei Dein Autinaut">
-
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="OnFeedbackClicked" Text="+">
-            <ToolbarItem.IconImageSource>
-                <OnPlatform x:TypeArguments="ImageSource">
-                    <On Platform="Android" Value="comment_filled.png" />
-                </OnPlatform>
-            </ToolbarItem.IconImageSource>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
 
     <ScrollView>
         <StackLayout>
-            <StackLayout Margin="10" VerticalOptions="CenterAndExpand">
+            <StackLayout Margin="20,20,20,20">
                 <Label
                     Margin="20,0,20,0"
                     FontSize="20"
@@ -34,6 +25,16 @@
                     Text="Weiterhin kann es sich als nützlich herausstellen, sich seine Erfolge niederzuschreiben. Diese kannst Du Dir dann immer 'vor Augen halten'."
                     TextColor="Black" />
             </StackLayout>
+            <buttons:SfButton
+                BackgroundColor="White"
+                Clicked="OnFeedbackClicked"
+                HorizontalOptions="Center"
+                ImageAlignment="Top"
+                ImageSource="mail.png"
+                ImageWidth="50"
+                ShowIcon="True"
+                Text="Feedback senden"
+                TextColor="Black" />
         </StackLayout>
     </ScrollView>
 </ContentPage>

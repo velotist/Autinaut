@@ -55,7 +55,7 @@
                 <buttons:SfButton
                     x:Name="SfButtonSave"
                     AutomationProperties.Name="Speichern"
-                    BackgroundColor="#40614d"
+                    BackgroundColor="#00aaff"
                     Clicked="OnSaveClicked"
                     CornerRadius="20"
                     HeightRequest="48"
@@ -66,24 +66,13 @@
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
                     AutomationProperties.Name="Löschen"
-                    BackgroundColor="#40614d"
+                    BackgroundColor="#00aaff"
                     Clicked="OnDeleteClicked"
                     CornerRadius="20"
                     HeightRequest="48"
                     IsCheckable="True"
                     MinimumHeightRequest="48"
                     Text="Löschen"
-                    WidthRequest="100" />
-                <buttons:SfButton
-                    x:Name="SfButtonCancel"
-                    AutomationProperties.Name="Abbrechen"
-                    BackgroundColor="#40614d"
-                    Clicked="OnCancelClicked"
-                    CornerRadius="20"
-                    HeightRequest="48"
-                    IsCheckable="True"
-                    MinimumHeightRequest="48"
-                    Text="Abbrechen"
                     WidthRequest="100" />
             </StackLayout>
         </StackLayout>

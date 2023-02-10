@@ -50,7 +50,7 @@ namespace Autinaut.Views
 
             try
             {
-                await Navigation.PushAsync(new SuccessItemPage
+                await Navigation.PushAsync(new SuccessItemPage(true)
                 {
                     BindingContext = e.SelectedItem as SuccessItemViewModel
                 });
@@ -72,7 +72,7 @@ namespace Autinaut.Views
 
             try
             {
-                await Navigation.PushAsync(new SuccessItemPage
+                await Navigation.PushAsync(new SuccessItemPage(false)
                 {
                     BindingContext = new SuccessItemViewModel()
                 });

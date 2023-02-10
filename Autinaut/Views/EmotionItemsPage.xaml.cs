@@ -50,7 +50,7 @@ namespace Autinaut.Views
 
             try
             {
-                await Navigation.PushAsync(new EmotionItemPage
+                await Navigation.PushAsync(new EmotionItemPage(true)
                 {
                     BindingContext = e.SelectedItem as EmotionItemViewModel
                 });
@@ -72,7 +72,7 @@ namespace Autinaut.Views
 
             try
             {
-                await Navigation.PushAsync(new EmotionItemPage
+                await Navigation.PushAsync(new EmotionItemPage(false)
                 {
                     BindingContext = new EmotionItemViewModel()
                 });

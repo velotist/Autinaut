@@ -16,19 +16,19 @@
             x:Key="EmotionShell"
             BasedOn="{StaticResource BaseStyle}"
             TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#a2b9ab" />
+            <Setter Property="Shell.BackgroundColor" Value="#a6d7ff" />
         </Style>
         <Style
             x:Key="SuccessShell"
             BasedOn="{StaticResource BaseStyle}"
             TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#ecefe8" />
+            <Setter Property="Shell.BackgroundColor" Value="#b7d7ff" />
         </Style>
         <Style
             x:Key="InfoShell"
             BasedOn="{StaticResource BaseStyle}"
             TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#a4a373" />
+            <Setter Property="Shell.BackgroundColor" Value="#c8d7ff" />
         </Style>
     </Shell.Resources>
 
@@ -38,9 +38,9 @@
         Icon="emotion.png">
         <ShellContent
             ContentTemplate="{DataTemplate views:EmotionItemsPage}"
-            Shell.TabBarBackgroundColor="#a2b9ab"
-            Shell.TabBarTitleColor="#110634"
-            Shell.TabBarUnselectedColor="#fcfcfc"
+            Shell.TabBarBackgroundColor="#a6d6ff"
+            Shell.TabBarTitleColor="Black"
+            Shell.TabBarUnselectedColor="#465C69"
             Style="{StaticResource EmotionShell}" />
     </Tab>
     <Tab
@@ -49,8 +49,8 @@
         Icon="star.png">
         <ShellContent
             ContentTemplate="{DataTemplate views:SuccessItemsPage}"
-            Shell.TabBarBackgroundColor="#ecefe8"
-            Shell.TabBarTitleColor="#0c0c0c"
+            Shell.TabBarBackgroundColor="#b7d7ff"
+            Shell.TabBarTitleColor="Black"
             Shell.TabBarUnselectedColor="#465C69"
             Style="{StaticResource SuccessShell}" />
     </Tab>
@@ -61,8 +61,8 @@
         <ShellContent
             x:Name="infoItem"
             ContentTemplate="{DataTemplate views:InfoPage}"
-            Shell.TabBarBackgroundColor="#a4a373"
-            Shell.TabBarTitleColor="#0f0104"
+            Shell.TabBarBackgroundColor="#c8d8ff"
+            Shell.TabBarTitleColor="Black"
             Shell.TabBarUnselectedColor="#465C69"
             Style="{StaticResource InfoShell}" />
     </Tab>

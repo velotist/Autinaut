@@ -14,9 +14,10 @@ namespace Autinaut.Views
 
         public ObservableCollection<SfCarouselItem> CarouselItems { get; set; }
 
-        public EmotionItemPage()
+        public EmotionItemPage(bool hasDeleteButton)
         {
             InitializeComponent();
+            SfButtonDelete.IsVisible = hasDeleteButton;
             AddCarouselItems();
             EmotionsCarouselView.ItemsSource = CarouselItems;
             EmotionsCarouselView.SelectedIndex = GetSelectedEmotion();
@@ -283,11 +284,6 @@ namespace Autinaut.Views
             EmotionItemDatabase database = await EmotionItemDatabase.Instance;
             _ = await database.DeleteItemAsync(EmotionItem);
 
-            await Navigation.PopToRootAsync();
-        }
-
-        private async void OnCancelClicked(object sender, EventArgs e)
-        {
             await Navigation.PopToRootAsync();
         }
 

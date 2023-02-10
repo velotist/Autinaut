@@ -18,14 +18,17 @@ namespace Autinaut
 
         protected override void OnStart()
         {
+            // Method intentionally left empty.
         }
 
         protected override void OnSleep()
         {
+            // Method intentionally left empty.
         }
 
         protected override void OnResume()
         {
+            // Method intentionally left empty.
         }
     }
 }

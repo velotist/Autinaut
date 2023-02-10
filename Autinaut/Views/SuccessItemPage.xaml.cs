@@ -9,9 +9,10 @@ namespace Autinaut.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SuccessItemPage : ContentPage
     {
-        public SuccessItemPage()
+        public SuccessItemPage(bool hasDeleteButton)
         {
             InitializeComponent();
+            SfButtonDelete.IsVisible = hasDeleteButton;
         }
 
         private async void EditorUnfocused(object sender, EventArgs e)
@@ -44,11 +45,6 @@ namespace Autinaut.Views
             SuccessItemDatabase database = await SuccessItemDatabase.Instance;
             _ = await database.DeleteItemAsync(successItem);
 
-            await Navigation.PopToRootAsync();
-        }
-
-        private async void OnCancelClicked(object sender, EventArgs e)
-        {
             await Navigation.PopToRootAsync();
         }
     }
