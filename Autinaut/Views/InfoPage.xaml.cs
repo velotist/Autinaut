@@ -10,7 +10,7 @@ namespace Autinaut.Views
     {
         private readonly string cancelDisplayAlert = "OK";
         private readonly string feedbackMailAddress = "marcusgreiner@protonmail.com";
-        private readonly string subject = "Feedback On Autinaut";
+        private readonly string subject = "Mein Feedback Zu Autinaut";
 
         public InfoPage()
         {
@@ -19,6 +19,8 @@ namespace Autinaut.Views
 
         private async void OnFeedbackClicked(object sender, EventArgs e)
         {
+            DependencyService.Get<IToast>().ShortToast("Besonderen Dank an Jan Charpa");
+
             await SendEmail(subject, "", new List<string>
             {
                 feedbackMailAddress

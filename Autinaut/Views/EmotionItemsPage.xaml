@@ -3,7 +3,9 @@
     x:Class="Autinaut.Views.EmotionItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Meine Gefühle">
+    xmlns:autinaut="clr-namespace:Autinaut"
+    Title="Meine Gefühle"
+    x:DataType="autinaut:AppShell">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnItemAdded" IconImageSource="add_reaction_filled.png" />
