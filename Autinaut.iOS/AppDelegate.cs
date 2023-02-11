@@ -5,7 +5,7 @@ using UIKit;
 namespace Autinaut.iOS
 {
     [Register("AppDelegate")]
-    public partial class AppDelegate : Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public class AppDelegate : Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this
