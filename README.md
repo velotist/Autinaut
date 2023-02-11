@@ -15,7 +15,7 @@ In the future, a visualization of the collected data is planned.
 <h2>Planned Features To Come</h2>
 <ul>
 <li>See your progress graphically</li>
-<li>See your moods in a daily or weekly chart</li>
+<li>See your emotions in a daily or weekly chart</li>
 </ul>
 </div>
 
