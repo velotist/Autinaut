@@ -37,7 +37,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Klicke dann auf einen vorhandenen Listeneintrag um ihn zu editieren oder zu löschen.",
+                            Text = "Klicke anschließend bei Bedarf auf einen vorhandenen Listeneintrag um ihn zu editieren oder zu löschen.",
                             TextColor = Color.Black,
                             FontSize = 22,
                             Margin = 40
