@@ -8,25 +8,26 @@
     Title="Sei Dein Autinaut"
     x:DataType="autinaut:AppShell">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="OnInfoClicked" Text="i" />
+    </ContentPage.ToolbarItems>
+
     <ScrollView>
         <StackLayout>
             <StackLayout Margin="20,20,20,0">
-                <Editor
+                <Label
                     Margin="10,0,10,0"
                     FontSize="20"
-                    IsReadOnly="True"
                     Text="Die App entstand im Zuge des FASTER-Programms des Universitätsklinikums Freiburg. Sie richtet sich in erster Linie an Menschen im Autismusspektrum."
                     TextColor="Black" />
-                <Editor
+                <Label
                     Margin="10,0,10,0"
                     FontSize="20"
-                    IsReadOnly="True"
                     Text="In vielen Situationen entstehen Gefühle. Halte eines Deiner sieben Grundgefühle (nach Paul Ekman) in verschiedenen Situationen fest. Die Protokollierung kann Dir dabei helfen, Dich mit dem Thema Gefühlserkennung und Gefühlsbennenung auseinanderzusetzen. Zusätzlich kannst Du die Ausprägung des Gefühls mit einer sogenannten Affektbilanz verknüpfen."
                     TextColor="Black" />
-                <Editor
+                <Label
                     Margin="10,0,10,0"
                     FontSize="20"
-                    IsReadOnly="True"
                     Text="Weiterhin kann es sich als nützlich herausstellen, sich seine Erfolge niederzuschreiben. Diese kannst Du Dir dann immer 'vor Augen halten'."
                     TextColor="Black" />
             </StackLayout>

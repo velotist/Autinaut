@@ -24,19 +24,32 @@ namespace Autinaut.Views
             System.Collections.Generic.List<SuccessItemViewModel> items = await database.GetItemsAsync();
             myListView.ItemsSource = items;
             Content = items.Count == 0
-                ? new Label
+                ? new StackLayout
                 {
-                    Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste, um Deinen ersten Eintrag zu erstellen.",
-                    TextColor = Color.Black,
-                    FontSize = 22,
-                    Margin = 40
+                    Children =
+                    {
+                        new Label
+                        {
+                            Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste um Deinen ersten Eintrag zu erstellen.",
+                            TextColor = Color.Black,
+                            FontSize = 22,
+                            Margin = 40
+                        },
+                        new Label
+                        {
+                            Text = "Klicke dann auf einen vorhandenen Listeneintrag um ihn zu editieren oder zu löschen.",
+                            TextColor = Color.Black,
+                            FontSize = 22,
+                            Margin = 40
+                        }
+                    }
                 }
                 : (View)myListView;
         }
 
-        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (e.SelectedItem == null)
+            if (e.Item == null)
             {
                 return;
             }
@@ -52,7 +65,7 @@ namespace Autinaut.Views
             {
                 await Navigation.PushAsync(new SuccessItemPage(true)
                 {
-                    BindingContext = e.SelectedItem as SuccessItemViewModel
+                    BindingContext = e.Item as SuccessItemViewModel
                 });
             }
             finally

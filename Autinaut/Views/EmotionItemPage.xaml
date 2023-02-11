@@ -3,10 +3,10 @@
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Autinaut.Models"
-    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:Autinaut.Models"
     Title="Mein Gefühl">
 
     <Shell.BackButtonBehavior>
@@ -92,6 +92,7 @@
                     CornerRadius="20">
                     <Slider
                         Maximum="100"
+                        MaximumTrackColor="#00aaff"
                         MinimumTrackColor="Yellow"
                         ThumbColor="Yellow"
                         ValueChanged="OnPositiveSliderValueChanged"
@@ -116,6 +117,7 @@
                     CornerRadius="20">
                     <Slider
                         Maximum="100"
+                        MaximumTrackColor="#00aaff"
                         MinimumTrackColor="Blue"
                         ThumbColor="Blue"
                         ValueChanged="OnNegativeSliderValueChanged"

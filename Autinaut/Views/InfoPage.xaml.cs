@@ -17,10 +17,13 @@ namespace Autinaut.Views
             InitializeComponent();
         }
 
-        private async void OnFeedbackClicked(object sender, EventArgs e)
+        private void OnInfoClicked(object sender, EventArgs e)
         {
             DependencyService.Get<IToast>().ShortToast("Besonderen Dank an Jan Charpa");
+        }
 
+        private async void OnFeedbackClicked(object sender, EventArgs e)
+        {
             await SendEmail(subject, "", new List<string>
             {
                 feedbackMailAddress

@@ -15,7 +15,7 @@
             Margin="10"
             CachingStrategy="RecycleElementAndDataTemplate"
             HasUnevenRows="True"
-            ItemTapped="OnListItemSelected"
+            ItemTapped="OnListItemTapped"
             SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
