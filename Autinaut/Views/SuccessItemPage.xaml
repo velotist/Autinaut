@@ -31,7 +31,6 @@
                 BorderColor="#cbdadf"
                 CornerRadius="20">
                 <inputLayout:SfTextInputLayout
-                    ContainerBackgroundColor="#cbdadf"
                     FocusedColor="#562b28"
                     FocusedStrokeWidth="0"
                     Hint="Beschreibe Deinen Erfolg"
