@@ -12,25 +12,19 @@
     <StackLayout>
         <ListView
             x:Name="myListView"
-            Margin="10"
             CachingStrategy="RecycleElementAndDataTemplate"
-            HasUnevenRows="True"
             ItemTapped="OnListItemTapped"
-            SelectionMode="None">
+            Style="{StaticResource listview}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Frame
-                                BorderColor="#cbdadf"
-                                CornerRadius="20"
-                                HasShadow="True">
+                            <Frame Style="{StaticResource frameListviewItem}">
                                 <StackLayout>
                                     <Label
                                         Margin="0,0,0,10"
-                                        FontSize="Small"
-                                        Text="{Binding Date}"
-                                        TextColor="Black" />
+                                        Style="{StaticResource labelStyle}"
+                                        Text="{Binding Date}" />
                                     <Label
                                         Margin="0,0,0,20"
                                         FontSize="Large"
@@ -52,9 +46,8 @@
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label
-                                            FontSize="Small"
+                                            Style="{StaticResource labelStyle}"
                                             Text="Positive Affektbilanz"
-                                            TextColor="Black"
                                             VerticalOptions="Center" />
                                         <Label
                                             FontSize="Large"
@@ -64,9 +57,8 @@
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label
-                                            FontSize="Small"
+                                            Style="{StaticResource labelStyle}"
                                             Text="Negative Affektbilanz"
-                                            TextColor="Black"
                                             VerticalOptions="Center" />
                                         <Label
                                             FontSize="Large"

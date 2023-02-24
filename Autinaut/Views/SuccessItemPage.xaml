@@ -54,25 +54,15 @@
                 <buttons:SfButton
                     x:Name="SfButtonSave"
                     AutomationProperties.Name="Speichern"
-                    BackgroundColor="#00aaff"
                     Clicked="OnSaveClicked"
-                    CornerRadius="20"
-                    HeightRequest="48"
-                    IsCheckable="True"
-                    MinimumHeightRequest="48"
-                    Text="Speichern"
-                    WidthRequest="100" />
+                    Style="{StaticResource baseSfButtonStyle}"
+                    Text="Speichern" />
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
                     AutomationProperties.Name="Löschen"
-                    BackgroundColor="#00aaff"
                     Clicked="OnDeleteClicked"
-                    CornerRadius="20"
-                    HeightRequest="48"
-                    IsCheckable="True"
-                    MinimumHeightRequest="48"
-                    Text="Löschen"
-                    WidthRequest="100" />
+                    Style="{StaticResource baseSfButtonStyle}"
+                    Text="Löschen" />
             </StackLayout>
         </StackLayout>
     </ScrollView>

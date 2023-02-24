@@ -7,65 +7,22 @@
     Title="Autinaut"
     x:DataType="autinaut:AppShell">
 
-    <Shell.Resources>
-        <Style x:Key="BaseStyle" TargetType="Element">
-            <Setter Property="Shell.TitleColor" Value="#0f0104" />
-            <Setter Property="Shell.NavBarHasShadow" Value="True" />
-            <Setter Property="Shell.ForegroundColor" Value="Transparent" />
-        </Style>
-        <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" />
-        <Style
-            x:Key="EmotionShell"
-            BasedOn="{StaticResource BaseStyle}"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#a6d7ff" />
-        </Style>
-        <Style
-            x:Key="SuccessShell"
-            BasedOn="{StaticResource BaseStyle}"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#b7d7ff" />
-        </Style>
-        <Style
-            x:Key="InfoShell"
-            BasedOn="{StaticResource BaseStyle}"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#c8d7ff" />
-        </Style>
-    </Shell.Resources>
-
     <Tab
         Title="Gefühle"
         AutomationProperties.Name="Gefühle"
         Icon="emotion.png">
-        <ShellContent
-            ContentTemplate="{DataTemplate views:EmotionItemsPage}"
-            Shell.TabBarBackgroundColor="#a6d6ff"
-            Shell.TabBarTitleColor="Black"
-            Shell.TabBarUnselectedColor="#465C69"
-            Style="{StaticResource EmotionShell}" />
+        <ShellContent ContentTemplate="{DataTemplate views:EmotionItemsPage}" Style="{StaticResource EmotionShell}" />
     </Tab>
     <Tab
         Title="Erfolge"
         AutomationProperties.Name="Erfolge"
         Icon="star.png">
-        <ShellContent
-            ContentTemplate="{DataTemplate views:SuccessItemsPage}"
-            Shell.TabBarBackgroundColor="#b7d7ff"
-            Shell.TabBarTitleColor="Black"
-            Shell.TabBarUnselectedColor="#465C69"
-            Style="{StaticResource SuccessShell}" />
+        <ShellContent ContentTemplate="{DataTemplate views:SuccessItemsPage}" Style="{StaticResource SuccessShell}" />
     </Tab>
     <Tab
         Title="Info"
         AutomationProperties.Name="Information"
         Icon="info.png">
-        <ShellContent
-            x:Name="infoItem"
-            ContentTemplate="{DataTemplate views:InfoPage}"
-            Shell.TabBarBackgroundColor="#c8d8ff"
-            Shell.TabBarTitleColor="Black"
-            Shell.TabBarUnselectedColor="#465C69"
-            Style="{StaticResource InfoShell}" />
+        <ShellContent ContentTemplate="{DataTemplate views:InfoPage}" Style="{StaticResource InfoShell}" />
     </Tab>
 </Shell>

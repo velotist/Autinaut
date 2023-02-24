@@ -3,10 +3,10 @@
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
-    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     xmlns:local="clr-namespace:Autinaut.Models"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     Title="Mein Gefühl">
 
     <Shell.BackButtonBehavior>
@@ -35,9 +35,8 @@
                 <Label
                     x:Name="labelSituation"
                     Margin="10,0,0,0"
-                    FontSize="Small"
-                    Text="Situation"
-                    TextColor="Black" />
+                    Style="{StaticResource labelStyle}"
+                    Text="Situation" />
                 <Frame
                     Margin="20,0,20,20"
                     Padding="20,20,20,10"
@@ -63,9 +62,8 @@
             <StackLayout Grid.Row="1">
                 <Label
                     Margin="10,0,0,-20"
-                    FontSize="Small"
-                    Text="Gefühl"
-                    TextColor="Black" />
+                    Style="{StaticResource labelStyle}"
+                    Text="Gefühl" />
                 <carousel:SfCarousel
                     x:Name="EmotionsCarouselView"
                     Margin="20"
@@ -81,9 +79,8 @@
             <StackLayout Grid.Row="2">
                 <Label
                     Margin="10,-40,0,0"
-                    FontSize="Small"
-                    Text="Positive Affektbilanz"
-                    TextColor="Black" />
+                    Style="{StaticResource labelStyle}"
+                    Text="Positive Affektbilanz" />
                 <Frame
                     Margin="20,0,20,0"
                     Padding="10"
@@ -101,14 +98,13 @@
                     x:Name="positiveLabel"
                     AutomationProperties.Name="Positive Affektbilanz"
                     HorizontalOptions="Center"
+                    Style="{StaticResource labelStyle}"
                     Text="Die Affektbilanz liegt bei 0 %."
-                    TextColor="Black"
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     Margin="10,20,0,0"
-                    FontSize="Small"
-                    Text="Negative Affektbilanz"
-                    TextColor="Black" />
+                    Style="{StaticResource labelStyle}"
+                    Text="Negative Affektbilanz" />
                 <Frame
                     Margin="20,0,20,0"
                     Padding="10"
@@ -126,8 +122,8 @@
                     x:Name="negativeLabel"
                     AutomationProperties.Name="Negative Affektbilanz"
                     HorizontalOptions="Center"
+                    Style="{StaticResource labelStyle}"
                     Text="Die Affektbilanz liegt bei 0 %."
-                    TextColor="Black"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout
@@ -140,25 +136,15 @@
                 <buttons:SfButton
                     x:Name="SfButtonSave"
                     AutomationProperties.Name="Speichern"
-                    BackgroundColor="#00aaff"
                     Clicked="OnSaveClicked"
-                    CornerRadius="20"
-                    HeightRequest="48"
-                    IsCheckable="True"
-                    MinimumHeightRequest="48"
-                    Text="Speichern"
-                    WidthRequest="100" />
+                    Style="{StaticResource baseSfButtonStyle}"
+                    Text="Speichern" />
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
                     AutomationProperties.Name="Löschen"
-                    BackgroundColor="#00aaff"
                     Clicked="OnDeleteClicked"
-                    CornerRadius="20"
-                    HeightRequest="48"
-                    IsCheckable="True"
-                    MinimumHeightRequest="48"
-                    Text="Löschen"
-                    WidthRequest="100" />
+                    Style="{StaticResource baseSfButtonStyle}"
+                    Text="Löschen" />
             </StackLayout>
         </Grid>
     </ScrollView>
