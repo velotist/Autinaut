@@ -71,7 +71,7 @@
                     ItemHeight="200"
                     ItemWidth="150"
                     RotationAngle="60"
-                    SelectedIndex="{Binding ImageID, Mode=TwoWay}"
+                    SelectedIndex="{Binding IconID, Mode=TwoWay}"
                     SelectionChanged="Carousel_SelectionChanged"
                     WidthRequest="200"
                     Offset="30" />

@@ -2,6 +2,7 @@
 using Autinaut.Models;
 using Syncfusion.SfCarousel.XForms;
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -12,91 +13,75 @@ namespace Autinaut.Views
     {
         private readonly string affectBilanceText = "Die Affektbilanz liegt bei {0} %.";
 
-        public ObservableCollection<SfCarouselItem> CarouselItems { get; set; }
-
-        public EmotionItemPage(bool hasDeleteButton)
+        private readonly ObservableCollection<SfCarouselItem> CarouselItems = new ObservableCollection<SfCarouselItem>
         {
-            InitializeComponent();
-            SfButtonDelete.IsVisible = hasDeleteButton;
-            AddCarouselItems();
-            EmotionsCarouselView.ItemsSource = CarouselItems;
-            EmotionsCarouselView.SelectedIndex = GetSelectedEmotion();
-            EmotionsCarouselView.SelectionChanged += Carousel_SelectionChanged;
-        }
-
-        private async void EditorUnfocused(object sender, EventArgs e)
-        {
-            await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
-        }
-
-        private void AddCarouselItems()
-        {
-            CarouselItems = new ObservableCollection<SfCarouselItem>
+            new SfCarouselItem
             {
-                new SfCarouselItem()
+                ItemContent = new StackLayout
                 {
-                    ItemContent = new StackLayout
+                    Children =
                     {
-                        Children =
+                        new Image
                         {
-                            new Image()
-                            {
-                                Source = "anger.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = "Wut",
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment = TextAlignment.Center
-                            }
+                            Source = "anger.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = "Wut",
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
                     }
-                },
-                new SfCarouselItem() {
-                    ItemContent = new StackLayout
+                }
+            },
+            new SfCarouselItem
+            {
+                ItemContent = new StackLayout
+                {
+                    Children =
                     {
-                        Children =
+                        new Image
                         {
-                            new Image()
-                            {
-                                Source = "contempt.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = "Verachtung",
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment = TextAlignment.Center
-                            }
+                            Source = "contempt.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = "Verachtung",
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
                     }
-                },
-                new SfCarouselItem() {
-                    ItemContent = new StackLayout
+                }
+            },
+            new SfCarouselItem
+            {
+                ItemContent = new StackLayout
+                {
+                    Children =
                     {
-                        Children =
+                        new Image
                         {
-                            new Image()
-                            {
-                                Source = "disgust.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = "Ekel",
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment = TextAlignment.Center
-                            }
+                            Source = "disgust.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = "Ekel",
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
                     }
-                },
-                new SfCarouselItem() {
-                    ItemContent = new StackLayout
-                    {
-                        Children =
+                }
+            },
+            new SfCarouselItem
+            {
+                ItemContent = new StackLayout
+                {
+                    Children =
                         {
-                            new Image()
+                            new Image
                             {
                                 Source = "fear.png",
                                 Aspect = Aspect.AspectFit
@@ -108,150 +93,98 @@ namespace Autinaut.Views
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
                         }
-                    }
-                },
-                new SfCarouselItem() {
-                    ItemContent = new StackLayout
+                }
+            },
+            new SfCarouselItem
+            {
+                ItemContent = new StackLayout
+                {
+                    Children =
                     {
-                        Children =
+                        new Image
                         {
-                            new Image()
-                            {
-                                Source = "joy.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = "Freude",
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment = TextAlignment.Center
-                            }
+                            Source = "joy.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = "Freude",
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
                     }
-                },
-               new SfCarouselItem() {
-                    ItemContent = new StackLayout
+                }
+            },
+            new SfCarouselItem
+            {
+                ItemContent = new StackLayout
+                {
+                    Children =
                     {
-                        Children =
+                        new Image
                         {
-                            new Image()
-                            {
-                                Source = "sadness.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = "Trauer",
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment=TextAlignment.Center
-                            }
+                            Source = "sadness.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = "Trauer",
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment=TextAlignment.Center
                         }
                     }
-                },
-                new SfCarouselItem() {
-                    ItemContent = new StackLayout
+                }
+            },
+            new SfCarouselItem
+            {
+                ItemContent = new StackLayout
+                {
+                    Children =
                     {
-                        Children =
+                        new Image
                         {
-                            new Image()
-                            {
-                                Source = "surprise.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = "Überraschung",
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment=TextAlignment.Center
-                            }
+                            Source = "surprise.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = "Überraschung",
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment=TextAlignment.Center
                         }
                     }
-                },
-            };
+                }
+            },
+        };
+
+        private readonly List<Emotions> BasicEmotions = new List<Emotions> {
+            new Emotions { ID = 1, Name = "Wut", Icon = "anger.png" },
+            new Emotions { ID = 2, Name = "Verachtung", Icon = "contempt.png" },
+            new Emotions { ID = 3, Name = "Ekel", Icon = "disgust.png" },
+            new Emotions { ID = 4, Name = "Angst", Icon = "fear.png" },
+            new Emotions { ID = 5, Name = "Freude", Icon = "joy.png" },
+            new Emotions { ID = 6, Name = "Trauer", Icon = "sadness.png" },
+            new Emotions { ID = 7, Name = "Überraschung", Icon = "surprise.png" }
+        };
+
+        public EmotionItemPage(bool hasDeleteButton)
+        {
+            InitializeComponent();
+            SfButtonDelete.IsVisible = hasDeleteButton;
+            EmotionsCarouselView.ItemsSource = CarouselItems;
+            EmotionsCarouselView.SelectionChanged += Carousel_SelectionChanged;
         }
 
-        private int GetSelectedEmotion()
+        private async void EditorUnfocused(object sender, EventArgs e)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
-
-            switch (EmotionItem.Emotion)
-            {
-                case "Wut":
-                    EmotionItem.ImageID = 0;
-                    break;
-
-                case "Verachtung":
-                    EmotionItem.ImageID = 1;
-                    break;
-
-                case "Ekel":
-                    EmotionItem.ImageID = 2;
-                    break;
-
-                case "Angst":
-                    EmotionItem.ImageID = 3;
-                    break;
-
-                case "Freude":
-                    EmotionItem.ImageID = 4;
-                    break;
-
-                case "Trauer":
-                    EmotionItem.ImageID = 5;
-                    break;
-
-                case "Überraschung":
-                    EmotionItem.ImageID = 6;
-                    break;
-
-                default:
-                    EmotionItem.ImageID = 3;
-                    break;
-            }
-
-            return EmotionItem.ImageID;
+            await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
         }
 
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
         {
             EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
-            switch (e.SelectedIndex)
-            {
-                case 0:
-                    EmotionItem.EmotionIcon = "anger.png";
-                    EmotionItem.Emotion = "Wut";
-                    break;
-
-                case 1:
-                    EmotionItem.EmotionIcon = "contempt.png";
-                    EmotionItem.Emotion = "Verachtung";
-                    break;
-
-                case 2:
-                    EmotionItem.EmotionIcon = "disgust.png";
-                    EmotionItem.Emotion = "Ekel";
-                    break;
-
-                case 3:
-                    EmotionItem.EmotionIcon = "fear.png";
-                    EmotionItem.Emotion = "Angst";
-                    break;
-
-                case 4:
-                    EmotionItem.EmotionIcon = "joy.png";
-                    EmotionItem.Emotion = "Freude";
-                    break;
-
-                case 5:
-                    EmotionItem.EmotionIcon = "sadness.png";
-                    EmotionItem.Emotion = "Trauer";
-                    break;
-
-                case 6:
-                    EmotionItem.EmotionIcon = "surprise.png";
-                    EmotionItem.Emotion = "Überraschung";
-                    break;
-            }
+            EmotionItem.EmotionIcon = BasicEmotions[e.SelectedIndex].Icon;
+            EmotionItem.EmotionName = BasicEmotions[e.SelectedIndex].Name;
         }
 
         private async Task ScrollToEnd()
