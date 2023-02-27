@@ -55,6 +55,7 @@
         </Style>
         <Style x:Key="listview" TargetType="ListView">
             <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalScrollBarVisibility" Value="Always" />
             <Setter Property="HasUnevenRows" Value="True" />
             <Setter Property="SelectionMode" Value="None" />
         </Style>
