@@ -1,4 +1,4 @@
-﻿namespace Autinaut
+﻿namespace Autinaut.Common
 {
     public interface IToast
     {

@@ -1,5 +1,6 @@
 ﻿using Android.Widget;
 using Autinaut;
+using Autinaut.Common;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(ToastMessage))]

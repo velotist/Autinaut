@@ -4,8 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:autinaut="clr-namespace:Autinaut"
+    xmlns:resources="clr-namespace:Autinaut.Resx"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    Title="Sei Dein Autinaut"
+    Title="{x:Static resources:AppResources.InfoPageTitle}"
     x:DataType="autinaut:AppShell">
 
     <ContentPage.ToolbarItems>
@@ -18,17 +19,17 @@
                 <Label
                     Margin="10,0,10,0"
                     FontSize="20"
-                    Text="Die App entstand im Zuge des FASTER-Programms des Universitätsklinikums Freiburg. Sie richtet sich in erster Linie an Menschen im Autismusspektrum."
+                    Text="{x:Static resources:AppResources.InfoTextPartOne}"
                     TextColor="Black" />
                 <Label
                     Margin="10,0,10,0"
                     FontSize="20"
-                    Text="In vielen Situationen entstehen Gefühle. Halte eines Deiner sieben Grundgefühle (nach Paul Ekman) in verschiedenen Situationen fest. Die Protokollierung kann Dir dabei helfen, Dich mit dem Thema Gefühlserkennung und Gefühlsbennenung auseinanderzusetzen. Zusätzlich kannst Du die Ausprägung des Gefühls mit einer sogenannten Affektbilanz verknüpfen."
+                    Text="{x:Static resources:AppResources.InfoTextPartTwo}"
                     TextColor="Black" />
                 <Label
                     Margin="10,0,10,0"
                     FontSize="20"
-                    Text="Weiterhin kann es sich als nützlich herausstellen, sich seine Erfolge niederzuschreiben. Diese kannst Du Dir dann immer 'vor Augen halten'."
+                    Text="{x:Static resources:AppResources.InfoTextPartThree}"
                     TextColor="Black" />
             </StackLayout>
             <buttons:SfButton
@@ -40,7 +41,7 @@
                 ImageSource="mail.png"
                 ImageWidth="50"
                 ShowIcon="True"
-                Text="Feedback senden"
+                Text="{x:Static resources:AppResources.TextButtonFeedback}"
                 TextColor="Black" />
         </StackLayout>
     </ScrollView>

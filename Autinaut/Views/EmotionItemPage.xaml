@@ -3,16 +3,17 @@
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:Autinaut.Models"
+    xmlns:resources="clr-namespace:Autinaut.Resx"
+    xmlns:local="clr-namespace:Autinaut.ViewModels"
     xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-    Title="Mein Gefühl">
+    Title="{x:Static resources:AppResources.EmotionItemPageTitle}">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior
-            AutomationProperties.HelpText="Zurück Button"
-            AutomationProperties.Name="Zurück"
+            AutomationProperties.HelpText="{x:Static resources:AppResources.BackButtonHelpText}"
+            AutomationProperties.Name="{x:Static resources:AppResources.BackButtonName}"
             IconOverride="arrow_back_filled.png" />
     </Shell.BackButtonBehavior>
 
@@ -36,7 +37,7 @@
                     x:Name="labelSituation"
                     Margin="10,0,0,0"
                     Style="{StaticResource labelStyle}"
-                    Text="Situation" />
+                    Text="{x:Static resources:AppResources.LabelSituation}" />
                 <Frame
                     Margin="20,0,20,20"
                     Padding="20,20,20,10"
@@ -46,7 +47,7 @@
                     <inputLayout:SfTextInputLayout
                         FocusedColor="#562b28"
                         FocusedStrokeWidth="0"
-                        Hint="Beschreibe die Situation"
+                        Hint="{x:Static resources:AppResources.HintInputSituation}"
                         UnfocusedColor="Black"
                         UnfocusedStrokeWidth="1">
                         <Editor
@@ -63,7 +64,7 @@
                 <Label
                     Margin="10,0,0,-20"
                     Style="{StaticResource labelStyle}"
-                    Text="Gefühl" />
+                    Text="{x:Static resources:AppResources.LabelFeeling}" />
                 <carousel:SfCarousel
                     x:Name="EmotionsCarouselView"
                     Margin="20"
@@ -80,7 +81,7 @@
                 <Label
                     Margin="10,-40,0,0"
                     Style="{StaticResource labelStyle}"
-                    Text="Positive Affektbilanz" />
+                    Text="{x:Static resources:AppResources.LabelPositiveAffect}" />
                 <Frame
                     Margin="20,0,20,0"
                     Padding="10"
@@ -96,15 +97,15 @@
                 </Frame>
                 <Label
                     x:Name="positiveLabel"
-                    AutomationProperties.Name="Positive Affektbilanz"
+                    AutomationProperties.Name="{x:Static resources:AppResources.LabelPositiveAffect}"
                     HorizontalOptions="Center"
                     Style="{StaticResource labelStyle}"
-                    Text="Die Affektbilanz liegt bei 0 %."
+                    Text="{x:Static resources:AppResources.TextAffectBilance}"
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     Margin="10,20,0,0"
                     Style="{StaticResource labelStyle}"
-                    Text="Negative Affektbilanz" />
+                    Text="{x:Static resources:AppResources.LabelNegativeAffect}" />
                 <Frame
                     Margin="20,0,20,0"
                     Padding="10"
@@ -120,10 +121,10 @@
                 </Frame>
                 <Label
                     x:Name="negativeLabel"
-                    AutomationProperties.Name="Negative Affektbilanz"
+                    AutomationProperties.Name="{x:Static resources:AppResources.LabelNegativeAffect}"
                     HorizontalOptions="Center"
                     Style="{StaticResource labelStyle}"
-                    Text="Die Affektbilanz liegt bei 0 %."
+                    Text="{x:Static resources:AppResources.TextAffectBilance}"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout
@@ -135,16 +136,16 @@
                 VerticalOptions="CenterAndExpand">
                 <buttons:SfButton
                     x:Name="SfButtonSave"
-                    AutomationProperties.Name="Speichern"
+                    AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameSave}"
                     Clicked="OnSaveClicked"
                     Style="{StaticResource baseSfButtonStyle}"
-                    Text="Speichern" />
+                    Text="{x:Static resources:AppResources.TextSfButtonSave}" />
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
-                    AutomationProperties.Name="Löschen"
+                    AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameDelete}"
                     Clicked="OnDeleteClicked"
                     Style="{StaticResource baseSfButtonStyle}"
-                    Text="Löschen" />
+                    Text="{x:Static resources:AppResources.TextSfButtonDelete}" />
             </StackLayout>
         </Grid>
     </ScrollView>

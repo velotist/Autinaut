@@ -3,15 +3,16 @@
     x:Class="Autinaut.Views.SuccessItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:Autinaut.Resx"
+    xmlns:local="clr-namespace:Autinaut.ViewModels"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:Autinaut.Models"
-    Title="Mein Erfolg">
+    Title="{x:Static resources:AppResources.SuccessItemPageTitle}">
 
     <Shell.BackButtonBehavior>
         <BackButtonBehavior
-            AutomationProperties.HelpText="Zurück Button"
-            AutomationProperties.Name="Zurück"
+            AutomationProperties.HelpText="{x:Static resources:AppResources.BackButtonHelpText}"
+            AutomationProperties.Name="{x:Static resources:AppResources.BackButtonName}"
             IconOverride="arrow_back_filled.png" />
     </Shell.BackButtonBehavior>
 
@@ -33,7 +34,7 @@
                 <inputLayout:SfTextInputLayout
                     FocusedColor="#562b28"
                     FocusedStrokeWidth="0"
-                    Hint="Beschreibe Deinen Erfolg"
+                    Hint="{x:Static resources:AppResources.HintInputSuccess}"
                     UnfocusedColor="Black"
                     UnfocusedStrokeWidth="1">
                     <Editor
@@ -53,16 +54,16 @@
                 VerticalOptions="CenterAndExpand">
                 <buttons:SfButton
                     x:Name="SfButtonSave"
-                    AutomationProperties.Name="Speichern"
+                    AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameSave}"
                     Clicked="OnSaveClicked"
                     Style="{StaticResource baseSfButtonStyle}"
-                    Text="Speichern" />
+                    Text="{x:Static resources:AppResources.TextSfButtonSave}" />
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
-                    AutomationProperties.Name="Löschen"
+                    AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameDelete}"
                     Clicked="OnDeleteClicked"
                     Style="{StaticResource baseSfButtonStyle}"
-                    Text="Löschen" />
+                    Text="{x:Static resources:AppResources.TextSfButtonDelete}" />
             </StackLayout>
         </StackLayout>
     </ScrollView>

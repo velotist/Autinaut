@@ -3,7 +3,8 @@
     x:Class="Autinaut.Views.EmotionItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Meine Gefühle">
+    xmlns:resources="clr-namespace:Autinaut.Resx"
+    Title="{x:Static resources:AppResources.EmotionItemsPageTitle}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnItemAdded" IconImageSource="add_reaction_filled.png" />
@@ -47,7 +48,7 @@
                                     <StackLayout Orientation="Horizontal">
                                         <Label
                                             Style="{StaticResource labelStyle}"
-                                            Text="Positive Affektbilanz"
+                                            Text="{x:Static resources:AppResources.LabelPositiveAffect}"
                                             VerticalOptions="Center" />
                                         <Label
                                             FontSize="Large"
@@ -58,7 +59,7 @@
                                     <StackLayout Orientation="Horizontal">
                                         <Label
                                             Style="{StaticResource labelStyle}"
-                                            Text="Negative Affektbilanz"
+                                            Text="{x:Static resources:AppResources.LabelNegativeAffect}"
                                             VerticalOptions="Center" />
                                         <Label
                                             FontSize="Large"
