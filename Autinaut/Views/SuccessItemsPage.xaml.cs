@@ -1,5 +1,6 @@
-﻿using Autinaut.Data;
-using Autinaut.Models;
+﻿using Autinaut.Models;
+using Autinaut.Resx;
+using Autinaut.ViewModels;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -30,14 +31,14 @@ namespace Autinaut.Views
                     {
                         new Label
                         {
-                            Text = "Sei Dein Autinaut. Klicke auf das Icon in der oberen Leiste um Deinen ersten Eintrag zu erstellen.",
+                            Text = AppResources.LabelInitialTextPartOne,
                             TextColor = Color.Black,
                             FontSize = 22,
                             Margin = 40
                         },
                         new Label
                         {
-                            Text = "Klicke anschließend bei Bedarf auf einen vorhandenen Listeneintrag um ihn zu editieren oder zu löschen.",
+                            Text = AppResources.LabelInitialTextPartTwo,
                             TextColor = Color.Black,
                             FontSize = 22,
                             Margin = 40

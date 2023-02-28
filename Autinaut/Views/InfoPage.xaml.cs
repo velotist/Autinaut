@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Autinaut.Common;
+using Autinaut.Resx;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -10,7 +12,7 @@ namespace Autinaut.Views
     {
         private readonly string cancelDisplayAlert = "OK";
         private readonly string feedbackMailAddress = "marcusgreiner@protonmail.com";
-        private readonly string subject = "Mein Feedback Zu Autinaut";
+        private readonly string subject = AppResources.MailSubjectText;
 
         public InfoPage()
         {
@@ -19,7 +21,7 @@ namespace Autinaut.Views
 
         private void OnInfoClicked(object sender, EventArgs e)
         {
-            DependencyService.Get<IToast>().ShortToast("Besonderen Dank an Jan Charpa");
+            DependencyService.Get<IToast>().ShortToast(AppResources.SpecialThanx);
         }
 
         private async void OnFeedbackClicked(object sender, EventArgs e)
@@ -45,11 +47,11 @@ namespace Autinaut.Views
             }
             catch (FeatureNotSupportedException)
             {
-                await DisplayAlert("Feature Not Supported", "Email is not supported on this device", cancelDisplayAlert);
+                await DisplayAlert(AppResources.TextAlertMailNotSupportedTitle, AppResources.TextAlertMailNotSupportedText, cancelDisplayAlert);
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Exception", ex.ToString(), cancelDisplayAlert);
+                await DisplayAlert(AppResources.TextExceptionTtitle, ex.ToString(), cancelDisplayAlert);
             }
         }
     }

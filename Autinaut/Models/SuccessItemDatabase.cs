@@ -1,9 +1,10 @@
-﻿using Autinaut.Models;
+﻿using Autinaut.Common;
+using Autinaut.ViewModels;
 using SQLite;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Autinaut.Data
+namespace Autinaut.Models
 {
     public class SuccessItemDatabase
     {
