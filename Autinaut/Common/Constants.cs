@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Autinaut
+namespace Autinaut.Common
 {
     public static class Constants
     {

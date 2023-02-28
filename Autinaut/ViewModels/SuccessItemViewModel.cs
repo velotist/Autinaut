@@ -1,7 +1,7 @@
 ﻿using SQLite;
 using System;
 
-namespace Autinaut.Models
+namespace Autinaut.ViewModels
 {
     public class SuccessItemViewModel
     {

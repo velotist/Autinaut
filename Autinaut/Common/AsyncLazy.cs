@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Autinaut
+namespace Autinaut.Common
 {
     public class AsyncLazy<T>
     {

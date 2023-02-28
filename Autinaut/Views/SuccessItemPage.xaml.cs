@@ -1,5 +1,6 @@
-﻿using Autinaut.Data;
-using Autinaut.Models;
+﻿using Autinaut.Models;
+using Autinaut.Resx;
+using Autinaut.ViewModels;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -25,7 +26,7 @@ namespace Autinaut.Views
             SuccessItemViewModel successItem = (SuccessItemViewModel)BindingContext;
             if (string.IsNullOrEmpty(successItem.SuccessNote))
             {
-                _ = DisplayAlert("Meldung", "Bitte trage Deinen Erfolg ein.", "OK");
+                _ = DisplayAlert(AppResources.NotificationTitle, AppResources.NotificationSuccessText, "OK");
                 SfButtonSave.IsChecked = false;
 
                 await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);

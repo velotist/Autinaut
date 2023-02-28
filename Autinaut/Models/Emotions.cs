@@ -1,4 +1,4 @@
-﻿namespace Autinaut.Data
+﻿namespace Autinaut.Models
 {
     public class Emotions
     {

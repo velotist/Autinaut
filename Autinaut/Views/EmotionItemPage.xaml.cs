@@ -1,5 +1,6 @@
-﻿using Autinaut.Data;
-using Autinaut.Models;
+﻿using Autinaut.Models;
+using Autinaut.Resx;
+using Autinaut.ViewModels;
 using Syncfusion.SfCarousel.XForms;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace Autinaut.Views
 {
     public partial class EmotionItemPage : ContentPage
     {
-        private readonly string affectBilanceText = "Die Affektbilanz liegt bei {0} %.";
+        private readonly string affectBilanceText = AppResources.TextActualAffectBilance;
 
         private readonly ObservableCollection<SfCarouselItem> CarouselItems = new ObservableCollection<SfCarouselItem>
         {
@@ -28,7 +29,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Wut",
+                            Text = AppResources.TextEmotionAnger,
                             TextColor = Color.Black,
                             HorizontalTextAlignment = TextAlignment.Center
                         }
@@ -48,7 +49,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Verachtung",
+                            Text = AppResources.TextEmotionContempt,
                             TextColor = Color.Black,
                             HorizontalTextAlignment = TextAlignment.Center
                         }
@@ -68,7 +69,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Ekel",
+                            Text = AppResources.TextEmotionDisgust,
                             TextColor = Color.Black,
                             HorizontalTextAlignment = TextAlignment.Center
                         }
@@ -88,7 +89,7 @@ namespace Autinaut.Views
                             },
                             new Label
                             {
-                                Text = "Angst",
+                                Text = AppResources.TextEmotionFear,
                                 TextColor = Color.Black,
                                 HorizontalTextAlignment = TextAlignment.Center
                             }
@@ -108,7 +109,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Freude",
+                            Text = AppResources.TextEmotionJoy,
                             TextColor = Color.Black,
                             HorizontalTextAlignment = TextAlignment.Center
                         }
@@ -128,7 +129,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Trauer",
+                            Text = AppResources.TextEmotionSadness,
                             TextColor = Color.Black,
                             HorizontalTextAlignment=TextAlignment.Center
                         }
@@ -148,7 +149,7 @@ namespace Autinaut.Views
                         },
                         new Label
                         {
-                            Text = "Überraschung",
+                            Text = AppResources.TextEmotionSurprise,
                             TextColor = Color.Black,
                             HorizontalTextAlignment=TextAlignment.Center
                         }
@@ -158,13 +159,13 @@ namespace Autinaut.Views
         };
 
         private readonly List<Emotions> BasicEmotions = new List<Emotions> {
-            new Emotions { ID = 1, Name = "Wut", Icon = "anger.png" },
-            new Emotions { ID = 2, Name = "Verachtung", Icon = "contempt.png" },
-            new Emotions { ID = 3, Name = "Ekel", Icon = "disgust.png" },
-            new Emotions { ID = 4, Name = "Angst", Icon = "fear.png" },
-            new Emotions { ID = 5, Name = "Freude", Icon = "joy.png" },
-            new Emotions { ID = 6, Name = "Trauer", Icon = "sadness.png" },
-            new Emotions { ID = 7, Name = "Überraschung", Icon = "surprise.png" }
+            new Emotions { ID = 1, Name = AppResources.TextEmotionAnger, Icon = "anger.png" },
+            new Emotions { ID = 2, Name = AppResources.TextEmotionContempt, Icon = "contempt.png" },
+            new Emotions { ID = 3, Name = AppResources.TextEmotionDisgust, Icon = "disgust.png" },
+            new Emotions { ID = 4, Name = AppResources.TextEmotionFear, Icon = "fear.png" },
+            new Emotions { ID = 5, Name = AppResources.TextEmotionFear, Icon = "joy.png" },
+            new Emotions { ID = 6, Name = AppResources.TextEmotionSadness, Icon = "sadness.png" },
+            new Emotions { ID = 7, Name = AppResources.TextEmotionSurprise, Icon = "surprise.png" }
         };
 
         public EmotionItemPage(bool hasDeleteButton)
@@ -197,7 +198,7 @@ namespace Autinaut.Views
             EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
             if (string.IsNullOrEmpty(EmotionItem.EmotionSituation))
             {
-                await DisplayAlert("Meldung", "Bitte trage eine Situation ein.", "OK");
+                await DisplayAlert(AppResources.NotificationTitle, AppResources.NotificationSituationText, "OK");
                 SfButtonSave.IsChecked = false;
 
                 await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);

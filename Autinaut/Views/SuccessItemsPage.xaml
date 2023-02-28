@@ -3,7 +3,8 @@
     x:Class="Autinaut.Views.SuccessItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Meine Erfolge">
+    xmlns:resources="clr-namespace:Autinaut.Resx"
+    Title="{x:Static resources:AppResources.SuccessItemsPageTitle}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnItemAdded" Text="+">
