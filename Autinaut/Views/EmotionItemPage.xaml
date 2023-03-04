@@ -3,11 +3,11 @@
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:resources="clr-namespace:Autinaut.Resx"
-    xmlns:local="clr-namespace:Autinaut.ViewModels"
-    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:Autinaut.ViewModels"
+    xmlns:resources="clr-namespace:Autinaut.Resx"
     Title="{x:Static resources:AppResources.EmotionItemPageTitle}">
 
     <Shell.BackButtonBehavior>
@@ -33,18 +33,13 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
             <StackLayout Grid.Row="0">
-                <Label
-                    x:Name="labelSituation"
-                    Margin="10,0,0,0"
-                    Style="{StaticResource labelStyle}"
-                    Text="{x:Static resources:AppResources.LabelSituation}" />
                 <Frame
                     Margin="20,0,20,20"
                     Padding="20,20,20,10"
-                    BackgroundColor="#cbdadf"
-                    BorderColor="#cbdadf"
+                    BorderColor="{StaticResource ActionColor}"
                     CornerRadius="20">
                     <inputLayout:SfTextInputLayout
+                        ContainerBackgroundColor="Transparent"
                         FocusedColor="#562b28"
                         FocusedStrokeWidth="0"
                         Hint="{x:Static resources:AppResources.HintInputSituation}"
@@ -62,36 +57,33 @@
             </StackLayout>
             <StackLayout Grid.Row="1">
                 <Label
-                    Margin="10,0,0,-20"
+                    Margin="20,0,0,-40"
                     Style="{StaticResource labelStyle}"
                     Text="{x:Static resources:AppResources.LabelFeeling}" />
                 <carousel:SfCarousel
                     x:Name="EmotionsCarouselView"
-                    Margin="20"
                     HeightRequest="200"
-                    ItemHeight="200"
-                    ItemWidth="150"
-                    RotationAngle="60"
+                    ItemHeight="100"
+                    ItemWidth="100"
                     SelectedIndex="{Binding IconID, Mode=TwoWay}"
-                    SelectionChanged="Carousel_SelectionChanged"
-                    WidthRequest="200"
-                    Offset="30" />
+                    SelectedItemOffset="30"
+                    SelectionChanged="Carousel_SelectionChanged" />
             </StackLayout>
             <StackLayout Grid.Row="2">
                 <Label
-                    Margin="10,-40,0,0"
+                    Margin="20,0,0,0"
                     Style="{StaticResource labelStyle}"
                     Text="{x:Static resources:AppResources.LabelPositiveAffect}" />
                 <Frame
                     Margin="20,0,20,0"
                     Padding="10"
-                    BackgroundColor="#cbdadf"
+                    BorderColor="{StaticResource ActionColor}"
                     CornerRadius="20">
                     <Slider
                         Maximum="100"
                         MaximumTrackColor="#00aaff"
-                        MinimumTrackColor="Yellow"
-                        ThumbColor="Yellow"
+                        MinimumTrackColor="GreenYellow"
+                        ThumbColor="{StaticResource ActionColor}"
                         ValueChanged="OnPositiveSliderValueChanged"
                         Value="{Binding PositiveAffectBalance}" />
                 </Frame>
@@ -103,19 +95,19 @@
                     Text="{x:Static resources:AppResources.TextAffectBilance}"
                     VerticalOptions="CenterAndExpand" />
                 <Label
-                    Margin="10,20,0,0"
+                    Margin="20,20,0,0"
                     Style="{StaticResource labelStyle}"
                     Text="{x:Static resources:AppResources.LabelNegativeAffect}" />
                 <Frame
                     Margin="20,0,20,0"
                     Padding="10"
-                    BackgroundColor="#cbdadf"
+                    BorderColor="{StaticResource ActionColor}"
                     CornerRadius="20">
                     <Slider
                         Maximum="100"
                         MaximumTrackColor="#00aaff"
                         MinimumTrackColor="Blue"
-                        ThumbColor="Blue"
+                        ThumbColor="{StaticResource ActionColor}"
                         ValueChanged="OnNegativeSliderValueChanged"
                         Value="{Binding NegativeAffectBalance}" />
                 </Frame>
@@ -130,7 +122,7 @@
             <StackLayout
                 x:Name="buttons"
                 Grid.Row="3"
-                Margin="20,20,20,0"
+                Margin="20"
                 HorizontalOptions="CenterAndExpand"
                 Orientation="Horizontal"
                 VerticalOptions="CenterAndExpand">

@@ -2,9 +2,9 @@
 
 namespace Autinaut
 {
-    public partial class AppShell : Shell
+    public partial class Main : TabbedPage
     {
-        public AppShell()
+        public Main()
         {
             InitializeComponent();
         }

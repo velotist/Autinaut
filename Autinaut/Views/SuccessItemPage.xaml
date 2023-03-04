@@ -28,10 +28,12 @@
             <Frame
                 Margin="20,0,20,20"
                 Padding="20,20,20,10"
-                BackgroundColor="#cbdadf"
-                BorderColor="#cbdadf"
-                CornerRadius="20">
+                BackgroundColor="WhiteSmoke"
+                BorderColor="{StaticResource ActionColor}"
+                CornerRadius="20"
+                HeightRequest="400">
                 <inputLayout:SfTextInputLayout
+                    ContainerBackgroundColor="Transparent"
                     FocusedColor="#562b28"
                     FocusedStrokeWidth="0"
                     Hint="{x:Static resources:AppResources.HintInputSuccess}"
@@ -48,7 +50,7 @@
             </Frame>
             <StackLayout
                 x:Name="buttons"
-                Margin="20,20,20,0"
+                Margin="20"
                 HorizontalOptions="CenterAndExpand"
                 Orientation="Horizontal"
                 VerticalOptions="CenterAndExpand">

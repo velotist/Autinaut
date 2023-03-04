@@ -26,8 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="AppShell.xaml.cs">
-      <DependentUpon>AppShell.xaml</DependentUpon>
+    <Compile Update="Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
     </Compile>
     <Compile Update="Resx\AppResources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -43,7 +43,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AppShell.xaml">
+    <EmbeddedResource Update="Main.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Resx\AppResources.resx">

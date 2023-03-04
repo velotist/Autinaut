@@ -14,6 +14,16 @@ namespace Autinaut.Views
     {
         private readonly string affectBilanceText = AppResources.TextActualAffectBilance;
 
+        private readonly List<Emotions> BasicEmotions = new List<Emotions> {
+            new Emotions { ID = 1, Name = AppResources.TextEmotionAnger, Icon = "anger.png" },
+            new Emotions { ID = 2, Name = AppResources.TextEmotionContempt, Icon = "contempt.png" },
+            new Emotions { ID = 3, Name = AppResources.TextEmotionDisgust, Icon = "disgust.png" },
+            new Emotions { ID = 4, Name = AppResources.TextEmotionFear, Icon = "fear.png" },
+            new Emotions { ID = 5, Name = AppResources.TextEmotionJoy, Icon = "joy.png" },
+            new Emotions { ID = 6, Name = AppResources.TextEmotionSadness, Icon = "sadness.png" },
+            new Emotions { ID = 7, Name = AppResources.TextEmotionSurprise, Icon = "surprise.png" }
+        };
+
         private readonly ObservableCollection<SfCarouselItem> CarouselItems = new ObservableCollection<SfCarouselItem>
         {
             new SfCarouselItem
@@ -156,16 +166,6 @@ namespace Autinaut.Views
                     }
                 }
             },
-        };
-
-        private readonly List<Emotions> BasicEmotions = new List<Emotions> {
-            new Emotions { ID = 1, Name = AppResources.TextEmotionAnger, Icon = "anger.png" },
-            new Emotions { ID = 2, Name = AppResources.TextEmotionContempt, Icon = "contempt.png" },
-            new Emotions { ID = 3, Name = AppResources.TextEmotionDisgust, Icon = "disgust.png" },
-            new Emotions { ID = 4, Name = AppResources.TextEmotionFear, Icon = "fear.png" },
-            new Emotions { ID = 5, Name = AppResources.TextEmotionFear, Icon = "joy.png" },
-            new Emotions { ID = 6, Name = AppResources.TextEmotionSadness, Icon = "sadness.png" },
-            new Emotions { ID = 7, Name = AppResources.TextEmotionSurprise, Icon = "surprise.png" }
         };
 
         public EmotionItemPage(bool hasDeleteButton)

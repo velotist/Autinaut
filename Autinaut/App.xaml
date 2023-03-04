@@ -6,41 +6,68 @@
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms">
 
     <Application.Resources>
-        <Style x:Key="BaseStyle" TargetType="Element">
-            <Setter Property="Shell.TitleColor" Value="#0f0104" />
-            <Setter Property="Shell.TabBarTitleColor" Value="Black" />
-            <Setter Property="Shell.TabBarUnselectedColor" Value="#465C69" />
-            <Setter Property="Shell.NavBarHasShadow" Value="True" />
-            <Setter Property="Shell.ForegroundColor" Value="Transparent" />
+        <Color x:Key="ActionColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#1BB5F2</x:String>
+            </x:Arguments>
+        </Color>
+        <Color x:Key="EmotionPageColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#57A9FF</x:String>
+            </x:Arguments>
+        </Color>
+        <Color x:Key="SuccessPageColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#FF6E63</x:String>
+            </x:Arguments>
+        </Color>
+        <Color x:Key="InfoPageColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#3DFF8E</x:String>
+            </x:Arguments>
+        </Color>
+        <Color x:Key="BottomBarBackgroundColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#FFB330</x:String>
+            </x:Arguments>
+        </Color>
+        <Color x:Key="SelectedTabColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#000000</x:String>
+            </x:Arguments>
+        </Color>
+        <Color x:Key="BarTextColor" x:FactoryMethod="FromHex">
+            <x:Arguments>
+                <x:String>#000000</x:String>
+            </x:Arguments>
+        </Color>
+        <Style x:Key="navEmotionPageStyle" TargetType="NavigationPage">
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
+            <Setter Property="BarBackgroundColor" Value="{StaticResource EmotionPageColor}" />
         </Style>
-        <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" />
-        <Style
-            x:Key="EmotionShell"
-            BasedOn="{StaticResource BaseStyle}"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#a6d7ff" />
-            <Setter Property="Shell.TabBarBackgroundColor" Value="#a6d7ff" />
+        <Style x:Key="navSuccessPageStyle" TargetType="NavigationPage">
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
+            <Setter Property="BarBackgroundColor" Value="{StaticResource SuccessPageColor}" />
         </Style>
-        <Style
-            x:Key="SuccessShell"
-            BasedOn="{StaticResource BaseStyle}"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#b7d7ff" />
-            <Setter Property="Shell.TabBarBackgroundColor" Value="#b7d7ff" />
+        <Style x:Key="navInfoPageStyle" TargetType="NavigationPage">
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
+            <Setter Property="BarBackgroundColor" Value="{StaticResource InfoPageColor}" />
         </Style>
-        <Style
-            x:Key="InfoShell"
-            BasedOn="{StaticResource BaseStyle}"
-            TargetType="Element">
-            <Setter Property="Shell.BackgroundColor" Value="#c8d7ff" />
-            <Setter Property="Shell.TabBarBackgroundColor" Value="#c8d8ff" />
+        <Style x:Key="tabbedPageStyle" TargetType="TabbedPage">
+            <Setter Property="BackgroundColor" Value="WhiteSmoke" />
+            <Setter Property="SelectedTabColor" Value="{StaticResource SelectedTabColor}" />
+            <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
+            <Setter Property="BarBackgroundColor" Value="{StaticResource BottomBarBackgroundColor}" />
         </Style>
         <Style x:Key="labelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="Small" />
             <Setter Property="TextColor" Value="Black" />
         </Style>
         <Style x:Key="baseSfButtonStyle" TargetType="buttons:SfButton">
-            <Setter Property="BackgroundColor" Value="#00aaff" />
+            <Setter Property="BackgroundColor" Value="{StaticResource ActionColor}" />
             <Setter Property="CornerRadius" Value="20" />
             <Setter Property="HasShadow" Value="True" />
             <Setter Property="IsCheckable" Value="True" />
@@ -49,7 +76,7 @@
             <Setter Property="WidthRequest" Value="100" />
         </Style>
         <Style x:Key="frameListviewItem" TargetType="Frame">
-            <Setter Property="BorderColor" Value="#cbdadf" />
+            <Setter Property="BorderColor" Value="{StaticResource ActionColor}" />
             <Setter Property="CornerRadius" Value="20" />
             <Setter Property="HasShadow" Value="True" />
         </Style>

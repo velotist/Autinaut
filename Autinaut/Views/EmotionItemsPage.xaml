@@ -40,10 +40,10 @@
                                             Source="{Binding EmotionIcon}"
                                             WidthRequest="100" />
                                         <Label
-                                            Margin="20,30,0,0"
-                                            FontSize="Large"
-                                            Text="{Binding Emotion}"
-                                            TextColor="Black" />
+                                            Margin="20,30,0,20"
+                                            Style="{StaticResource labelStyle}"
+                                            Text="{Binding EmotionName}"
+                                            VerticalOptions="EndAndExpand" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label

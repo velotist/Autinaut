@@ -7,10 +7,10 @@
     xmlns:resources="clr-namespace:Autinaut.Resx"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     Title="{x:Static resources:AppResources.InfoPageTitle}"
-    x:DataType="autinaut:AppShell">
+    x:DataType="autinaut:Main">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Clicked="OnInfoClicked" Text="i" />
+        <ToolbarItem Clicked="OnInfoClicked" Text="" />
     </ContentPage.ToolbarItems>
 
     <ScrollView>
@@ -33,8 +33,8 @@
                     TextColor="Black" />
             </StackLayout>
             <buttons:SfButton
-                Margin="0,30,0,0"
-                BackgroundColor="White"
+                Margin="0,30,0,30"
+                BackgroundColor="Transparent"
                 Clicked="OnFeedbackClicked"
                 HorizontalOptions="Center"
                 ImageAlignment="Top"
@@ -42,7 +42,8 @@
                 ImageWidth="50"
                 ShowIcon="True"
                 Text="{x:Static resources:AppResources.TextButtonFeedback}"
-                TextColor="Black" />
+                TextColor="Black"
+                VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
