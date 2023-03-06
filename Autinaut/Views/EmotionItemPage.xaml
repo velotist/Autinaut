@@ -55,21 +55,21 @@
                     </inputLayout:SfTextInputLayout>
                 </Frame>
             </StackLayout>
-            <StackLayout Grid.Row="1">
+            <StackLayout Grid.Row="1" Margin="20,0,20,0">
                 <Label
-                    Margin="20,0,0,-40"
+                    Margin="0,0,0,-40"
                     Style="{StaticResource labelStyle}"
                     Text="{x:Static resources:AppResources.LabelFeeling}" />
                 <carousel:SfCarousel
                     x:Name="EmotionsCarouselView"
-                    HeightRequest="200"
-                    ItemHeight="100"
+                    HeightRequest="300"
+                    ItemHeight="200"
                     ItemWidth="100"
                     SelectedIndex="{Binding IconID, Mode=TwoWay}"
                     SelectedItemOffset="30"
                     SelectionChanged="Carousel_SelectionChanged" />
             </StackLayout>
-            <StackLayout Grid.Row="2">
+            <StackLayout Grid.Row="2" Margin="0,-100,0,0">
                 <Label
                     Margin="20,0,0,0"
                     Style="{StaticResource labelStyle}"
