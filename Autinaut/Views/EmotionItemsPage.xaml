@@ -29,7 +29,7 @@
                                     <Label
                                         Margin="0,0,0,20"
                                         FontSize="Large"
-                                        Text="{Binding EmotionSituation}"
+                                        Text="{Binding Note}"
                                         TextColor="Black" />
                                     <StackLayout
                                         HorizontalOptions="StartAndExpand"
@@ -37,12 +37,12 @@
                                         VerticalOptions="Center">
                                         <Image
                                             HeightRequest="100"
-                                            Source="{Binding EmotionIcon}"
+                                            Source="{Binding Icon}"
                                             WidthRequest="100" />
                                         <Label
                                             Margin="20,30,0,20"
                                             Style="{StaticResource labelStyle}"
-                                            Text="{Binding EmotionName}"
+                                            Text="{Binding Name}"
                                             VerticalOptions="EndAndExpand" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">

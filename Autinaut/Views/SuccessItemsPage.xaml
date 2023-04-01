@@ -34,7 +34,7 @@
                                         VerticalOptions="Center" />
                                     <Label
                                         FontSize="Large"
-                                        Text="{Binding SuccessNote}"
+                                        Text="{Binding Note}"
                                         TextColor="Black"
                                         VerticalOptions="Center" />
                                 </StackLayout>

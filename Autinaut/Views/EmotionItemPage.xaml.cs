@@ -3,7 +3,7 @@ using Autinaut.Resx;
 using Autinaut.ViewModels;
 using Syncfusion.SfCarousel.XForms;
 using System;
-using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -14,15 +14,7 @@ namespace Autinaut.Views
     {
         private readonly string affectBilanceText = AppResources.TextActualAffectBilance;
 
-        private readonly List<Emotions> BasicEmotions = new List<Emotions> {
-            new Emotions { ID = 1, Name = AppResources.TextEmotionAnger, Icon = "anger.png" },
-            new Emotions { ID = 2, Name = AppResources.TextEmotionContempt, Icon = "contempt.png" },
-            new Emotions { ID = 3, Name = AppResources.TextEmotionDisgust, Icon = "disgust.png" },
-            new Emotions { ID = 4, Name = AppResources.TextEmotionFear, Icon = "fear.png" },
-            new Emotions { ID = 5, Name = AppResources.TextEmotionJoy, Icon = "joy.png" },
-            new Emotions { ID = 6, Name = AppResources.TextEmotionSadness, Icon = "sadness.png" },
-            new Emotions { ID = 7, Name = AppResources.TextEmotionSurprise, Icon = "surprise.png" }
-        };
+        private readonly ImmutableList<Emotion> BasicEmotions = Emotion.GetEmotionsList();
 
         private readonly ObservableCollection<SfCarouselItem> CarouselItems = new ObservableCollection<SfCarouselItem>
         {
@@ -184,8 +176,8 @@ namespace Autinaut.Views
         private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
         {
             EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
-            EmotionItem.EmotionIcon = BasicEmotions[e.SelectedIndex].Icon;
-            EmotionItem.EmotionName = BasicEmotions[e.SelectedIndex].Name;
+            EmotionItem.Icon = BasicEmotions[e.SelectedIndex].Icon;
+            EmotionItem.Name = BasicEmotions[e.SelectedIndex].Name;
         }
 
         private async Task ScrollToEnd()
@@ -196,7 +188,7 @@ namespace Autinaut.Views
         private async void OnSaveClicked(object sender, EventArgs e)
         {
             EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
-            if (string.IsNullOrEmpty(EmotionItem.EmotionSituation))
+            if (string.IsNullOrEmpty(EmotionItem.Note))
             {
                 await DisplayAlert(AppResources.NotificationTitle, AppResources.NotificationSituationText, "OK");
                 SfButtonSave.IsChecked = false;
@@ -206,7 +198,7 @@ namespace Autinaut.Views
                 return;
             }
 
-            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            var database = new ItemDatabase<EmotionItemViewModel>();
             _ = await database.SaveItemAsync(EmotionItem);
 
             await Navigation.PopToRootAsync();
@@ -214,8 +206,8 @@ namespace Autinaut.Views
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
-            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            var EmotionItem = (EmotionItemViewModel)BindingContext;
+            var database = new ItemDatabase<EmotionItemViewModel>();
             _ = await database.DeleteItemAsync(EmotionItem);
 
             await Navigation.PopToRootAsync();

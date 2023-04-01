@@ -21,7 +21,7 @@ namespace Autinaut.Views
         {
             base.OnAppearing();
 
-            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            var database = new ItemDatabase<EmotionItemViewModel>();
             System.Collections.Generic.List<EmotionItemViewModel> items = await database.GetItemsAsync();
             myListView.ItemsSource = items;
             Content = items.Count == 0

@@ -3,11 +3,11 @@
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
-    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:Autinaut.ViewModels"
     xmlns:resources="clr-namespace:Autinaut.Resx"
+    xmlns:local="clr-namespace:Autinaut.ViewModels"
+    xmlns:carousel="clr-namespace:Syncfusion.SfCarousel.XForms;assembly=Syncfusion.SfCarousel.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     Title="{x:Static resources:AppResources.EmotionItemPageTitle}">
 
     <Shell.BackButtonBehavior>
@@ -50,7 +50,7 @@
                             Completed="EditorUnfocused"
                             Keyboard="Text"
                             MaxLength="400"
-                            Text="{Binding EmotionSituation}"
+                            Text="{Binding Note}"
                             TextColor="Black" />
                     </inputLayout:SfTextInputLayout>
                 </Frame>
@@ -65,7 +65,7 @@
                     HeightRequest="300"
                     ItemHeight="200"
                     ItemWidth="100"
-                    SelectedIndex="{Binding IconID, Mode=TwoWay}"
+                    SelectedIndex="{Binding EmotionID, Mode=TwoWay}"
                     SelectedItemOffset="30"
                     SelectionChanged="Carousel_SelectionChanged" />
             </StackLayout>

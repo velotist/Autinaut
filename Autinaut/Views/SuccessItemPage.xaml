@@ -44,7 +44,7 @@
                         Completed="EditorUnfocused"
                         Keyboard="Text"
                         MaxLength="700"
-                        Text="{Binding SuccessNote}"
+                        Text="{Binding Note}"
                         TextColor="Black" />
                 </inputLayout:SfTextInputLayout>
             </Frame>

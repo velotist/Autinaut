@@ -2,6 +2,7 @@
 using Autinaut.Resx;
 using Autinaut.ViewModels;
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,8 +22,8 @@ namespace Autinaut.Views
         {
             base.OnAppearing();
 
-            SuccessItemDatabase database = await SuccessItemDatabase.Instance;
-            System.Collections.Generic.List<SuccessItemViewModel> items = await database.GetItemsAsync();
+            var database = new ItemDatabase<SuccessItemViewModel>();
+            List<SuccessItemViewModel> items = await database.GetItemsAsync();
             myListView.ItemsSource = items;
             Content = items.Count == 0
                 ? new StackLayout
