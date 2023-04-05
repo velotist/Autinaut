@@ -3,8 +3,7 @@ using System.Collections.Immutable;
 
 namespace Autinaut.Models
 {
-    public class Emotion : IEmotion
-
+    public sealed class Emotion : IEmotion
     {
         public int EmotionID { get; }
         public string Name { get; }

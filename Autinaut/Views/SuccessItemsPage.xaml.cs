@@ -22,8 +22,8 @@ namespace Autinaut.Views
         {
             base.OnAppearing();
 
-            var database = new ItemDatabase<SuccessItemViewModel>();
-            List<SuccessItemViewModel> items = await database.GetItemsAsync();
+            var database = new ItemDatabase<ItemViewModel>();
+            List<ItemViewModel> items = await database.GetItemsAsync();
             myListView.ItemsSource = items;
             Content = items.Count == 0
                 ? new StackLayout
@@ -67,7 +67,7 @@ namespace Autinaut.Views
             {
                 await Navigation.PushAsync(new SuccessItemPage(true)
                 {
-                    BindingContext = e.Item as SuccessItemViewModel
+                    BindingContext = e.Item as ItemViewModel
                 });
             }
             finally
@@ -89,7 +89,7 @@ namespace Autinaut.Views
             {
                 await Navigation.PushAsync(new SuccessItemPage(false)
                 {
-                    BindingContext = new SuccessItemViewModel()
+                    BindingContext = new ItemViewModel()
                 });
             }
             finally

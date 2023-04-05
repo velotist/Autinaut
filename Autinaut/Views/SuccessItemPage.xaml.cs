@@ -23,7 +23,7 @@ namespace Autinaut.Views
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            SuccessItemViewModel successItem = (SuccessItemViewModel)BindingContext;
+            ItemViewModel successItem = (ItemViewModel)BindingContext;
             if (string.IsNullOrEmpty(successItem.Note))
             {
                 _ = DisplayAlert(AppResources.NotificationTitle, AppResources.NotificationSuccessText, "OK");
@@ -34,7 +34,7 @@ namespace Autinaut.Views
                 return;
             }
 
-            var database = new ItemDatabase<SuccessItemViewModel>();
+            var database = new ItemDatabase<ItemViewModel>();
             _ = await database.SaveItemAsync(successItem);
 
             await Navigation.PopToRootAsync();
@@ -42,8 +42,8 @@ namespace Autinaut.Views
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            SuccessItemViewModel successItem = (SuccessItemViewModel)BindingContext;
-            var database = new ItemDatabase<SuccessItemViewModel>();
+            ItemViewModel successItem = (ItemViewModel)BindingContext;
+            var database = new ItemDatabase<ItemViewModel>();
             _ = await database.DeleteItemAsync(successItem);
 
             await Navigation.PopToRootAsync();

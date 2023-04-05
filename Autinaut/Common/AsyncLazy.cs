@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace Autinaut.Common
 {
-    public class AsyncLazy<T>
+    public sealed class AsyncLazy<T>
     {
         private readonly Lazy<Task<T>> instance;
 

@@ -3,10 +3,10 @@
     x:Class="Autinaut.Views.SuccessItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:resources="clr-namespace:Autinaut.Resx"
-    xmlns:local="clr-namespace:Autinaut.ViewModels"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:local="clr-namespace:Autinaut.ViewModels"
+    xmlns:resources="clr-namespace:Autinaut.Resx"
     Title="{x:Static resources:AppResources.SuccessItemPageTitle}">
 
     <Shell.BackButtonBehavior>
@@ -17,7 +17,7 @@
     </Shell.BackButtonBehavior>
 
     <ContentPage.BindingContext>
-        <local:SuccessItemViewModel />
+        <local:ItemViewModel />
     </ContentPage.BindingContext>
 
     <ScrollView

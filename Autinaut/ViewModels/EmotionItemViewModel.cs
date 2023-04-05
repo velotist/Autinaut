@@ -3,7 +3,7 @@ using Autinaut.Resx;
 
 namespace Autinaut.ViewModels
 {
-    public class EmotionItemViewModel : ItemViewModel, IEmotion
+    public sealed class EmotionItemViewModel : ItemViewModel, IEmotion
     {
         public int PositiveAffectBalance { get; set; }
         public int NegativeAffectBalance { get; set; }

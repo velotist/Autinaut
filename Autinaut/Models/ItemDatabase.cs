@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Autinaut.Models
 {
-    public class ItemDatabase<T> where T : ItemViewModel, new()
+    public sealed class ItemDatabase<T> where T : ItemViewModel, new()
     {
         private readonly SQLiteAsyncConnection _database;
 
