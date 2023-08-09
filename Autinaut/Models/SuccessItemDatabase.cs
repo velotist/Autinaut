@@ -8,20 +8,15 @@ namespace Autinaut.Models
 {
     public class SuccessItemDatabase
     {
-        private static SQLiteAsyncConnection Database;
+        private static readonly SQLiteAsyncConnection Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
 
         public static readonly AsyncLazy<SuccessItemDatabase> Instance = new AsyncLazy<SuccessItemDatabase>(async () =>
         {
             SuccessItemDatabase instance = new SuccessItemDatabase();
-            CreateTableResult result = await Database.CreateTableAsync<SuccessItemViewModel>();
+            await Database.CreateTableAsync<SuccessItemViewModel>();
 
             return instance;
         });
-
-        public SuccessItemDatabase()
-        {
-            Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-        }
 
         public Task<List<SuccessItemViewModel>> GetItemsAsync()
         {

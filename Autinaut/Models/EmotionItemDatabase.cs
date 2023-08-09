@@ -8,20 +8,15 @@ namespace Autinaut.Models
 {
     public class EmotionItemDatabase
     {
-        private static SQLiteAsyncConnection Database;
+        private static readonly SQLiteAsyncConnection Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
 
         public static readonly AsyncLazy<EmotionItemDatabase> Instance = new AsyncLazy<EmotionItemDatabase>(async () =>
         {
             EmotionItemDatabase instance = new EmotionItemDatabase();
-            CreateTableResult result = await Database.CreateTableAsync<EmotionItemViewModel>();
+            await Database.CreateTableAsync<EmotionItemViewModel>();
 
             return instance;
         });
-
-        public EmotionItemDatabase()
-        {
-            Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
-        }
 
         public async Task<List<EmotionItemViewModel>> GetItemsAsync()
         {
