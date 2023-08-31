@@ -30,13 +30,13 @@ namespace Autinaut.Models
         public Task<SuccessItemViewModel> GetItemAsync(int id)
         {
             return Database.Table<SuccessItemViewModel>()
-                .Where(i => i.ID == id)
+                .Where(i => i.Id == id)
                 .FirstOrDefaultAsync();
         }
 
         public Task<int> SaveItemAsync(SuccessItemViewModel item)
         {
-            return item.ID != 0 ? Database.UpdateAsync(item) : Database.InsertAsync(item);
+            return item.Id != 0 ? Database.UpdateAsync(item) : Database.InsertAsync(item);
         }
 
         public Task<int> DeleteItemAsync(SuccessItemViewModel item)

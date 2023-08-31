@@ -6,9 +6,8 @@ namespace Autinaut.ViewModels
     public class SuccessItemViewModel
     {
         [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
-
+        public int Id { get; set; }
         public string SuccessNote { get; set; }
-        public string Date { get; set; } = DateTime.Now.ToString();
+        public DateTime Date { get; set; } = DateTime.Now;
     }
 }
