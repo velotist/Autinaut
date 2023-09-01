@@ -1,18 +1,19 @@
-﻿using Autinaut.Common;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Autinaut.Common;
 using Autinaut.ViewModels;
 using SQLite;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Autinaut.Models
 {
     public class EmotionItemDatabase
     {
-        private static readonly SQLiteAsyncConnection Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+        private static readonly SQLiteAsyncConnection Database =
+            new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
 
         public static readonly AsyncLazy<EmotionItemDatabase> Instance = new AsyncLazy<EmotionItemDatabase>(async () =>
         {
-            EmotionItemDatabase instance = new EmotionItemDatabase();
+            var instance = new EmotionItemDatabase();
             await Database.CreateTableAsync<EmotionItemViewModel>();
 
             return instance;

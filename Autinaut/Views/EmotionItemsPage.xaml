@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="Autinaut.Views.EmotionItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -12,19 +13,19 @@
 
     <StackLayout>
         <ListView
-            x:Name="myListView"
+            x:Name="MyListView"
             CachingStrategy="RecycleElementAndDataTemplate"
             ItemTapped="OnListItemTapped"
-            Style="{StaticResource listview}">
+            Style="{StaticResource Listview}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Frame Style="{StaticResource frameListviewItem}">
+                            <Frame Style="{StaticResource FrameListviewItem}">
                                 <StackLayout>
                                     <Label
                                         Margin="0,0,0,10"
-                                        Style="{StaticResource labelStyle}"
+                                        Style="{StaticResource LabelStyle}"
                                         Text="{Binding Date}" />
                                     <Label
                                         Margin="0,0,0,20"
@@ -41,13 +42,13 @@
                                             WidthRequest="100" />
                                         <Label
                                             Margin="20,30,0,20"
-                                            Style="{StaticResource labelStyle}"
+                                            Style="{StaticResource LabelStyle}"
                                             Text="{Binding EmotionName}"
                                             VerticalOptions="EndAndExpand" />
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label
-                                            Style="{StaticResource labelStyle}"
+                                            Style="{StaticResource LabelStyle}"
                                             Text="{x:Static resources:AppResources.LabelPositiveAffect}"
                                             VerticalOptions="Center" />
                                         <Label
@@ -58,7 +59,7 @@
                                     </StackLayout>
                                     <StackLayout Orientation="Horizontal">
                                         <Label
-                                            Style="{StaticResource labelStyle}"
+                                            Style="{StaticResource LabelStyle}"
                                             Text="{x:Static resources:AppResources.LabelNegativeAffect}"
                                             VerticalOptions="Center" />
                                         <Label

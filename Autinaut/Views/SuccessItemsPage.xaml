@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="Autinaut.Views.SuccessItemsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -18,18 +19,18 @@
 
     <StackLayout>
         <ListView
-            x:Name="myListView"
+            x:Name="MyListView"
             CachingStrategy="RecycleElementAndDataTemplate"
             ItemTapped="OnListItemTapped"
-            Style="{StaticResource listview}">
+            Style="{StaticResource Listview}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <Grid Padding="10">
-                            <Frame Style="{StaticResource frameListviewItem}">
+                            <Frame Style="{StaticResource FrameListviewItem}">
                                 <StackLayout>
                                     <Label
-                                        Style="{StaticResource labelStyle}"
+                                        Style="{StaticResource LabelStyle}"
                                         Text="{Binding Date}"
                                         VerticalOptions="Center" />
                                     <Label

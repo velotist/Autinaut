@@ -1,18 +1,19 @@
-﻿using Autinaut.Common;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Autinaut.Common;
 using Autinaut.ViewModels;
 using SQLite;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Autinaut.Models
 {
-    public class SuccessItemDatabase
+    public class SuccessItemDatabase : ISuccessItemDatabase
     {
-        private static readonly SQLiteAsyncConnection Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+        private static readonly SQLiteAsyncConnection Database =
+            new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
 
         public static readonly AsyncLazy<SuccessItemDatabase> Instance = new AsyncLazy<SuccessItemDatabase>(async () =>
         {
-            SuccessItemDatabase instance = new SuccessItemDatabase();
+            var instance = new SuccessItemDatabase();
             await Database.CreateTableAsync<SuccessItemViewModel>();
 
             return instance;
@@ -20,7 +21,7 @@ namespace Autinaut.Models
 
         public Task<List<SuccessItemViewModel>> GetItemsAsync()
         {
-            Task<List<SuccessItemViewModel>> successes = Database.Table<SuccessItemViewModel>()
+            var successes = Database.Table<SuccessItemViewModel>()
                 .OrderByDescending(p => p.Date)
                 .ToListAsync();
 

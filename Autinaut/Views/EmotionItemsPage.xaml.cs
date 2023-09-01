@@ -1,7 +1,7 @@
-﻿using Autinaut.Models;
+﻿using System;
+using Autinaut.Models;
 using Autinaut.Resx;
 using Autinaut.ViewModels;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,9 +21,9 @@ namespace Autinaut.Views
         {
             base.OnAppearing();
 
-            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
-            System.Collections.Generic.List<EmotionItemViewModel> items = await database.GetItemsAsync();
-            myListView.ItemsSource = items;
+            var database = await EmotionItemDatabase.Instance;
+            var items = await database.GetItemsAsync();
+            MyListView.ItemsSource = items;
             Content = items.Count == 0
                 ? new StackLayout
                 {
@@ -45,22 +45,16 @@ namespace Autinaut.Views
                         }
                     }
                 }
-                : (View)myListView;
+                : (View)MyListView;
         }
 
         private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
         {
-            if (_isRunning)
-            {
-                return;
-            }
+            if (_isRunning) return;
 
             _isRunning = true;
 
-            if (e.Item == null)
-            {
-                return;
-            }
+            if (e.Item == null) return;
 
             try
             {
@@ -77,10 +71,7 @@ namespace Autinaut.Views
 
         private async void OnItemAdded(object sender, EventArgs e)
         {
-            if (_isRunning)
-            {
-                return;
-            }
+            if (_isRunning) return;
 
             _isRunning = true;
 

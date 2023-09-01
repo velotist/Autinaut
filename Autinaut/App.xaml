@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Application
     x:Class="Autinaut.App"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -41,32 +42,32 @@
                 <x:String>#000000</x:String>
             </x:Arguments>
         </Color>
-        <Style x:Key="navEmotionPageStyle" TargetType="NavigationPage">
+        <Style x:Key="NavEmotionPageStyle" TargetType="NavigationPage">
             <Setter Property="BackgroundColor" Value="WhiteSmoke" />
             <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
             <Setter Property="BarBackgroundColor" Value="{StaticResource EmotionPageColor}" />
         </Style>
-        <Style x:Key="navSuccessPageStyle" TargetType="NavigationPage">
+        <Style x:Key="NavSuccessPageStyle" TargetType="NavigationPage">
             <Setter Property="BackgroundColor" Value="WhiteSmoke" />
             <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
             <Setter Property="BarBackgroundColor" Value="{StaticResource SuccessPageColor}" />
         </Style>
-        <Style x:Key="navInfoPageStyle" TargetType="NavigationPage">
+        <Style x:Key="NavInfoPageStyle" TargetType="NavigationPage">
             <Setter Property="BackgroundColor" Value="WhiteSmoke" />
             <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
             <Setter Property="BarBackgroundColor" Value="{StaticResource InfoPageColor}" />
         </Style>
-        <Style x:Key="tabbedPageStyle" TargetType="TabbedPage">
+        <Style x:Key="TabbedPageStyle" TargetType="TabbedPage">
             <Setter Property="BackgroundColor" Value="WhiteSmoke" />
             <Setter Property="SelectedTabColor" Value="{StaticResource SelectedTabColor}" />
             <Setter Property="BarTextColor" Value="{StaticResource BarTextColor}" />
             <Setter Property="BarBackgroundColor" Value="{StaticResource BottomBarBackgroundColor}" />
         </Style>
-        <Style x:Key="labelStyle" TargetType="Label">
+        <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="FontSize" Value="Small" />
             <Setter Property="TextColor" Value="Black" />
         </Style>
-        <Style x:Key="baseSfButtonStyle" TargetType="buttons:SfButton">
+        <Style x:Key="BaseSfButtonStyle" TargetType="buttons:SfButton">
             <Setter Property="BackgroundColor" Value="{StaticResource ActionColor}" />
             <Setter Property="CornerRadius" Value="20" />
             <Setter Property="HasShadow" Value="True" />
@@ -75,12 +76,12 @@
             <Setter Property="HeightRequest" Value="48" />
             <Setter Property="WidthRequest" Value="100" />
         </Style>
-        <Style x:Key="frameListviewItem" TargetType="Frame">
+        <Style x:Key="FrameListviewItem" TargetType="Frame">
             <Setter Property="BorderColor" Value="{StaticResource ActionColor}" />
             <Setter Property="CornerRadius" Value="20" />
             <Setter Property="HasShadow" Value="True" />
         </Style>
-        <Style x:Key="listview" TargetType="ListView">
+        <Style x:Key="Listview" TargetType="ListView">
             <Setter Property="Margin" Value="10" />
             <Setter Property="VerticalScrollBarVisibility" Value="Always" />
             <Setter Property="HasUnevenRows" Value="True" />

@@ -1,249 +1,254 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
-    Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
-    associated with the data types.
-    
-    Example:
-    
-    ... ado.net/XML headers & schema ...
-    <resheader name="resmimetype">text/microsoft-resx</resheader>
-    <resheader name="version">2.0</resheader>
-    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
-    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
-    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
-    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
-    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
-        <value>[base64 mime encoded serialized .NET Framework object]</value>
-    </data>
-    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
-        <comment>This is a comment</comment>
-    </data>
-                
-    There are any number of "resheader" rows that contain simple 
-    name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
-    mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
-    extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
-    read any of the formats listed below.
-    
-    mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
-            : and then encoded with base64 encoding.
-    
-    mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
-            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
-            : and then encoded with base64 encoding.
-
-    mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
-            : using a System.ComponentModel.TypeConverter
-            : and then encoded with base64 encoding.
-    -->
-  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
-    <xsd:element name="root" msdata:IsDataSet="true">
-      <xsd:complexType>
-        <xsd:choice maxOccurs="unbounded">
-          <xsd:element name="metadata">
+    <!-- 
+      Microsoft ResX Schema 
+      
+      Version 2.0
+      
+      The primary goals of this format is to allow a simple XML format 
+      that is mostly human readable. The generation and parsing of the 
+      various data types are done through the TypeConverter classes 
+      associated with the data types.
+      
+      Example:
+      
+      ... ado.net/XML headers & schema ...
+      <resheader name="resmimetype">text/microsoft-resx</resheader>
+      <resheader name="version">2.0</resheader>
+      <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+      <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+      <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+      <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+      <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+          <value>[base64 mime encoded serialized .NET Framework object]</value>
+      </data>
+      <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+          <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+          <comment>This is a comment</comment>
+      </data>
+                  
+      There are any number of "resheader" rows that contain simple 
+      name/value pairs.
+      
+      Each data row contains a name, and value. The row also contains a 
+      type or mimetype. Type corresponds to a .NET class that support 
+      text/value conversion through the TypeConverter architecture. 
+      Classes that don't support this are serialized and stored with the 
+      mimetype set.
+      
+      The mimetype is used for serialized objects, and tells the 
+      ResXResourceReader how to depersist the object. This is currently not 
+      extensible. For a given mimetype the value must be set accordingly:
+      
+      Note - application/x-microsoft.net.object.binary.base64 is the format 
+      that the ResXResourceWriter will generate, however the reader can 
+      read any of the formats listed below.
+      
+      mimetype: application/x-microsoft.net.object.binary.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+              : and then encoded with base64 encoding.
+      
+      mimetype: application/x-microsoft.net.object.soap.base64
+      value   : The object must be serialized with 
+              : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+              : and then encoded with base64 encoding.
+  
+      mimetype: application/x-microsoft.net.object.bytearray.base64
+      value   : The object must be serialized into a byte array 
+              : using a System.ComponentModel.TypeConverter
+              : and then encoded with base64 encoding.
+      -->
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root"
+                xmlns="">
+        <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+        <xsd:element name="root" msdata:IsDataSet="true">
             <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" />
-              </xsd:sequence>
-              <xsd:attribute name="name" use="required" type="xsd:string" />
-              <xsd:attribute name="type" type="xsd:string" />
-              <xsd:attribute name="mimetype" type="xsd:string" />
-              <xsd:attribute ref="xml:space" />
+                <xsd:choice maxOccurs="unbounded">
+                    <xsd:element name="metadata">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" use="required" type="xsd:string"/>
+                            <xsd:attribute name="type" type="xsd:string"/>
+                            <xsd:attribute name="mimetype" type="xsd:string"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="assembly">
+                        <xsd:complexType>
+                            <xsd:attribute name="alias" type="xsd:string"/>
+                            <xsd:attribute name="name" type="xsd:string"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="data">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+                            <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+                            <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+                            <xsd:attribute ref="xml:space"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="resheader">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                            </xsd:sequence>
+                            <xsd:attribute name="name" type="xsd:string" use="required"/>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:choice>
             </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="assembly">
-            <xsd:complexType>
-              <xsd:attribute name="alias" type="xsd:string" />
-              <xsd:attribute name="name" type="xsd:string" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="data">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
-              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
-              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
-              <xsd:attribute ref="xml:space" />
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="resheader">
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
-              </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" use="required" />
-            </xsd:complexType>
-          </xsd:element>
-        </xsd:choice>
-      </xsd:complexType>
-    </xsd:element>
-  </xsd:schema>
-  <resheader name="resmimetype">
-    <value>text/microsoft-resx</value>
-  </resheader>
-  <resheader name="version">
-    <value>2.0</value>
-  </resheader>
-  <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </resheader>
-  <data name="BackButtonHelpText" xml:space="preserve">
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>2.0</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral,
+            PublicKeyToken=b77a5c561934e089
+        </value>
+    </resheader>
+    <data name="BackButtonHelpText" xml:space="preserve">
     <value>Back button</value>
   </data>
-  <data name="BackButtonName" xml:space="preserve">
+    <data name="BackButtonName" xml:space="preserve">
     <value>Back</value>
   </data>
-  <data name="EmotionItemPageTitle" xml:space="preserve">
+    <data name="EmotionItemPageTitle" xml:space="preserve">
     <value>My feeling</value>
   </data>
-  <data name="EmotionItemsPageTitle" xml:space="preserve">
+    <data name="EmotionItemsPageTitle" xml:space="preserve">
     <value>My feelings</value>
   </data>
-  <data name="HintInputSituation" xml:space="preserve">
+    <data name="HintInputSituation" xml:space="preserve">
     <value>Describe the situation</value>
   </data>
-  <data name="HintInputSuccess" xml:space="preserve">
+    <data name="HintInputSuccess" xml:space="preserve">
     <value>Describe your success</value>
   </data>
-  <data name="InfoPageTitle" xml:space="preserve">
+    <data name="InfoPageTitle" xml:space="preserve">
     <value>Be your autinaut</value>
   </data>
-  <data name="InfoTextPartOne" xml:space="preserve">
+    <data name="InfoTextPartOne" xml:space="preserve">
     <value>The app was developed as part of the FASTER program at  Universitätsklinikum Freiburg. It is primarily aimed at people on the autism spectrum.</value>
   </data>
-  <data name="InfoTextPartThree" xml:space="preserve">
+    <data name="InfoTextPartThree" xml:space="preserve">
     <value>Furthermore, it may prove useful to write down your successes. You can then always 'keep them in front of your eyes'.</value>
   </data>
-  <data name="InfoTextPartTwo" xml:space="preserve">
+    <data name="InfoTextPartTwo" xml:space="preserve">
     <value>Feelings arise in many situations. Record one of your seven basic feelings (according to Paul Ekman) in different situations. The recording can help you to deal with the topic of recognizing and naming feelings. In addition, you can link the expression of the feeling with a so-called affect balance.</value>
   </data>
-  <data name="LabelFeeling" xml:space="preserve">
+    <data name="LabelFeeling" xml:space="preserve">
     <value>Feeling</value>
   </data>
-  <data name="LabelInitialTextPartOne" xml:space="preserve">
+    <data name="LabelInitialTextPartOne" xml:space="preserve">
     <value>Be your own Autinaut. Click on the icon in the top bar to create your first entry.</value>
   </data>
-  <data name="LabelInitialTextPartTwo" xml:space="preserve">
+    <data name="LabelInitialTextPartTwo" xml:space="preserve">
     <value>Then, if necessary, click on an existing list entry to edit or delete it.</value>
   </data>
-  <data name="LabelNegativeAffect" xml:space="preserve">
+    <data name="LabelNegativeAffect" xml:space="preserve">
     <value>Negative affect bilance</value>
   </data>
-  <data name="LabelPositiveAffect" xml:space="preserve">
+    <data name="LabelPositiveAffect" xml:space="preserve">
     <value>Positive affect bilance</value>
   </data>
-  <data name="LabelSituation" xml:space="preserve">
+    <data name="LabelSituation" xml:space="preserve">
     <value>Situation</value>
   </data>
-  <data name="MailSubjectText" xml:space="preserve">
+    <data name="MailSubjectText" xml:space="preserve">
     <value>My feedback on Autinaut</value>
   </data>
-  <data name="NotificationSituationText" xml:space="preserve">
+    <data name="NotificationSituationText" xml:space="preserve">
     <value>Please enter a situation.</value>
   </data>
-  <data name="NotificationSuccessText" xml:space="preserve">
+    <data name="NotificationSuccessText" xml:space="preserve">
     <value>Please enter a success.</value>
   </data>
-  <data name="NotificationTitle" xml:space="preserve">
+    <data name="NotificationTitle" xml:space="preserve">
     <value>Message</value>
   </data>
-  <data name="SfButtonAutomationPropertiesNameDelete" xml:space="preserve">
+    <data name="SfButtonAutomationPropertiesNameDelete" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="SfButtonAutomationPropertiesNameSave" xml:space="preserve">
+    <data name="SfButtonAutomationPropertiesNameSave" xml:space="preserve">
     <value>Save</value>
   </data>
-  <data name="SpecialThanx" xml:space="preserve">
+    <data name="SpecialThanx" xml:space="preserve">
     <value>Special thanks to Jan Charpa</value>
   </data>
-  <data name="SuccessItemPageTitle" xml:space="preserve">
+    <data name="SuccessItemPageTitle" xml:space="preserve">
     <value>My success</value>
   </data>
-  <data name="SuccessItemsPageTitle" xml:space="preserve">
+    <data name="SuccessItemsPageTitle" xml:space="preserve">
     <value>My successes</value>
   </data>
-  <data name="TabTitleFeelings" xml:space="preserve">
+    <data name="TabTitleFeelings" xml:space="preserve">
     <value>Feelings</value>
   </data>
-  <data name="TabTitleInfo" xml:space="preserve">
+    <data name="TabTitleInfo" xml:space="preserve">
     <value>Information</value>
   </data>
-  <data name="TabTitleSuccesses" xml:space="preserve">
+    <data name="TabTitleSuccesses" xml:space="preserve">
     <value>Successes</value>
   </data>
-  <data name="TextActualAffectBilance" xml:space="preserve">
+    <data name="TextActualAffectBilance" xml:space="preserve">
     <value>The affect balance is {0} %.</value>
   </data>
-  <data name="TextAffectBilance" xml:space="preserve">
+    <data name="TextAffectBilance" xml:space="preserve">
     <value>The affect balance is 0%.</value>
   </data>
-  <data name="TextAlertMailNotSupportedText" xml:space="preserve">
+    <data name="TextAlertMailNotSupportedText" xml:space="preserve">
     <value>Email is not supported on this device</value>
   </data>
-  <data name="TextAlertMailNotSupportedTitle" xml:space="preserve">
+    <data name="TextAlertMailNotSupportedTitle" xml:space="preserve">
     <value>Feature Not Supported</value>
   </data>
-  <data name="TextButtonFeedback" xml:space="preserve">
+    <data name="TextButtonFeedback" xml:space="preserve">
     <value>Send feedback</value>
   </data>
-  <data name="TextEmotionAnger" xml:space="preserve">
+    <data name="TextEmotionAnger" xml:space="preserve">
     <value>Anger</value>
   </data>
-  <data name="TextEmotionContempt" xml:space="preserve">
+    <data name="TextEmotionContempt" xml:space="preserve">
     <value>Contempt</value>
   </data>
-  <data name="TextEmotionDisgust" xml:space="preserve">
+    <data name="TextEmotionDisgust" xml:space="preserve">
     <value>Disgust</value>
   </data>
-  <data name="TextEmotionFear" xml:space="preserve">
+    <data name="TextEmotionFear" xml:space="preserve">
     <value>Fear</value>
   </data>
-  <data name="TextEmotionJoy" xml:space="preserve">
+    <data name="TextEmotionJoy" xml:space="preserve">
     <value>Joy</value>
   </data>
-  <data name="TextEmotionSadness" xml:space="preserve">
+    <data name="TextEmotionSadness" xml:space="preserve">
     <value>Sadness</value>
   </data>
-  <data name="TextEmotionSurprise" xml:space="preserve">
+    <data name="TextEmotionSurprise" xml:space="preserve">
     <value>Surprise</value>
   </data>
-  <data name="TextExceptionTtitle" xml:space="preserve">
+    <data name="TextExceptionTtitle" xml:space="preserve">
     <value>Exception</value>
   </data>
-  <data name="TextSfButtonDelete" xml:space="preserve">
+    <data name="TextSfButtonDelete" xml:space="preserve">
     <value>Delete</value>
   </data>
-  <data name="TextSfButtonSave" xml:space="preserve">
+    <data name="TextSfButtonSave" xml:space="preserve">
     <value>Save</value>
   </data>
 </root>

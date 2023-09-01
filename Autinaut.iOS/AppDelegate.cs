@@ -1,11 +1,14 @@
 ﻿using Foundation;
+using Syncfusion.SfCarousel.XForms.iOS;
 using Syncfusion.XForms.iOS.TextInputLayout;
 using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 namespace Autinaut.iOS
 {
     [Register("AppDelegate")]
-    public class AppDelegate : Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+    public class AppDelegate : FormsApplicationDelegate
     {
         //
         // This method is invoked when the application has loaded and is ready to run. In this
@@ -16,8 +19,8 @@ namespace Autinaut.iOS
         //
         public override bool FinishedLaunching(UIApplication uiApplication, NSDictionary launchOptions)
         {
-            Xamarin.Forms.Forms.Init();
-            Syncfusion.SfCarousel.XForms.iOS.SfCarouselRenderer.Init();
+            Forms.Init();
+            SfCarouselRenderer.Init();
             SfTextInputLayoutRenderer.Init();
 
             LoadApplication(new App());

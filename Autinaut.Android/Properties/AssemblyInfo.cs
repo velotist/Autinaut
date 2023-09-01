@@ -1,6 +1,6 @@
-﻿using Android.App;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.InteropServices;
+using Android.App;
 
 [assembly: AssemblyTitle("Autinaut.Android")]
 [assembly: AssemblyDescription("")]

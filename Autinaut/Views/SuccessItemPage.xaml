@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="Autinaut.Views.SuccessItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -21,7 +22,7 @@
     </ContentPage.BindingContext>
 
     <ScrollView
-        x:Name="scrollView"
+        x:Name="ScrollView"
         Margin="0,20,0,20"
         VerticalScrollBarVisibility="Always">
         <StackLayout VerticalOptions="CenterAndExpand">
@@ -49,7 +50,7 @@
                 </inputLayout:SfTextInputLayout>
             </Frame>
             <StackLayout
-                x:Name="buttons"
+                x:Name="Buttons"
                 Margin="20"
                 HorizontalOptions="CenterAndExpand"
                 Orientation="Horizontal"
@@ -58,13 +59,13 @@
                     x:Name="SfButtonSave"
                     AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameSave}"
                     Clicked="OnSaveClicked"
-                    Style="{StaticResource baseSfButtonStyle}"
+                    Style="{StaticResource BaseSfButtonStyle}"
                     Text="{x:Static resources:AppResources.TextSfButtonSave}" />
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
                     AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameDelete}"
                     Clicked="OnDeleteClicked"
-                    Style="{StaticResource baseSfButtonStyle}"
+                    Style="{StaticResource BaseSfButtonStyle}"
                     Text="{x:Static resources:AppResources.TextSfButtonDelete}" />
             </StackLayout>
         </StackLayout>

@@ -1,12 +1,13 @@
-﻿using Autinaut.Models;
-using Autinaut.Resx;
-using Autinaut.ViewModels;
-using Syncfusion.SfCarousel.XForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using Autinaut.Models;
+using Autinaut.Resx;
+using Autinaut.ViewModels;
+using Syncfusion.SfCarousel.XForms;
 using Xamarin.Forms;
+using SelectionChangedEventArgs = Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs;
 
 namespace Autinaut.Views
 {
@@ -14,7 +15,8 @@ namespace Autinaut.Views
     {
         private readonly string affectBilanceText = AppResources.TextActualAffectBilance;
 
-        private readonly List<Emotions> BasicEmotions = new List<Emotions> {
+        private readonly List<Emotions> BasicEmotions = new List<Emotions>
+        {
             new Emotions { ID = 1, Name = AppResources.TextEmotionAnger, Icon = "anger.png" },
             new Emotions { ID = 2, Name = AppResources.TextEmotionContempt, Icon = "contempt.png" },
             new Emotions { ID = 3, Name = AppResources.TextEmotionDisgust, Icon = "disgust.png" },
@@ -91,19 +93,19 @@ namespace Autinaut.Views
                 ItemContent = new StackLayout
                 {
                     Children =
+                    {
+                        new Image
                         {
-                            new Image
-                            {
-                                Source = "fear.png",
-                                Aspect = Aspect.AspectFit
-                            },
-                            new Label
-                            {
-                                Text = AppResources.TextEmotionFear,
-                                TextColor = Color.Black,
-                                HorizontalTextAlignment = TextAlignment.Center
-                            }
+                            Source = "fear.png",
+                            Aspect = Aspect.AspectFit
+                        },
+                        new Label
+                        {
+                            Text = AppResources.TextEmotionFear,
+                            TextColor = Color.Black,
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
+                    }
                 }
             },
             new SfCarouselItem
@@ -141,7 +143,7 @@ namespace Autinaut.Views
                         {
                             Text = AppResources.TextEmotionSadness,
                             TextColor = Color.Black,
-                            HorizontalTextAlignment=TextAlignment.Center
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
                     }
                 }
@@ -161,11 +163,11 @@ namespace Autinaut.Views
                         {
                             Text = AppResources.TextEmotionSurprise,
                             TextColor = Color.Black,
-                            HorizontalTextAlignment=TextAlignment.Center
+                            HorizontalTextAlignment = TextAlignment.Center
                         }
                     }
                 }
-            },
+            }
         };
 
         public EmotionItemPage(bool hasDeleteButton)
@@ -178,35 +180,35 @@ namespace Autinaut.Views
 
         private async void EditorUnfocused(object sender, EventArgs e)
         {
-            await scrollView.ScrollToAsync(positiveLabel, ScrollToPosition.Center, true);
+            await ScrollView.ScrollToAsync(PositiveLabel, ScrollToPosition.Center, true);
         }
 
-        private void Carousel_SelectionChanged(object sender, Syncfusion.SfCarousel.XForms.SelectionChangedEventArgs e)
+        private void Carousel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            var EmotionItem = (EmotionItemViewModel)BindingContext;
             EmotionItem.EmotionIcon = BasicEmotions[e.SelectedIndex].Icon;
             EmotionItem.EmotionName = BasicEmotions[e.SelectedIndex].Name;
         }
 
         private async Task ScrollToEnd()
         {
-            await scrollView.ScrollToAsync(buttons, ScrollToPosition.Start, true);
+            await ScrollView.ScrollToAsync(Buttons, ScrollToPosition.Start, true);
         }
 
         private async void OnSaveClicked(object sender, EventArgs e)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            var EmotionItem = (EmotionItemViewModel)BindingContext;
             if (string.IsNullOrEmpty(EmotionItem.EmotionSituation))
             {
                 await DisplayAlert(AppResources.NotificationTitle, AppResources.NotificationSituationText, "OK");
                 SfButtonSave.IsChecked = false;
 
-                await scrollView.ScrollToAsync(scrollView, ScrollToPosition.Start, true);
+                await ScrollView.ScrollToAsync(ScrollView, ScrollToPosition.Start, true);
 
                 return;
             }
 
-            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            var database = await EmotionItemDatabase.Instance;
             _ = await database.SaveItemAsync(EmotionItem);
 
             await Navigation.PopToRootAsync();
@@ -214,8 +216,8 @@ namespace Autinaut.Views
 
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
-            EmotionItemDatabase database = await EmotionItemDatabase.Instance;
+            var EmotionItem = (EmotionItemViewModel)BindingContext;
+            var database = await EmotionItemDatabase.Instance;
             _ = await database.DeleteItemAsync(EmotionItem);
 
             await Navigation.PopToRootAsync();
@@ -223,18 +225,18 @@ namespace Autinaut.Views
 
         private void OnPositiveSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            var EmotionItem = (EmotionItemViewModel)BindingContext;
             EmotionItem.PositiveAffectBalance = (int)Math.Round(args.NewValue);
-            positiveLabel.Text = string.Format(affectBilanceText, EmotionItem.PositiveAffectBalance);
+            PositiveLabel.Text = string.Format(affectBilanceText, EmotionItem.PositiveAffectBalance);
 
             _ = ScrollToEnd();
         }
 
         private void OnNegativeSliderValueChanged(object sender, ValueChangedEventArgs args)
         {
-            EmotionItemViewModel EmotionItem = (EmotionItemViewModel)BindingContext;
+            var EmotionItem = (EmotionItemViewModel)BindingContext;
             EmotionItem.NegativeAffectBalance = (int)Math.Round(args.NewValue);
-            negativeLabel.Text = string.Format(affectBilanceText, EmotionItem.NegativeAffectBalance);
+            NegativeLabel.Text = string.Format(affectBilanceText, EmotionItem.NegativeAffectBalance);
         }
     }
 }

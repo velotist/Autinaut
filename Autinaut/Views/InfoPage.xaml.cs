@@ -1,8 +1,8 @@
-﻿using Autinaut.Common;
-using Autinaut.Resx;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Autinaut.Common;
+using Autinaut.Resx;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -36,18 +36,19 @@ namespace Autinaut.Views
         {
             try
             {
-                EmailMessage message = new EmailMessage
+                var message = new EmailMessage
                 {
                     Subject = subject,
                     Body = body,
-                    To = recipients,
+                    To = recipients
                 };
 
                 await Email.ComposeAsync(message);
             }
             catch (FeatureNotSupportedException)
             {
-                await DisplayAlert(AppResources.TextAlertMailNotSupportedTitle, AppResources.TextAlertMailNotSupportedText, cancelDisplayAlert);
+                await DisplayAlert(AppResources.TextAlertMailNotSupportedTitle,
+                    AppResources.TextAlertMailNotSupportedText, cancelDisplayAlert);
             }
             catch (Exception ex)
             {

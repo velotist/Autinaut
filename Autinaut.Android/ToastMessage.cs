@@ -2,6 +2,7 @@
 using Autinaut;
 using Autinaut.Common;
 using Xamarin.Forms;
+using Application = Android.App.Application;
 
 [assembly: Dependency(typeof(ToastMessage))]
 
@@ -11,7 +12,7 @@ namespace Autinaut
     {
         public void ShortToast(string message)
         {
-            Toast.MakeText(Android.App.Application.Context, message, ToastLength.Short).Show();
+            Toast.MakeText(Application.Context, message, ToastLength.Short).Show();
         }
     }
 }

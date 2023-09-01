@@ -1,13 +1,13 @@
-﻿using Autinaut.Resx;
+﻿using System;
+using Autinaut.Resx;
 using SQLite;
-using System;
 
 namespace Autinaut.ViewModels
 {
     public class EmotionItemViewModel
     {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        [PrimaryKey] [AutoIncrement] public int Id { get; set; }
+
         public string EmotionName { get; set; } = AppResources.TextEmotionFear;
         public string EmotionSituation { get; set; }
         public string EmotionIcon { get; set; } = "fear.png";
