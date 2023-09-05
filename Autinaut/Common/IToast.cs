@@ -1,7 +1,6 @@
-﻿namespace Autinaut.Common
+﻿namespace Autinaut.Common;
+
+public interface IToast
 {
-    public interface IToast
-    {
-        void ShortToast(string message);
-    }
+    void ShortToast(string message);
 }

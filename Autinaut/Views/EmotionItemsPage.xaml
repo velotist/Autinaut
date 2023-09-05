@@ -5,12 +5,17 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:resources="clr-namespace:Autinaut.Resx"
+    xmlns:viewModels="clr-namespace:Autinaut.ViewModels;assembly=Autinaut"
     Title="{x:Static resources:AppResources.EmotionItemsPageTitle}">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Clicked="OnItemAdded" IconImageSource="add_reaction_filled.png" />
     </ContentPage.ToolbarItems>
 
+    <ContentPage.BindingContext>
+        <viewModels:EmotionItemViewModel />
+    </ContentPage.BindingContext>
+    
     <StackLayout>
         <ListView
             x:Name="MyListView"

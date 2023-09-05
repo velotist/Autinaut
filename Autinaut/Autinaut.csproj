@@ -5,6 +5,7 @@
         <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
         <BaseOutputPath>bin\</BaseOutputPath>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

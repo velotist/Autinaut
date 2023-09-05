@@ -1,12 +1,12 @@
 ﻿using Android.Widget;
-using Autinaut;
 using Autinaut.Common;
+using Autinaut.Droid;
 using Xamarin.Forms;
 using Application = Android.App.Application;
 
 [assembly: Dependency(typeof(ToastMessage))]
 
-namespace Autinaut
+namespace Autinaut.Droid
 {
     public class ToastMessage : IToast
     {
