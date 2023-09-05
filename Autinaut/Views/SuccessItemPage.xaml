@@ -31,8 +31,7 @@
                 Padding="20,20,20,10"
                 BackgroundColor="WhiteSmoke"
                 BorderColor="{StaticResource ActionColor}"
-                CornerRadius="20"
-                HeightRequest="400">
+                CornerRadius="20">
                 <inputLayout:SfTextInputLayout
                     ContainerBackgroundColor="Transparent"
                     FocusedColor="#562b28"
