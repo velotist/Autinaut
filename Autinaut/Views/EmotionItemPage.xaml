@@ -50,7 +50,7 @@
                             AutoSize="TextChanges"
                             Completed="EditorUnfocused"
                             Keyboard="Text"
-                            MaxLength="400"
+                            MaxLength="500"
                             Text="{Binding EmotionSituation}"
                             TextColor="Black" />
                     </inputLayout:SfTextInputLayout>
