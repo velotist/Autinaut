@@ -16,8 +16,9 @@
     <ItemGroup>
         <PackageReference Include="NuGet.Common" Version="6.5.1"/>
         <PackageReference Include="sqlite-net-pcl" Version="1.8.116"/>
-        <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="20.4.0.52"/>
-        <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="20.4.0.52"/>
+        <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="22.2.12" />
+        <PackageReference Include="Syncfusion.Xamarin.Core" Version="22.2.12" />
+        <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="22.2.12" />
         <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545"/>
         <PackageReference Include="Xamarin.Essentials" Version="1.7.5"/>
     </ItemGroup>
