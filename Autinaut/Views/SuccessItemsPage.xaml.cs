@@ -1,100 +1,91 @@
-﻿using Autinaut.Models;
+﻿using System;
+using Autinaut.Database;
 using Autinaut.Resx;
 using Autinaut.ViewModels;
-using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Autinaut.Views
+namespace Autinaut.Views;
+
+[XamlCompilation(XamlCompilationOptions.Compile)]
+public partial class SuccessItemsPage : ContentPage
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SuccessItemsPage : ContentPage
+    private bool _isRunning;
+
+    public SuccessItemsPage()
     {
-        private bool _isRunning;
+        InitializeComponent();
+    }
 
-        public SuccessItemsPage()
-        {
-            InitializeComponent();
-        }
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
+        var databaseHelper = new DatabaseHelper();
 
-            SuccessItemDatabase database = await SuccessItemDatabase.Instance;
-            System.Collections.Generic.List<SuccessItemViewModel> items = await database.GetItemsAsync();
-            myListView.ItemsSource = items;
-            Content = items.Count == 0
-                ? new StackLayout
+        var items = await databaseHelper.GetItemsAsync<SuccessItemViewModel>();
+        MyListView.ItemsSource = items;
+        Content = items.Count == 0
+            ? new StackLayout
+            {
+                Children =
                 {
-                    Children =
+                    new Label
                     {
-                        new Label
-                        {
-                            Text = AppResources.LabelInitialTextPartOne,
-                            TextColor = Color.Black,
-                            FontSize = 22,
-                            Margin = 40
-                        },
-                        new Label
-                        {
-                            Text = AppResources.LabelInitialTextPartTwo,
-                            TextColor = Color.Black,
-                            FontSize = 22,
-                            Margin = 40
-                        }
+                        Text = AppResources.LabelInitialTextPartOne,
+                        TextColor = Color.Black,
+                        FontSize = 22,
+                        Margin = 40
+                    },
+                    new Label
+                    {
+                        Text = AppResources.LabelInitialTextPartTwo,
+                        TextColor = Color.Black,
+                        FontSize = 22,
+                        Margin = 40
                     }
                 }
-                : (View)myListView;
-        }
+            }
+            : MyListView;
+    }
 
-        private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
+    private async void OnListItemTapped(object sender, ItemTappedEventArgs e)
+    {
+        if (e.Item == null) return;
+
+        if (_isRunning) return;
+
+        _isRunning = true;
+
+        try
         {
-            if (e.Item == null)
+            await Navigation.PushAsync(new SuccessItemPage(true)
             {
-                return;
-            }
-
-            if (_isRunning)
-            {
-                return;
-            }
-
-            _isRunning = true;
-
-            try
-            {
-                await Navigation.PushAsync(new SuccessItemPage(true)
-                {
-                    BindingContext = e.Item as SuccessItemViewModel
-                });
-            }
-            finally
-            {
-                _isRunning = false;
-            }
+                BindingContext = e.Item as SuccessItemViewModel
+            });
         }
-
-        private async void OnItemAdded(object sender, EventArgs e)
+        finally
         {
-            if (_isRunning)
-            {
-                return;
-            }
+            _isRunning = false;
+        }
+    }
 
-            _isRunning = true;
+    private async void OnItemAdded(object sender, EventArgs e)
+    {
+        if (_isRunning) return;
 
-            try
+        _isRunning = true;
+
+        try
+        {
+            await Navigation.PushAsync(new SuccessItemPage(false)
             {
-                await Navigation.PushAsync(new SuccessItemPage(false)
-                {
-                    BindingContext = new SuccessItemViewModel()
-                });
-            }
-            finally
-            {
-                _isRunning = false;
-            }
+                BindingContext = new SuccessItemViewModel()
+            });
+        }
+        finally
+        {
+            _isRunning = false;
         }
     }
 }

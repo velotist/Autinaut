@@ -1,4 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage
     x:Class="Autinaut.Views.EmotionItemPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
@@ -22,7 +23,7 @@
     </ContentPage.BindingContext>
 
     <ScrollView
-        x:Name="scrollView"
+        x:Name="ScrollView"
         Margin="0,20,0,20"
         VerticalScrollBarVisibility="Always">
         <Grid>
@@ -49,7 +50,7 @@
                             AutoSize="TextChanges"
                             Completed="EditorUnfocused"
                             Keyboard="Text"
-                            MaxLength="400"
+                            MaxLength="500"
                             Text="{Binding EmotionSituation}"
                             TextColor="Black" />
                     </inputLayout:SfTextInputLayout>
@@ -58,21 +59,21 @@
             <StackLayout Grid.Row="1" Margin="20,0,20,0">
                 <Label
                     Margin="0,0,0,-40"
-                    Style="{StaticResource labelStyle}"
+                    Style="{StaticResource LabelStyle}"
                     Text="{x:Static resources:AppResources.LabelFeeling}" />
                 <carousel:SfCarousel
                     x:Name="EmotionsCarouselView"
                     HeightRequest="300"
                     ItemHeight="200"
                     ItemWidth="100"
-                    SelectedIndex="{Binding IconID, Mode=TwoWay}"
+                    SelectedIndex="{Binding IconId, Mode=TwoWay}"
                     SelectedItemOffset="30"
                     SelectionChanged="Carousel_SelectionChanged" />
             </StackLayout>
             <StackLayout Grid.Row="2" Margin="0,-100,0,0">
                 <Label
                     Margin="20,0,0,0"
-                    Style="{StaticResource labelStyle}"
+                    Style="{StaticResource LabelStyle}"
                     Text="{x:Static resources:AppResources.LabelPositiveAffect}" />
                 <Frame
                     Margin="20,0,20,0"
@@ -88,15 +89,15 @@
                         Value="{Binding PositiveAffectBalance}" />
                 </Frame>
                 <Label
-                    x:Name="positiveLabel"
+                    x:Name="PositiveLabel"
                     AutomationProperties.Name="{x:Static resources:AppResources.LabelPositiveAffect}"
                     HorizontalOptions="Center"
-                    Style="{StaticResource labelStyle}"
+                    Style="{StaticResource LabelStyle}"
                     Text="{x:Static resources:AppResources.TextAffectBilance}"
                     VerticalOptions="CenterAndExpand" />
                 <Label
                     Margin="20,20,0,0"
-                    Style="{StaticResource labelStyle}"
+                    Style="{StaticResource LabelStyle}"
                     Text="{x:Static resources:AppResources.LabelNegativeAffect}" />
                 <Frame
                     Margin="20,0,20,0"
@@ -112,15 +113,15 @@
                         Value="{Binding NegativeAffectBalance}" />
                 </Frame>
                 <Label
-                    x:Name="negativeLabel"
+                    x:Name="NegativeLabel"
                     AutomationProperties.Name="{x:Static resources:AppResources.LabelNegativeAffect}"
                     HorizontalOptions="Center"
-                    Style="{StaticResource labelStyle}"
+                    Style="{StaticResource LabelStyle}"
                     Text="{x:Static resources:AppResources.TextAffectBilance}"
                     VerticalOptions="CenterAndExpand" />
             </StackLayout>
             <StackLayout
-                x:Name="buttons"
+                x:Name="Buttons"
                 Grid.Row="3"
                 Margin="20"
                 HorizontalOptions="CenterAndExpand"
@@ -130,13 +131,13 @@
                     x:Name="SfButtonSave"
                     AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameSave}"
                     Clicked="OnSaveClicked"
-                    Style="{StaticResource baseSfButtonStyle}"
+                    Style="{StaticResource BaseSfButtonStyle}"
                     Text="{x:Static resources:AppResources.TextSfButtonSave}" />
                 <buttons:SfButton
                     x:Name="SfButtonDelete"
                     AutomationProperties.Name="{x:Static resources:AppResources.SfButtonAutomationPropertiesNameDelete}"
                     Clicked="OnDeleteClicked"
-                    Style="{StaticResource baseSfButtonStyle}"
+                    Style="{StaticResource BaseSfButtonStyle}"
                     Text="{x:Static resources:AppResources.TextSfButtonDelete}" />
             </StackLayout>
         </Grid>

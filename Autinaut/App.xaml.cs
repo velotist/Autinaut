@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Syncfusion.Licensing;
+using Xamarin.Forms;
 
 namespace Autinaut
 {
@@ -10,7 +11,8 @@ namespace Autinaut
             // If you use this license key without Syncfusion account,
             // you are not able to contact Syncfusion for any technical support
             // or for any updates.
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mgo + DSMBaFt / QHRqVVhjVFpFdEBBXHxAd1p / VWJYdVt5flBPcDwsT3RfQF9iS3xad0ZiWHxYeH1WRg ==; Mgo + DSMBPh8sVXJ0S0J + XE9HflRDX3xKf0x / TGpQb19xflBPallYVBYiSV9jS3xSdEdqWHxfcXdTT2BbUQ ==; ORg4AjUWIQA / Gnt2VVhkQlFadVdJXGFWfVJpTGpQdk5xdV9DaVZUTWY / P1ZhSXxRd0dhUH5dcXVWQGleU0Q =; ODM5MjA2QDMyMzAyZTM0MmUzMEdpbkVNdWw3UGl5aHEzNkg0Sm5HOFoyRnhsdExHendxS3JmRmFyZlp6a2c9; ODM5MjA3QDMyMzAyZTM0MmUzMG1EdE0rdnE5M2VWTUtDbUcrR3Z4V1NQaVlLazVKNmgvanhqcHVVTnRtcVk9; NRAiBiAaIQQuGjN / V0Z + WE9EaFxKVmJLYVB3WmpQdldgdVRMZVVbQX9PIiBoS35RdERhW3Zfc3VURWdeWEZz; ODM5MjA5QDMyMzAyZTM0MmUzMFprMTVuZ0pqWjUyWDJRMDF2cDlldjZaeTgxenNNVnRoZDJDRVVjRGc4Yjg9; ODM5MjEwQDMyMzAyZTM0MmUzMEZUems4aThodHV6bHB5dTR2blZSQ3AxY21hRDEyZmxJR2xabG4xdFN3TzA9; Mgo + DSMBMAY9C3t2VVhkQlFadVdJXGFWfVJpTGpQdk5xdV9DaVZUTWY / P1ZhSXxRd0dhUH5dcXVWQWNaVkE =; ODM5MjEyQDMyMzAyZTM0MmUzMERpNW1wUnZDeTI4dEJPVEFTRllZbGpMTXd5bHViS0gxVkN0RXQrV1dzWTA9; ODM5MjEzQDMyMzAyZTM0MmUzME5tczlmbDF4dHhPdGxUNmpPeXlTcVUvVzhVclFiOXdwdjNNdzcrQ0ptRUU9; ODM5MjE0QDMyMzAyZTM0MmUzMFprMTVuZ0pqWjUyWDJRMDF2cDlldjZaeTgxenNNVnRoZDJDRVVjRGc4Yjg9");
+            SyncfusionLicenseProvider.RegisterLicense(
+                "Mgo+DSMBaFt9QHFqVkJrXVNbdV5dVGpAd0N3RGlcdlR1fUUmHVdTRHRcQlRjTH9WdkZjWXdXcnQ=;Mgo+DSMBPh8sVXJ2S0d+X1VPd11dXmJWd1p/THNYflR1fV9DaUwxOX1dQl9gSXdTc0RmWXxecH1VQGA=;ORg4AjUWIQA/Gnt2V1hhQlJAfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hSn5adkBiXH9dcHRcRGJc;MjY4MjMzMkAzMjMyMmUzMDJlMzBNc0Y4ZE1kdUZMWkRiRWFYVHAvcW5iQThybXFnZ2ZmVkd2TnVIQVd5SlhZPQ==;MjY4MjMzM0AzMjMyMmUzMDJlMzBqRlBFQlQreE5JeVBHYjQ5N2pVTmNrSzNWd241VXFwd05oTmpVcE9HYUpNPQ==;NRAiBiAaIQQuGjN/V0R+XU9HclRDX3xKf0x/TGpQb19xflBPallYVBYiSV9jS31Tf0VmWHpec3RVT2leUQ==;MjY4MjMzNUAzMjMyMmUzMDJlMzBuRVl5N1NjandDRnBpcFRaSy8zUUR5bkc1QVZxVVgyNXZhZU1mdnZsVE93PQ==;MjY4MjMzNkAzMjMyMmUzMDJlMzBhWXFwWW1PQXdSZHdxckU4U2JJWC9TbC82WnExT0NtZ0llVXR6alIxM25RPQ==;Mgo+DSMBMAY9C3t2V1hhQlJAfV5AQmBIYVp/TGpJfl96cVxMZVVBJAtUQF1hSn5adkBiXH9dcHVVQWBc;MjY4MjMzOEAzMjMyMmUzMDJlMzBCL2l0MERBTHk5SkFTcU9qeHR2aFNFVEZLYjkzZVFoTm56dDFaMnVIOXl3PQ==;MjY4MjMzOUAzMjMyMmUzMDJlMzBPdGU1dVZVU3RDeVhlaVozTW0vczlwZ2xQR05adUROMjBxdDNOSjBxdHRFPQ==;MjY4MjM0MEAzMjMyMmUzMDJlMzBuRVl5N1NjandDRnBpcFRaSy8zUUR5bkc1QVZxVVgyNXZhZU1mdnZsVE93PQ==");
 
             InitializeComponent();
             MainPage = new Main();

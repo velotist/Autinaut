@@ -1,17 +1,18 @@
 ﻿using Android.Widget;
-using Autinaut;
 using Autinaut.Common;
+using Autinaut.Droid;
 using Xamarin.Forms;
+using Application = Android.App.Application;
 
 [assembly: Dependency(typeof(ToastMessage))]
 
-namespace Autinaut
+namespace Autinaut.Droid
 {
     public class ToastMessage : IToast
     {
         public void ShortToast(string message)
         {
-            Toast.MakeText(Android.App.Application.Context, message, ToastLength.Short).Show();
+            Toast.MakeText(Application.Context, message, ToastLength.Short).Show();
         }
     }
 }

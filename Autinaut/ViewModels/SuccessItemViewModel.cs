@@ -1,14 +1,19 @@
-﻿using SQLite;
-using System;
+﻿using System;
+using Autinaut.Database;
+using SQLite;
 
-namespace Autinaut.ViewModels
+namespace Autinaut.ViewModels;
+
+public class SuccessItemViewModel : IDatabaseItem
 {
-    public class SuccessItemViewModel
+    [PrimaryKey] [AutoIncrement] public int Id { get; set; }
+    public DateTime Date { get; set; } = DateTime.Now;
+    private string _successNote;
+    public string SuccessNote
     {
-        [PrimaryKey, AutoIncrement]
-        public int ID { get; set; }
-
-        public string SuccessNote { get; set; }
-        public string Date { get; set; } = DateTime.Now.ToString();
+        get => _successNote;
+        set =>
+            _successNote = value is { Length: > 700 } ? value.Substring(0, 700) :
+                value;
     }
 }

@@ -361,6 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/NDependOut
-*.ndproj
-/Autinaut/.sonarqube/conf
+
+# Jetbrains Rider
+/.idea
