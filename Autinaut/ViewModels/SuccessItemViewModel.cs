@@ -4,7 +4,7 @@ using SQLite;
 
 namespace Autinaut.ViewModels;
 
-public class SuccessItemViewModel : IDatabaseItem
+public class SuccessItemViewModel : IDatabaseEntity
 {
     [PrimaryKey] [AutoIncrement] public int Id { get; set; }
     public DateTime Date { get; set; } = DateTime.Now;

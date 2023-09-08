@@ -5,7 +5,7 @@ using SQLite;
 
 namespace Autinaut.ViewModels;
 
-public class EmotionItemViewModel : IDatabaseItem
+public class EmotionItemViewModel : IDatabaseEntity
 {
     [PrimaryKey] [AutoIncrement] public int Id { get; set; }
     public DateTime Date { get; set; } = DateTime.Now;
