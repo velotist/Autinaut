@@ -44,6 +44,9 @@
                         FocusedColor="#562b28"
                         FocusedStrokeWidth="0"
                         Hint="{x:Static resources:AppResources.HintInputSituation}"
+                        HelperText="{x:Static resources:AppResources.EmotionNoteMaxChars}"
+                        CharMaxLength="500"
+                        ShowCharCount="True"
                         UnfocusedColor="Black"
                         UnfocusedStrokeWidth="1">
                         <Editor

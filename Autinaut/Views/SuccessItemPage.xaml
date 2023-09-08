@@ -37,6 +37,9 @@
                     FocusedColor="#562b28"
                     FocusedStrokeWidth="0"
                     Hint="{x:Static resources:AppResources.HintInputSuccess}"
+                    HelperText="{x:Static resources:AppResources.SuccessNoteMaxChars}"
+                    CharMaxLength="700"
+                    ShowCharCount="True"
                     UnfocusedColor="Black"
                     UnfocusedStrokeWidth="1">
                     <Editor
