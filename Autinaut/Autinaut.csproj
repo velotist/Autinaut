@@ -6,6 +6,8 @@
         <BaseOutputPath>bin\</BaseOutputPath>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
+        <AssemblyVersion>1.9.0.0</AssemblyVersion>
+        <NeutralLanguage>en-US</NeutralLanguage>
     </PropertyGroup>
 
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
