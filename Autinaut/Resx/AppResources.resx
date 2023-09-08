@@ -252,4 +252,10 @@
     <data name="TextSfButtonSave" xml:space="preserve">
     <value>Speichern</value>
   </data>
+    <data name="SuccessNoteMaxChars" xml:space="preserve">
+      <value>Max 700 Zeichen</value>
+    </data>
+    <data name="EmotionNoteMaxChars" xml:space="preserve">
+      <value>Max 500 Zeichen</value>
+    </data>
 </root>

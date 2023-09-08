@@ -96,6 +96,15 @@ namespace Autinaut.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max 500 Zeichen.
+        /// </summary>
+        public static string EmotionNoteMaxChars {
+            get {
+                return ResourceManager.GetString("EmotionNoteMaxChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Beschreibe die Situation.
         /// </summary>
         public static string HintInputSituation {
@@ -281,6 +290,15 @@ namespace Autinaut.Resx {
         public static string SuccessItemsPageTitle {
             get {
                 return ResourceManager.GetString("SuccessItemsPageTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max 700 Zeichen.
+        /// </summary>
+        public static string SuccessNoteMaxChars {
+            get {
+                return ResourceManager.GetString("SuccessNoteMaxChars", resourceCulture);
             }
         }
         
