@@ -17,11 +17,11 @@
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.BindingContext>
         <viewModels:SuccessItemViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <ListView
             x:Name="MyListView"

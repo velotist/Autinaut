@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using Autinaut.Database;
 using SQLite;
 using Xamarin.Forms;
@@ -12,8 +13,8 @@ public class DatabaseConnection : IDatabaseConnection
     public SQLiteAsyncConnection DbConnection()
     {
         const string dbName = "Autinaut.db3";
-        var path = Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), dbName);
-        
+        var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), dbName);
+
         return new SQLiteAsyncConnection(path);
     }
 }

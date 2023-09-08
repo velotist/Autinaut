@@ -1,4 +1,5 @@
 ﻿using System;
+using Autinaut.Common;
 using Autinaut.Database;
 using Autinaut.Resx;
 using Autinaut.ViewModels;
@@ -23,7 +24,7 @@ public partial class SuccessItemsPage : ContentPage
 
         var databaseHelper = new DatabaseHelper();
 
-        var items = await databaseHelper.GetItemsAsync<SuccessItemViewModel>();
+        var items = await databaseHelper.GetItemsAsync<SuccessItemViewModel>(Order.Descending);
         MyListView.ItemsSource = items;
         Content = items.Count == 0
             ? new StackLayout

@@ -6,13 +6,12 @@ using Application = Android.App.Application;
 
 [assembly: Dependency(typeof(ToastMessage))]
 
-namespace Autinaut.Droid
+namespace Autinaut.Droid;
+
+public class ToastMessage : IToast
 {
-    public class ToastMessage : IToast
+    public void ShortToast(string message)
     {
-        public void ShortToast(string message)
-        {
-            Toast.MakeText(Application.Context, message, ToastLength.Short).Show();
-        }
+        Toast.MakeText(Application.Context, message, ToastLength.Short).Show();
     }
 }

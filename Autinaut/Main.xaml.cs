@@ -1,12 +1,11 @@
 ﻿using Xamarin.Forms;
 
-namespace Autinaut
+namespace Autinaut;
+
+public partial class Main : TabbedPage
 {
-    public partial class Main : TabbedPage
+    public Main()
     {
-        public Main()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

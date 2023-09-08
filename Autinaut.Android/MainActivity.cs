@@ -6,28 +6,27 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using Platform = Xamarin.Essentials.Platform;
 
-namespace Autinaut.Droid
+namespace Autinaut.Droid;
+
+[Activity(Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true,
+    ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
+    ScreenOrientation = ScreenOrientation.Portrait)]
+public class MainActivity : FormsAppCompatActivity
 {
-    [Activity(Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true,
-        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation,
-        ScreenOrientation = ScreenOrientation.Portrait)]
-    public class MainActivity : FormsAppCompatActivity
+    protected override void OnCreate(Bundle savedInstanceState)
     {
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+        base.OnCreate(savedInstanceState);
 
-            Platform.Init(this, savedInstanceState);
-            Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
-        }
+        Platform.Init(this, savedInstanceState);
+        Forms.Init(this, savedInstanceState);
+        LoadApplication(new App());
+    }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
-            [GeneratedEnum] Permission[] grantResults)
-        {
-            Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+    public override void OnRequestPermissionsResult(int requestCode, string[] permissions,
+        [GeneratedEnum] Permission[] grantResults)
+    {
+        Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
+        base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
