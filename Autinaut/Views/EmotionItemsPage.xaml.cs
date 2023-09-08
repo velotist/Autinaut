@@ -1,4 +1,5 @@
 ﻿using System;
+using Autinaut.Common;
 using Autinaut.Database;
 using Autinaut.Resx;
 using Autinaut.ViewModels;
@@ -22,7 +23,7 @@ public partial class EmotionItemsPage : ContentPage
         base.OnAppearing();
 
         var databaseHelper = new DatabaseHelper();
-        var items = await databaseHelper.GetItemsAsync<EmotionItemViewModel>();
+        var items = await databaseHelper.GetItemsAsync<EmotionItemViewModel>(Order.Descending);
         MyListView.ItemsSource = items;
         Content = items.Count == 0
             ? new StackLayout
