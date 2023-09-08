@@ -17,7 +17,7 @@ public partial class EmotionItemPage : ContentPage
 
     private readonly ObservableCollection<SfCarouselItem> _carouselItems = new()
     {
-        new SfCarouselItem()
+        new SfCarouselItem
         {
             ItemContent = new StackLayout
             {
@@ -172,12 +172,12 @@ public partial class EmotionItemPage : ContentPage
         await ScrollView.ScrollToAsync(PositiveLabel, ScrollToPosition.Center, true);
     }
 
-        private void Carousel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            var emotion = (EmotionItemViewModel)BindingContext;
-            emotion.EmotionIcon = BasicEmotion.GetIconForSelectedIndex(e.SelectedIndex);
-            emotion.EmotionName = BasicEmotion.GetNameForSelectedIndex(e.SelectedIndex);
-        }
+    private void Carousel_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        var emotion = (EmotionItemViewModel)BindingContext;
+        emotion.EmotionIcon = BasicEmotion.GetIconForSelectedIndex(e.SelectedIndex);
+        emotion.EmotionName = BasicEmotion.GetNameForSelectedIndex(e.SelectedIndex);
+    }
 
     private async Task ScrollToEnd()
     {

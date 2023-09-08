@@ -19,7 +19,7 @@ public class DatabaseHelper
         _database.CreateTableAsync<SuccessItemViewModel>().Wait();
         _database.CreateTableAsync<EmotionItemViewModel>().Wait();
     }
-    
+
     public async Task<List<T>> GetItemsAsync<T>(Order direction) where T : class, IDatabaseEntity, new()
     {
         var items = await _database.Table<T>().ToListAsync();
