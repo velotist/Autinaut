@@ -15,7 +15,7 @@
     <ContentPage.BindingContext>
         <viewModels:EmotionItemViewModel />
     </ContentPage.BindingContext>
-    
+
     <StackLayout>
         <ListView
             x:Name="MyListView"

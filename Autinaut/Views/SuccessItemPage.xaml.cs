@@ -28,7 +28,7 @@ public partial class SuccessItemPage : ContentPage
         {
             _ = DisplayAlert(AppResources.NotificationTitle, AppResources.NotificationSuccessText, "OK");
             SfButtonSave.IsChecked = false;
-  
+
             await ScrollView.ScrollToAsync(ScrollView, ScrollToPosition.Start, true);
 
             return;
@@ -47,5 +47,11 @@ public partial class SuccessItemPage : ContentPage
         await databaseHelper.DeleteItemAsync(successItem);
 
         await Navigation.PopToRootAsync();
+    }
+
+    private void EditorFocused(object sender, FocusEventArgs e)
+    {
+        SuccessNote.ShowHelperText = false;
+        SuccessNote.ShowCharCount = true;
     }
 }

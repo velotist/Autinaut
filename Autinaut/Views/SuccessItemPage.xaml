@@ -25,7 +25,8 @@
         x:Name="ScrollView"
         Margin="0,20,0,20"
         VerticalScrollBarVisibility="Always">
-        <StackLayout VerticalOptions="CenterAndExpand">
+        <StackLayout
+            VerticalOptions="StartAndExpand">
             <Frame
                 Margin="20,0,20,20"
                 Padding="20,20,20,10"
@@ -33,14 +34,20 @@
                 BorderColor="{StaticResource ActionColor}"
                 CornerRadius="20">
                 <inputLayout:SfTextInputLayout
+                    x:Name="SuccessNote"
                     ContainerBackgroundColor="Transparent"
                     FocusedColor="#562b28"
                     FocusedStrokeWidth="0"
                     Hint="{x:Static resources:AppResources.HintInputSuccess}"
+                    ShowHelperText="True"
+                    HelperText="{x:Static resources:AppResources.SuccessNoteMaxChars}"
+                    CharMaxLength="700"
+                    ShowCharCount="False"
                     UnfocusedColor="Black"
                     UnfocusedStrokeWidth="1">
                     <Editor
                         AutoSize="TextChanges"
+                        Focused="EditorFocused"
                         Completed="EditorUnfocused"
                         Keyboard="Text"
                         MaxLength="700"
