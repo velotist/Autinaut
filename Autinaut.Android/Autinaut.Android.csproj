@@ -72,8 +72,8 @@
         <PackageReference Include="sqlite-net-pcl">
             <Version>1.8.116</Version>
         </PackageReference>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
-        <PackageReference Include="Xamarin.Essentials" Version="1.7.7" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578"/>
+        <PackageReference Include="Xamarin.Essentials" Version="1.7.7"/>
     </ItemGroup>
     <ItemGroup>
         <Compile Include="MainActivity.cs"/>
