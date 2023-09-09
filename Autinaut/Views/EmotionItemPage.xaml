@@ -40,6 +40,7 @@
                     BorderColor="{StaticResource ActionColor}"
                     CornerRadius="20">
                     <inputLayout:SfTextInputLayout
+                        x:Name="EmotionNote"
                         ContainerBackgroundColor="Transparent"
                         FocusedColor="#562b28"
                         FocusedStrokeWidth="0"
@@ -51,6 +52,7 @@
                         UnfocusedStrokeWidth="1">
                         <Editor
                             AutoSize="TextChanges"
+                            Focused="EditorFocused"
                             Completed="EditorUnfocused"
                             Keyboard="Text"
                             MaxLength="500"

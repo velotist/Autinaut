@@ -48,4 +48,10 @@ public partial class SuccessItemPage : ContentPage
 
         await Navigation.PopToRootAsync();
     }
+
+    private void EditorFocused(object sender, FocusEventArgs e)
+    {
+        SuccessNote.ShowHelperText = false;
+        SuccessNote.ShowCharCount = true;
+    }
 }

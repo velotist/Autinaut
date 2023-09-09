@@ -227,4 +227,10 @@ public partial class EmotionItemPage : ContentPage
         emotion.NegativeAffectBalance = (int)Math.Round(args.NewValue);
         NegativeLabel.Text = string.Format(_affectBilanceText, emotion.NegativeAffectBalance);
     }
+
+    private void EditorFocused(object sender, FocusEventArgs e)
+    {
+        EmotionNote.ShowHelperText = false;
+        EmotionNote.ShowCharCount = true;
+    }
 }
