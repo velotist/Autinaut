@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Autinaut.Common;
 using Autinaut.Resx;
-using Xamarin.Essentials;
-using Xamarin.Forms;
 
 namespace Autinaut.Views;
 

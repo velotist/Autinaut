@@ -1,12 +1,14 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Autinaut</RootNamespace>
         <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
         <BaseOutputPath>bin\</BaseOutputPath>
         <GenerateDocumentationFile>False</GenerateDocumentationFile>
         <LangVersion>latest</LangVersion>
-        <AssemblyVersion>1.9.0.0</AssemblyVersion>
+        <AssemblyVersion>2.0.0.0</AssemblyVersion>
         <NeutralLanguage>en-US</NeutralLanguage>
     </PropertyGroup>
 
@@ -16,17 +18,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="NuGet.Common" Version="6.7.0"/>
-        <PackageReference Include="sqlite-net-pcl" Version="1.8.116"/>
-        <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="22.2.12"/>
-        <PackageReference Include="Syncfusion.Xamarin.Core" Version="22.2.12"/>
-        <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="22.2.12"/>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578"/>
-        <PackageReference Include="Xamarin.Essentials" Version="1.7.7"/>
+        <PackageReference Include="Microsoft.Maui.Core" Version="8.0.70" />
+        <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+        <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="22.2.12" />
+        <PackageReference Include="Syncfusion.Xamarin.Core" Version="22.2.12" />
+        <PackageReference Include="Syncfusion.Xamarin.SfCarousel" Version="22.2.12" />
     </ItemGroup>
 
     <ItemGroup>
-        <Compile Remove="Resx\AppResources.de.Designer.cs"/>
+        <Compile Remove="Resx\AppResources.de.Designer.cs" />
     </ItemGroup>
 
     <ItemGroup>
